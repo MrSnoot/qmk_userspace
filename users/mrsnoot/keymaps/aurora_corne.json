@@ -1,0 +1,13 @@
+{
+	"keyboard": "splitkb/aurora/corne/rev1",
+	"keymap": "mrsnoot",
+	"layout": "LAYOUT_aurora_corne_w",
+	"layers": [
+		[ "C_42(HRM(_OPY))" ],
+		[ "C_42(HRM(_QWERTY))" ],
+		[ "C_42(_NAV)" ],
+		[ "C_42(_NUM_FUNC)" ],
+		[ "C_42(_SYMBOL)" ],
+		[ "C_42(_ADJUST)" ]
+	]
+}
