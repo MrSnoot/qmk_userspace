@@ -13,19 +13,20 @@
 #   define AUDIO_TONE_MULTIPLEXING_RATE_DEFAULT 10
 #   define AUDIO_CLICKY
 #   define AUDIO_CLICKY_FREQ_MIN 100.0f
+#   define AUDIO_CLICKY_FREQ_RANDOMNESS 1.0f
+#   undef  AUDIO_INIT_DELAY
 #   define AUDIO_INIT_DELAY 1000
 #   define STARTUP_SONG SONG(STARTUP_SOUND)
 #endif
-
 
 // Caps Word Feature --------------------------------------
 #ifdef CAPS_WORD_ENABLE
 #   define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
 #endif
 
-
 // Combo Feature ------------------------------------------
 #ifdef COMBO_ENABLE
+#   undef  TAPPING_TERM
 #   define TAPPING_TERM 190
 #   define TAPPING_FORCE_HOLD_PER_KEY
 #   define TAPPING_TOGGLE 1
@@ -33,7 +34,6 @@
 #   define ONESHOT_TIMEOUT 3000
 #   define COMBO_SHOULD_TRIGGER
 #endif
-
 
 // OLED Feature -------------------------------------------
 #ifdef OLED_ENABLE
@@ -87,14 +87,28 @@
 #   endif
 #endif
 
-// HMKB EON40 ---------------------------------------------
-#if defined(KEYBOARD_evyd13_eon40)
-#   define HAS_QWERTY_LAYER
+// Dasbob ------------------------------------------------
+#if defined(KEYBOARD_dasbob)
 #   define HAS_OPY_LAYER
 #   define USE_HRM
-#   define THUMB_1 MO(NAV)
-#   define THUMB_2 LT(NUM_FUNC, KC_SPC)
-#   define THUMB_4 OSL(SYMBOL)
+#   define NUM_FUN MO(NUM_FUNC)
+#   define NAV_SPC LT(NAV, KC_SPC)
+#   define NAV_ENT LT(NAV, KC_ENT)
+#   define OSL_SYM OSL(SYMBOL)
+
+#   define RP2040_BOOTLOADER_DOUBLE_TAP_RESET
+#   define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_TIMEOUT 500U
+#   define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_LED 17U
+#endif
+
+// HMKB EON40 ---------------------------------------------
+#if defined(KEYBOARD_evyd13_eon40)
+#   define HAS_OPY_LAYER
+#   define USE_HRM
+#   define NUM_FUN MO(NUM_FUNC)
+#   define NAV_SPC LT(NAV, KC_SPC)
+#   define NAV_ENT LT(NAV, KC_ENT)
+#   define OSL_SYM OSL(SYMBOL)
 #endif
 
 // HMKB EON95 ---------------------------------------------
@@ -107,13 +121,12 @@
 
 // Horizon ------------------------------------------------
 #if defined(KEYBOARD_horizon)
-#   define HAS_QWERTY_LAYER
 #   define HAS_OPY_LAYER
 #   define USE_HRM
-#   define THUMB_1 MO(NAV)
-#   define THUMB_2 LT(NUM_FUNC, KC_SPC)
-#   define THUMB_3 OSL(NUM_FUNC)
-#   define THUMB_4 OSL(SYMBOL)
+#   define NUM_FUN MO(NUM_FUNC)
+#   define NAV_SPC LT(NAV, KC_SPC)
+#   define NAV_ENT LT(NAV, KC_ENT)
+#   define OSL_SYM OSL(SYMBOL)
 
 #   ifdef CONVERT_TO_HELIOS
 #       ifdef AUDIO_ENABLE
@@ -146,7 +159,6 @@
 
 // Splitkb Aurora Corne -------------------------------------------
 #if defined(KEYBOARD_splitkb_aurora_corne_rev1)
-#   define HAS_QWERTY_LAYER
 #   define HAS_OPY_LAYER
 #   define USE_HRM
 #   define THUMB_1 MO(NAV)
@@ -174,7 +186,6 @@
 
 // Splitkb Aurora Helix -------------------------------------------
 #if defined(KEYBOARD_splitkb_aurora_helix_rev1)
-#   define HAS_QWERTY_LAYER
 #   define HAS_OPY_LAYER
 #   define USE_HRM
 #   define THUMB_1 MO(NAV)
@@ -204,7 +215,7 @@
 #define MO_ADJ MO(ADJUST)
 #define NP_XMLL MEH(DE_L)
 #define NP_XMLF MEH(DE_B)
-#define V_DESKT RGUI(KC_TAB)
+#define GUI_SS LGUI_T(DE_SS)
 
 #ifdef USE_HRM
 #  define NUM_F6 RSFT_T(KC_F6)

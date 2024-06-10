@@ -26,14 +26,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
 ),
 
-[QWERTY] = LAYOUT(
-    _______, DE_Q   , DE_W   , DE_E   , DE_R   , DE_T   ,                   DE_Z   , DE_U   , DE_I   , DE_O   , DE_P   , DE_UDIA,
-    _______, HRM_Q_A, HRM_Q_S, HRM_Q_D, HRM_Q_F, DE_G   ,                   DE_H   , HRM_Q_J, HRM_Q_K, HRM_Q_L, HRM_QOE, DE_ADIA,
-    _______, DE_Y   , DE_X   , DE_C   , DE_V   , DE_B   ,                   DE_N   , DE_M   , DE_COMM, DE_DOT , DE_MINS, _______,
-    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
-    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
-),
-
 [NAV] = LAYOUT(
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, KC_HOME, KC_UP  , KC_END , KC_PGUP, XXXXXXX,
     XXXXXXX, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,                   XXXXXXX, KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN, XXXXXXX,
@@ -59,10 +51,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 [ADJUST] = LAYOUT(
-    QK_BOOT, RGB_TOG, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, RGUI(KC_7), RGUI(KC_8), RGUI(KC_9), KC_NUM , DF(OPY)   ,
-    EE_CLR , AU_TOGG, CK_TOGG, CK_DOWN, CK_UP  , CK_RST ,                   TB_DPI , RGUI(KC_4), RGUI(KC_5), RGUI(KC_6), KC_CAPS, DF(QWERTY),
-    TB_RST , AS_TOGG, AS_DOWN, AS_UP  , AS_RPT , XXXXXXX,                   XXXXXXX, RGUI(KC_1), RGUI(KC_2), RGUI(KC_3), KC_SCRL, XXXXXXX   ,
-    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______   , _______   , _______   , _______, _______   ,
+    QK_BOOT, RGB_TOG, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, RGUI(KC_7), RGUI(KC_8), RGUI(KC_9), KC_NUM , XXXXXXX,
+    EE_CLR , AU_TOGG, CK_TOGG, CK_DOWN, CK_UP  , CK_RST ,                   TB_DPI , RGUI(KC_4), RGUI(KC_5), RGUI(KC_6), KC_CAPS, XXXXXXX,
+    TB_RST , AS_TOGG, AS_DOWN, AS_UP  , AS_RPT , XXXXXXX,                   XXXXXXX, RGUI(KC_1), RGUI(KC_2), RGUI(KC_3), KC_SCRL, XXXXXXX,
+    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______   , _______   , _______   , _______, _______,
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX   , XXXXXXX   , XXXXXXX   , XXXXXXX, XXXXXXX
 )
 };

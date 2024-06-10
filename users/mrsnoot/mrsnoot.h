@@ -54,11 +54,10 @@ enum layers {
 };
 #endif
 
-// HMKB EON40 ---------------------------------------------
-#if defined(KEYBOARD_evyd13_eon40) || defined(KEYBOARD_horizon)
+// DASBOB / HMKB EON40 / Horizon ---------------------------------------------
+#if defined(KEYBOARD_dasbob) || defined(KEYBOARD_evyd13_eon40) || defined(KEYBOARD_horizon)
 enum layers {
     OPY = 0,
-    QWERTY,
     NAV,
     NUM_FUNC,
     SYMBOL,
@@ -87,7 +86,6 @@ enum layers {
 #if defined(KEYBOARD_splitkb_aurora_corne_rev1) || defined(KEYBOARD_splitkb_aurora_helix_rev1)
 enum layers {
     OPY = 0,
-    QWERTY,
     NAV,
     NUM_FUNC,
     SYMBOL,
@@ -107,8 +105,6 @@ void cs_mouse_wheel_up(void);
 void cs_mouse_wheel_down(void);
 void cs_mouse_wheel_up_accelerated(void);
 void cs_mouse_wheel_down_accelerated(void);
-void cs_page_up(void);
-void cs_page_down(void);
 void cs_cursor_left(void);
 void cs_cursor_right(void);
 void cs_virtual_desktop_previous(void);
@@ -121,8 +117,6 @@ enum custom_keycodes {
     CP_ALL = SAFE_RANGE,
     CP_LINE,
     CP_WORD,
-    CS_PGU,
-    CS_PGD,
     CS_CSRL,
     CS_CSRR,
     CS_VDPR,

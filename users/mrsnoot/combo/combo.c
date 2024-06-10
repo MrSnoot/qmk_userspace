@@ -20,6 +20,7 @@ enum combos {
     #endif
     #ifdef HAS_OPY_LAYER
     // OPY links
+    OPY_ESC,
     OPY_DOT,
     OPY_COMMA,
     OPY_DASH,
@@ -44,6 +45,10 @@ enum combos {
     OPY_COPY_WORD,
     OPY_ALT_F4,
     OPY_TAB,
+    OPY_VDPR,
+    OPY_VDNX,
+    OPY_TSPR,
+    OPY_TSNX,
     #endif
     // Alle Base Layer
     COM_MOUSE_DBL_CLICK
@@ -67,6 +72,7 @@ const uint16_t PROGMEM qwerty_alt_f4_combo[] = { DE_H, DE_N, COMBO_END };
 #endif
 #ifdef HAS_OPY_LAYER
 // OPY links
+const uint16_t PROGMEM opy_esc_combo[] = { DE_Q, DE_Z, COMBO_END };
 const uint16_t PROGMEM opy_dot_combo[] = { HRM_O_E, HRM_O_I, COMBO_END };
 const uint16_t PROGMEM opy_comma_combo[] = { HRM_O_A, HRM_O_E, COMBO_END };
 const uint16_t PROGMEM opy_dash_combo[] = { HRM_O_H, HRM_O_A, COMBO_END };
@@ -88,9 +94,13 @@ const uint16_t PROGMEM opy_paste_combo[]  = { DE_M, DE_V, COMBO_END };
 const uint16_t PROGMEM opy_cut_combo[] = { DE_V, DE_X, COMBO_END };
 const uint16_t PROGMEM opy_copy_all_combo[] = { DE_D, DE_L, COMBO_END };
 const uint16_t PROGMEM opy_copy_line_combo[] = { DE_L, DE_F, COMBO_END };
-const uint16_t PROGMEM opy_copy_word_combo[] = { DE_F, DE_SS, COMBO_END };
+const uint16_t PROGMEM opy_copy_word_combo[] = { DE_F, GUI_SS, COMBO_END };
 const uint16_t PROGMEM opy_alt_f4_combo[] = { DE_G, DE_B, COMBO_END };
 const uint16_t PROGMEM opy_tab_combo[] = { HRM_O_N, DE_D, COMBO_END };
+const uint16_t PROGMEM opy_vdpr_combo[] = { HRM_O_T, DE_M, COMBO_END };
+const uint16_t PROGMEM opy_vdnx_combo[] = { HRM_O_N, DE_C, COMBO_END };
+const uint16_t PROGMEM opy_tspr_combo[] = { HRM_O_N, DE_V, COMBO_END };
+const uint16_t PROGMEM opy_tsnx_combo[] = { HRM_O_S, DE_M, COMBO_END };
 #endif
 // Alle Base Layer
 const uint16_t PROGMEM com_mouse_double_click_combo[] = { KC_BTN1, KC_BTN2, COMBO_END };
@@ -114,6 +124,7 @@ combo_t key_combos[] = {
     #endif
     #ifdef HAS_OPY_LAYER
     // OPY links
+    [OPY_ESC] = COMBO(opy_esc_combo, KC_ESC),
     [OPY_DOT] = COMBO(opy_dot_combo, DE_DOT),
     [OPY_COMMA] = COMBO(opy_comma_combo, DE_COMM),
     [OPY_DASH] = COMBO(opy_dash_combo, DE_MINS),
@@ -138,6 +149,10 @@ combo_t key_combos[] = {
     [OPY_COPY_WORD] = COMBO(opy_copy_word_combo, CP_WORD),
     [OPY_ALT_F4] = COMBO(opy_alt_f4_combo, LALT(KC_F4)),
     [OPY_TAB] = COMBO(opy_tab_combo, KC_TAB),
+    [OPY_VDPR] = COMBO(opy_vdpr_combo, CS_VDPR),
+    [OPY_VDNX] = COMBO(opy_vdnx_combo, CS_VDNX),
+    [OPY_TSPR] = COMBO(opy_tspr_combo, CS_TSPR),
+    [OPY_TSNX] = COMBO(opy_tsnx_combo, CS_TSNX),
     #endif
     // Alle Base Layer
     [COM_MOUSE_DBL_CLICK] = COMBO(com_mouse_double_click_combo, DBL_CLK),
@@ -153,7 +168,7 @@ bool combo_should_trigger(uint16_t combo_index, combo_t *combo, uint16_t keycode
             break;
         #endif
         #ifdef HAS_OPY_LAYER
-        case OPY_DOT ... OPY_TAB:
+        case OPY_ESC ... OPY_TSNX:
             if (!layer_state_cmp(default_layer_state, OPY)) {
                 return false;
             }

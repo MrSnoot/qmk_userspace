@@ -136,12 +136,11 @@ void toggle_scroll(void) {
 	scroll_enabled = !scroll_enabled;
 }
 
-// __attribute__((weak))
-// void cycle_dpi(void) {	
-// 	keyboard_config.dpi_config = (keyboard_config.dpi_config + 1) % (sizeof(dpi_options) / sizeof(uint16_t));
-// 	eeconfig_update_kb(keyboard_config.raw);
-// 	pointing_device_set_cpi(dpi_options[keyboard_config.dpi_config]);
-// }
+void cycle_dpi(void) {	
+	keyboard_config.dpi_config = (keyboard_config.dpi_config + 1) % (sizeof(dpi_options) / sizeof(uint16_t));
+	eeconfig_update_kb(keyboard_config.raw);
+	pointing_device_set_cpi(dpi_options[keyboard_config.dpi_config]);
+}
 
 bool has_trigger_state_led_state(struct action_trigger_t *trigger, led_t led_state) {
 	bool state_is_matching = false;

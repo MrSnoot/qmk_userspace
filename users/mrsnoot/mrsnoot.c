@@ -33,14 +33,6 @@ void cs_mouse_wheel_down_accelerated(void) {
     cs_mouse_wheel_down();
 }
 
-void cs_page_up(void) {
-    tap_code(KC_PGUP);
-}
-
-void cs_page_down(void) {
-    tap_code(KC_PGDN);
-}
-
 void cs_cursor_left(void) {
     tap_code(KC_LEFT);
 }
@@ -154,16 +146,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 #endif
             }
             break;
-        case CS_PGU:
-            if (record->event.pressed) {
-                cs_page_up();
-            }
-            break;
-        case CS_PGD:
-            if (record->event.pressed) {
-                cs_page_down();
-            }
-            break;
         case CS_CSRL:
             if (record->event.pressed) {
                 cs_cursor_left();
@@ -203,6 +185,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             #endif
             break;
         case KC_ENT:
+        case NAV_ENT:
             #ifdef AUDIO_ENABLE
             if(record->event.pressed) {
                 PLAY_SONG(tone_startup);
