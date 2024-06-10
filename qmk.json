@@ -1,4 +1,14 @@
 {
     "userspace_version": "1.0",
-    "build_targets": []
+    "build_targets": [
+        ["acheron/apollo/87htsc", "mrsnoot"],
+        ["evyd13/eon40", "mrsnoot"],
+        ["evyd13/eon95", "mrsnoot"],
+        ["horizon", "mrsnoot"],
+        ["ploopyco/madromys/rev1_001", "mrsnoot"],
+        ["ploopyco/trackball_nano/rev1_001", "mrsnoot"],
+        ["splitkb/aurora/corne/rev1", "mrsnoot"],
+        ["splitkb/aurora/helix/rev1", "mrsnoot"],
+        ["dasbob", "mrsnoot"]
+    ]
 }
