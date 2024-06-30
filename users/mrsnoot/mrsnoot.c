@@ -185,6 +185,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             #endif
             break;
         case KC_ENT:
+            #ifdef AUDIO_ENABLE
+            if(record->event.pressed) {
+                PLAY_SONG(tone_startup);
+            }
+            #endif
+            break;
+        #ifdef NAV_ENT
         case NAV_ENT:
             #ifdef AUDIO_ENABLE
             if(record->event.pressed) {
@@ -192,6 +199,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             #endif
             break;
+        #endif
         case KC_BSPC:
         case LCTL(KC_BSPC):
             #ifdef AUDIO_ENABLE
