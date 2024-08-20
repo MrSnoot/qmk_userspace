@@ -21,13 +21,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_ESC,  DE_Q,    DE_Z,    DE_O,    DE_P,    DE_Y,                      DE_W,    DE_C,    DE_M,    DE_V,    DE_X,    KC_LGUI,
     KC_BTN2, HRM_O_H, HRM_O_A, HRM_O_E, HRM_O_I, DE_K,                      DE_G,    HRM_O_T, HRM_O_N, HRM_O_S, HRM_O_R, KC_ENT,
     KC_BTN1, DE_J,    DE_ODIA, DE_ADIA, DE_U,    DE_UDIA,                   DE_B,    DE_D,    DE_L,    DE_F,    DE_SS,   V_DESKT,
-                                        XXXXXXX, THUMB_1, THUMB_2, THUMB_3, THUMB_4, XXXXXXX 
+                                        XXXXXXX, OSL_NUM, NAV_SPC, NAV_ENT, OSL_SYM, XXXXXXX 
 ),
   
 [NAV] = LAYOUT_split_3x6_3(
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, KC_HOME, KC_UP,   KC_END,  KC_PGUP, XXXXXXX,
-    XXXXXXX, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,                   XXXXXXX, KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN, XXXXXXX,
-    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+    XXXXXXX, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,                   TB_SCR,  KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN, XXXXXXX,
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, KC_BTN1, KC_BTN2, KC_LCTL, KC_LSFT, XXXXXXX,
                                         _______, _______, _______, _______, MO_ADJ,  _______
 ),
 

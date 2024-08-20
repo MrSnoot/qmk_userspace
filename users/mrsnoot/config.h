@@ -20,9 +20,9 @@
 #endif
 
 // Caps Word Feature --------------------------------------
-#ifdef CAPS_WORD_ENABLE
-#   define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
-#endif
+// #ifdef CAPS_WORD_ENABLE
+// #   define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
+// #endif
 
 // Combo Feature ------------------------------------------
 #ifdef COMBO_ENABLE
@@ -91,10 +91,7 @@
 #if defined(KEYBOARD_dasbob)
 #   define HAS_OPY_LAYER
 #   define USE_HRM
-#   define NUM_FUN MO(NUM_FUNC)
-#   define NAV_SPC LT(NAV, KC_SPC)
-#   define NAV_ENT LT(NAV, KC_ENT)
-#   define OSL_SYM OSL(SYMBOL)
+#   define USE_FOUR_THUMB_DEFAULT
 
 #   define RP2040_BOOTLOADER_DOUBLE_TAP_RESET
 #   define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_TIMEOUT 500U
@@ -105,10 +102,7 @@
 #if defined(KEYBOARD_evyd13_eon40)
 #   define HAS_OPY_LAYER
 #   define USE_HRM
-#   define NUM_FUN MO(NUM_FUNC)
-#   define NAV_SPC LT(NAV, KC_SPC)
-#   define NAV_ENT LT(NAV, KC_ENT)
-#   define OSL_SYM OSL(SYMBOL)
+#   define USE_FOUR_THUMB_DEFAULT
 #endif
 
 // HMKB EON95 ---------------------------------------------
@@ -123,10 +117,7 @@
 #if defined(KEYBOARD_horizon)
 #   define HAS_OPY_LAYER
 #   define USE_HRM
-#   define NUM_FUN MO(NUM_FUNC)
-#   define NAV_SPC LT(NAV, KC_SPC)
-#   define NAV_ENT LT(NAV, KC_ENT)
-#   define OSL_SYM OSL(SYMBOL)
+#   define USE_FOUR_THUMB_DEFAULT
 
 #   ifdef CONVERT_TO_HELIOS
 #       ifdef AUDIO_ENABLE
@@ -161,10 +152,7 @@
 #if defined(KEYBOARD_splitkb_aurora_corne_rev1)
 #   define HAS_OPY_LAYER
 #   define USE_HRM
-#   define THUMB_1 MO(NAV)
-#   define THUMB_2 LT(NUM_FUNC, KC_SPC)
-#   define THUMB_3 OSL(NUM_FUNC)
-#   define THUMB_4 OSL(SYMBOL)
+#   define USE_FOUR_THUMB_DEFAULT
 
 #   ifdef CONVERT_TO_HELIOS
 #       ifdef AUDIO_ENABLE
@@ -188,10 +176,7 @@
 #if defined(KEYBOARD_splitkb_aurora_helix_rev1)
 #   define HAS_OPY_LAYER
 #   define USE_HRM
-#   define THUMB_1 MO(NAV)
-#   define THUMB_2 LT(NUM_FUNC, KC_SPC)
-#   define THUMB_3 OSL(NUM_FUNC)
-#   define THUMB_4 OSL(SYMBOL)
+#   define USE_FOUR_THUMB_DEFAULT
 
 #   ifdef CONVERT_TO_HELIOS
 #       ifdef AUDIO_ENABLE
@@ -216,6 +201,13 @@
 #define NP_XMLL MEH(DE_L)
 #define NP_XMLF MEH(DE_B)
 #define GUI_SS LGUI_T(DE_SS)
+
+#ifdef USE_FOUR_THUMB_DEFAULT
+#  define OSL_NUM OSL(NUM_FUNC)
+#  define NAV_SPC LT(NAV, KC_SPC)
+#  define NAV_ENT LT(NAV, KC_ENT)
+#  define OSL_SYM OSL(SYMBOL)
+#endif
 
 #ifdef USE_HRM
 #  define NUM_F6 RSFT_T(KC_F6)
