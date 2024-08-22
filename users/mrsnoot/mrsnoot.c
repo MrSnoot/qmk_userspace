@@ -191,15 +191,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             #endif
             break;
-        #ifdef NAV_ENT
-        case NAV_ENT:
-            #ifdef AUDIO_ENABLE
-            if(record->event.pressed) {
-                PLAY_SONG(tone_startup);
-            }
-            #endif
-            break;
-        #endif
         case KC_BSPC:
         case LCTL(KC_BSPC):
             #ifdef AUDIO_ENABLE
@@ -318,30 +309,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 // Tapping Feature ----------------------------------------
 __attribute__ ((weak))
 bool get_tapping_force_hold(uint16_t keycode, keyrecord_t *record) {
-    #if defined(THUMB_1) || defined(THUMB_2) || defined(THUMB_3) || defined(THUMB_4) || defined(LNAV_SPC)
-    switch (keycode) {
-        #ifdef THUMB_1
-        case THUMB_1:
-        #endif
-        #ifdef THUMB_2
-        case THUMB_2:
-        #endif
-        #ifdef THUMB_3
-        case THUMB_3:
-        #endif
-        #ifdef THUMB_4
-        case THUMB_4:
-        #endif
-        #ifdef LNAV_SPC
-        case LNAV_SPC:
-        #endif
-            return false;
-        default:
-            return true;
-    }
-    #else
     return true;
-    #endif
 }
 
 // Caps Word Feature --------------------------------------

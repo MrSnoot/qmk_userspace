@@ -22,13 +22,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     DE_Q   , DE_Z   , DE_O   , DE_P   , DE_Y   , XXXXXXX,                   XXXXXXX, DE_W   , DE_C   , DE_M   , DE_V   , DE_X   ,
     HRM_O_H, HRM_O_A, HRM_O_E, HRM_O_I, DE_K   , XXXXXXX,                   XXXXXXX, DE_G   , HRM_O_T, HRM_O_N, HRM_O_S, HRM_O_R,
     DE_J   , DE_ODIA, DE_ADIA, DE_U   , DE_UDIA, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, DE_B   , DE_D   , DE_L   , DE_F   , GUI_SS ,
-    XXXXXXX, XXXXXXX, XXXXXXX, OSL_NUM, NAV_SPC, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, NAV_ENT, OSL_SYM, XXXXXXX, XXXXXXX, XXXXXXX
+    XXXXXXX, XXXXXXX, XXXXXXX, OSL_NUM, NAV_SPC, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, MS_ENT , OSL_SYM, XXXXXXX, XXXXXXX, XXXXXXX
 ),
 
 [NAV] = LAYOUT(
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, KC_HOME, KC_UP  , KC_END , KC_PGUP,
-    KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX, XXXXXXX,                   XXXXXXX, TB_SCR,  KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN,
-    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______, _______, XXXXXXX, XXXXXXX, KC_BTN1, KC_BTN2, KC_LCTL, KC_LSFT,
+    KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN,
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______, _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+),
+
+[MOUSE] = LAYOUT(
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+    KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX, XXXXXXX,                   XXXXXXX, TB_DPI , KC_BTN1, KC_BTN2, KC_LCTL, KC_LSFT,
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______, _______, XXXXXXX, XXXXXXX, TB_SCR , XXXXXXX, XXXXXXX, XXXXXXX,
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
 ),
 
@@ -48,7 +55,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [ADJUST] = LAYOUT(
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, KC_NUM , XXXXXXX, XXXXXXX, QK_BOOT,
-    AU_TOGG, CK_TOGG, CK_DOWN, CK_UP  , CK_RST , XXXXXXX,                   XXXXXXX, TB_DPI , KC_CAPS, XXXXXXX, XXXXXXX, XXXXXXX,
+    AU_TOGG, CK_TOGG, CK_DOWN, CK_UP  , CK_RST , XXXXXXX,                   XXXXXXX, XXXXXXX, KC_CAPS, XXXXXXX, XXXXXXX, XXXXXXX,
     AS_TOGG, AS_DOWN, AS_UP  , AS_RPT , XXXXXXX, XXXXXXX, _______, _______, XXXXXXX, XXXXXXX, KC_SCRL, XXXXXXX, XXXXXXX, TB_RST ,
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
 )

@@ -131,5 +131,5 @@ ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), 3x3macropad kprepublic/bm60hsr
 endif
 
 ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), dasbob evyd13/eon40 evyd13/eon95 horizon splitkb/aurora/corne/rev1 splitkb/aurora/helix/rev1))
-	AUTO_SHIFT_ENABLE = yes
+	AUTO_SHIFT_ENABLE = no
 endif

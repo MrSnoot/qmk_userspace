@@ -59,6 +59,7 @@ enum layers {
 enum layers {
     OPY = 0,
     NAV,
+    MOUSE,
     NUM_FUNC,
     SYMBOL,
     ADJUST
@@ -87,6 +88,7 @@ enum layers {
 enum layers {
     OPY = 0,
     NAV,
+    MOUSE,
     NUM_FUNC,
     SYMBOL,
     ADJUST

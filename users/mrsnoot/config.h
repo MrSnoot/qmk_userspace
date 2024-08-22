@@ -205,7 +205,7 @@
 #ifdef USE_FOUR_THUMB_DEFAULT
 #  define OSL_NUM OSL(NUM_FUNC)
 #  define NAV_SPC LT(NAV, KC_SPC)
-#  define NAV_ENT LT(NAV, KC_ENT)
+#  define MS_ENT LT(MOUSE, KC_ENT)
 #  define OSL_SYM OSL(SYMBOL)
 #endif
 
