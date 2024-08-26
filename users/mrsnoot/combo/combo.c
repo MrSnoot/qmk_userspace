@@ -47,10 +47,12 @@ enum combos {
     OPY_TAB,
     OPY_VDPR,
     OPY_VDNX,
-    OPY_TSPR,
-    OPY_TSNX,
     // OPY beidseitig
     OPY_CAPS_WORD,
+#ifdef USER_NUM_WORD_ENABLE
+    OPY_NUM_WORD,
+    NUM_NUM_WORD,
+#endif
     #endif
     // Alle Base Layer
     COM_MOUSE_DBL_CLICK
@@ -101,10 +103,12 @@ const uint16_t PROGMEM opy_alt_f4_combo[] = { DE_G, DE_B, COMBO_END };
 const uint16_t PROGMEM opy_tab_combo[] = { HRM_O_N, DE_D, COMBO_END };
 const uint16_t PROGMEM opy_vdpr_combo[] = { HRM_O_T, DE_M, COMBO_END };
 const uint16_t PROGMEM opy_vdnx_combo[] = { HRM_O_N, DE_C, COMBO_END };
-const uint16_t PROGMEM opy_tspr_combo[] = { HRM_O_N, DE_V, COMBO_END };
-const uint16_t PROGMEM opy_tsnx_combo[] = { HRM_O_S, DE_M, COMBO_END };
 // OPY Beidseitig
 const uint16_t PROGMEM opy_caps_word_combo[] = { HRM_O_H, HRM_O_R, COMBO_END };
+#ifdef USER_NUM_WORD_ENABLE
+const uint16_t PROGMEM opy_num_word_combo[] = { HRM_O_S, DE_M, COMBO_END };
+const uint16_t PROGMEM num_num_word_combo[] = { NUM_6, DE_8, COMBO_END };
+#endif
 #endif
 // Alle Base Layer
 const uint16_t PROGMEM com_mouse_double_click_combo[] = { KC_BTN1, KC_BTN2, COMBO_END };
@@ -155,10 +159,12 @@ combo_t key_combos[] = {
     [OPY_TAB] = COMBO(opy_tab_combo, KC_TAB),
     [OPY_VDPR] = COMBO(opy_vdpr_combo, CS_VDPR),
     [OPY_VDNX] = COMBO(opy_vdnx_combo, CS_VDNX),
-    [OPY_TSPR] = COMBO(opy_tspr_combo, CS_TSPR),
-    [OPY_TSNX] = COMBO(opy_tsnx_combo, CS_TSNX),
     // OPY beidseitig
     [OPY_CAPS_WORD] = COMBO(opy_caps_word_combo, CW_TOGG),
+#ifdef USER_NUM_WORD_ENABLE
+    [OPY_NUM_WORD] = COMBO(opy_num_word_combo, NUMWORD),
+    [NUM_NUM_WORD] = COMBO(num_num_word_combo, NUMWORD),
+#endif
     #endif
     // Alle Base Layer
     [COM_MOUSE_DBL_CLICK] = COMBO(com_mouse_double_click_combo, DBL_CLK),
@@ -176,6 +182,18 @@ bool combo_should_trigger(uint16_t combo_index, combo_t *combo, uint16_t keycode
         #ifdef HAS_OPY_LAYER
         case OPY_ESC ... OPY_CAPS_WORD:
             if (!layer_state_cmp(default_layer_state, OPY)) {
+                return false;
+            }
+            break;
+        #endif
+        #ifdef USER_NUM_WORD_ENABLE
+        case OPY_NUM_WORD:
+            if (!layer_state_cmp(default_layer_state, OPY)) {
+                return false;
+            }
+            break;
+        case NUM_NUM_WORD:
+            if (!layer_state_cmp(layer_state, NUM_FUNC)) {
                 return false;
             }
             break;

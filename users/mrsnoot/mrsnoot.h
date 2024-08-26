@@ -3,6 +3,11 @@
 #include "quantum.h"
 #include "keymap_german.h"
 
+// NUM_WORD Feature ---------------------------------------
+#ifdef USER_NUM_WORD_ENABLE
+#    include "num_word/num_word.h"
+#endif
+
 // Combo Feature ------------------------------------------
 #if defined(COMBO_ENABLE)
 #   include "combo/combo.h"
@@ -132,5 +137,8 @@ enum custom_keycodes {
     S_LN_F5,
     F2_CPLN,
     IM1_INS,
+#ifdef USER_NUM_WORD_ENABLE
+    NUMWORD,
+#endif
     MS_BN13
 };

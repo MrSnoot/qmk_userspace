@@ -35,6 +35,17 @@ ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), dasbob horizon ploopyco/madrom
 	AUDIO_DRIVER = pwm_hardware
 endif
 
+# Num Word -----------------------------------------------
+ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), 3x3macropad evyd13/eon95 kprepublic/bm60hsrgb_iso/rev1 ploopyco/madromys/rev1_001 ploopyco/trackball_nano/rev1_001))
+	USER_NUM_WORD_ENABLE = no 
+endif
+
+ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), dasbob evyd13/eon40 horizon splitkb/aurora/corne/rev1 splitkb/aurora/helix/rev1))
+	USER_NUM_WORD_ENABLE = yes
+	SRC += num_word/num_word.c
+    OPT_DEFS += -DUSER_NUM_WORD_ENABLE
+endif
+
 # Combos --------------------------------------------------
 ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), 3x3macropad kprepublic/bm60hsrgb_iso/rev1 ploopyco/madromys/rev1_001 ploopyco/trackball_nano/rev1_001))
 	COMBO_ENABLE = no
