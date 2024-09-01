@@ -46,9 +46,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 [SYMBOL] = LAYOUT_split_3x6_3(
-    XXXXXXX, DE_EXLM, DE_DEG,  DE_SECT, DE_DLR,  DE_AMPR,                   XXXXXXX, NP_XMLL, NP_XMLF, DE_ACUT, DE_GRV , XXXXXXX,
-    XXXXXXX, DE_QUES, DE_LCBR, DE_LBRC, DE_LPRN, DE_LABK,                   XXXXXXX, DE_PIPE, DE_CIRC, DE_TILD, TB_SCR , KC_PSCR,
-    MS_BN13, KC_BTN3, DE_RCBR, DE_RBRC, DE_RPRN, DE_RABK,                   XXXXXXX, F2_CPLN, IM1_INS, XXXXXXX, XXXXXXX, XXXXXXX,
+    XXXXXXX, DE_EXLM, DE_DEG,  DE_SECT, DE_DLR,  DE_AMPR,                   XXXXXXX, DE_PIPE, DE_CIRC, DE_TILD, XXXXXXX, XXXXXXX,
+    XXXXXXX, DE_QUES, DE_LCBR, DE_LBRC, DE_LPRN, DE_LABK,                   XXXXXXX, NP_XMLL, NP_XMLF, DE_ACUT, DE_GRV , XXXXXXX,
+    MS_BN13, KC_BTN3, DE_RCBR, DE_RBRC, DE_RPRN, DE_RABK,                   XXXXXXX, F2_CPLN, IM1_INS, XXXXXXX, KC_PSCR, XXXXXXX,
                                         _______, MO_ADJ,  _______, _______, _______, _______
 ),
 

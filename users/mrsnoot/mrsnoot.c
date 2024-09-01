@@ -12,6 +12,7 @@ float tone_startup[][2]         = SONG(STARTUP_SOUND);
 #endif
 
 // Custom Functions ---------------------------------------
+#ifdef CS_USE_CUSTOM_FUNCTIONS
 bool is_alt_tab_active = false;
 uint16_t alt_tab_timer = 0;
 
@@ -82,15 +83,18 @@ void cs_task_next(void) {
     PLAY_SONG(tone_scroll_lock_on);
     #endif
 }
+#endif
 
 // Matrix Scan --------------------------------------------
 void matrix_scan_user(void) {
+#ifdef CS_USE_CUSTOM_FUNCTIONS
   if (is_alt_tab_active) {
     if (timer_elapsed(alt_tab_timer) > 1000) {
       unregister_code(KC_LALT);
       is_alt_tab_active = false;
     }
   }
+#endif
 }
 
 // Process Record -----------------------------------------
@@ -117,6 +121,59 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 #endif
             }
             break;
+        case KC_BTN1:
+        case KC_BTN2:
+            #ifdef AUDIO_ENABLE
+            if(record->event.pressed) {
+                audio_stop_all();
+            }
+            #endif
+            break;
+        case KC_ENT:
+            #ifdef AUDIO_ENABLE
+            if(record->event.pressed) {
+                PLAY_SONG(tone_startup);
+            }
+            #endif
+            break;
+        case KC_BSPC:
+        case LCTL(KC_BSPC):
+            #ifdef AUDIO_ENABLE
+            if(record->event.pressed) {
+                PLAY_SONG(tone_num_lock_off);
+            }
+            #endif
+            break;
+        case KC_DEL:
+        case LCTL(KC_DEL):
+            #ifdef AUDIO_ENABLE
+            if(record->event.pressed) {
+                PLAY_SONG(tone_scroll_lock_off);
+            }
+            #endif
+            break;
+        case LCTL(KC_C):
+            #ifdef AUDIO_ENABLE
+            if(record->event.pressed) {
+                PLAY_SONG(tone_num_lock_on);
+            }
+            #endif
+            break;
+        case LCTL(KC_V):
+            #ifdef AUDIO_ENABLE
+            if(record->event.pressed) {
+                PLAY_SONG(tone_num_lock_off);
+            }
+            #endif
+            break;
+        case LCTL(KC_X):
+            #ifdef AUDIO_ENABLE
+            if(record->event.pressed) {
+                PLAY_SONG(tone_scroll_lock_on);
+            }
+            #endif
+            break;
+#ifdef CS_USE_CUSTOM_FUNCTIONS
         case CP_ALL:
             if (record->event.pressed) {
                 tap_code16(LCTL(KC_A));
@@ -175,58 +232,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             if (record->event.pressed) {
                 cs_task_next();
             }
-            break;
-        case KC_BTN1:
-        case KC_BTN2:
-            #ifdef AUDIO_ENABLE
-            if(record->event.pressed) {
-                audio_stop_all();
-            }
-            #endif
-            break;
-        case KC_ENT:
-            #ifdef AUDIO_ENABLE
-            if(record->event.pressed) {
-                PLAY_SONG(tone_startup);
-            }
-            #endif
-            break;
-        case KC_BSPC:
-        case LCTL(KC_BSPC):
-            #ifdef AUDIO_ENABLE
-            if(record->event.pressed) {
-                PLAY_SONG(tone_num_lock_off);
-            }
-            #endif
-            break;
-        case KC_DEL:
-        case LCTL(KC_DEL):
-            #ifdef AUDIO_ENABLE
-            if(record->event.pressed) {
-                PLAY_SONG(tone_scroll_lock_off);
-            }
-            #endif
-            break;
-        case LCTL(KC_C):
-            #ifdef AUDIO_ENABLE
-            if(record->event.pressed) {
-                PLAY_SONG(tone_num_lock_on);
-            }
-            #endif
-            break;
-        case LCTL(KC_V):
-            #ifdef AUDIO_ENABLE
-            if(record->event.pressed) {
-                PLAY_SONG(tone_num_lock_off);
-            }
-            #endif
-            break;
-        case LCTL(KC_X):
-            #ifdef AUDIO_ENABLE
-            if(record->event.pressed) {
-                PLAY_SONG(tone_scroll_lock_on);
-            }
-            #endif
             break;
         case DBL_CLK:
             if (record->event.pressed) {
@@ -302,9 +307,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 wait_ms(29);
                 tap_code(KC_CAPS);
             }
+#endif
     }
 
-#ifdef USER_NUM_WORD_ENABLE
+#ifdef CS_NUM_WORD_ENABLE
     if (!process_record_num_word(keycode, record)) {
         return false; 
     }

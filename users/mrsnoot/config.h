@@ -19,11 +19,6 @@
 #   define STARTUP_SONG SONG(STARTUP_SOUND)
 #endif
 
-// Caps Word Feature --------------------------------------
-// #ifdef CAPS_WORD_ENABLE
-// #   define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
-// #endif
-
 // Combo Feature ------------------------------------------
 #ifdef COMBO_ENABLE
 #   undef  TAPPING_TERM
@@ -66,6 +61,9 @@
 
 // 3x3 Macropad -------------------------------------------
 #if defined(KEYBOARD_3x3macropad)
+#   define CS_INCLUDE_BASIS_LAYER
+#   define CS_INCLUDE_ADJUST_LAYER
+#   define CS_INCLUDE_FUN_LAYER
 #   ifdef RGBLIGHT_ENABLE
 #       define RGBLIGHT_LIMIT_VAL 150
 #       define RGBLIGHT_SLEEP
@@ -89,10 +87,16 @@
 
 // Dasbob ------------------------------------------------
 #if defined(KEYBOARD_dasbob)
-#   define HAS_OPY_LAYER
-#   define USE_HRM
-#   define USE_FOUR_THUMB_DEFAULT
-
+#   define CS_INCLUDE_OPY_LAYER
+#   define CS_INCLUDE_NAV_LAYER
+#   define CS_INCLUDE_MOUSE_LAYER
+#   define CS_INCLUDE_NUM_FUNC_LAYER
+#   define CS_INCLUDE_SYMBOL_LAYER
+#   define CS_INCLUDE_ADJUST_LAYER
+#   define CS_USE_HRM
+#   define CS_USE_FOUR_THUMB_DEFAULT
+#   define CS_USE_CUSTOM_FUNCTIONS
+    // Frood Bootloeader ueber Doppeltap auf Resetknopf
 #   define RP2040_BOOTLOADER_DOUBLE_TAP_RESET
 #   define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_TIMEOUT 500U
 #   define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_LED 17U
@@ -100,24 +104,39 @@
 
 // HMKB EON40 ---------------------------------------------
 #if defined(KEYBOARD_evyd13_eon40)
-#   define HAS_OPY_LAYER
-#   define USE_HRM
-#   define USE_FOUR_THUMB_DEFAULT
+#   define CS_INCLUDE_OPY_LAYER
+#   define CS_INCLUDE_NAV_LAYER
+#   define CS_INCLUDE_MOUSE_LAYER
+#   define CS_INCLUDE_NUM_FUNC_LAYER
+#   define CS_INCLUDE_SYMBOL_LAYER
+#   define CS_INCLUDE_ADJUST_LAYER
+#   define CS_USE_HRM
+#   define CS_USE_FOUR_THUMB_DEFAULT
+#   define CS_USE_CUSTOM_FUNCTIONS
 #endif
 
 // HMKB EON95 ---------------------------------------------
 #if defined(KEYBOARD_evyd13_eon95)
-#   define HAS_QWERTY_LAYER
-#   define USE_HRM
+#   define CS_INCLUDE_QWERTY_LAYER
+#   define CS_INCLUDE_NAV_LAYER
+#   define CS_INCLUDE_ADJUST_LAYER
+#   define CS_USE_HRM
+#   define CS_USE_CUSTOM_FUNCTIONS
 #   define LNAV_SPC LT(NAV, KC_SPC)
 #   define LADJ_CPS LT(ADJUST, KC_CAPS)
 #endif
 
 // Horizon ------------------------------------------------
 #if defined(KEYBOARD_horizon)
-#   define HAS_OPY_LAYER
-#   define USE_HRM
-#   define USE_FOUR_THUMB_DEFAULT
+#   define CS_INCLUDE_OPY_LAYER
+#   define CS_INCLUDE_NAV_LAYER
+#   define CS_INCLUDE_MOUSE_LAYER
+#   define CS_INCLUDE_NUM_FUNC_LAYER
+#   define CS_INCLUDE_SYMBOL_LAYER
+#   define CS_INCLUDE_ADJUST_LAYER
+#   define CS_USE_HRM
+#   define CS_USE_FOUR_THUMB_DEFAULT
+#   define CS_USE_CUSTOM_FUNCTIONS
 
 #   ifdef CONVERT_TO_HELIOS
 #       ifdef AUDIO_ENABLE
@@ -130,11 +149,13 @@
 
 // KPRepublic BM60 HSRGB ---------------------------------------------
 #if defined(KEYBOARD_kprepublic_bm60hsrgb_iso_rev1)
-#   define HAS_QWERTY_LAYER
+#   define CS_INCLUDE_QWERTY_LAYER
+#   define CS_INCLUDE_NAV_FUNC_LAYER
 #endif
 
 // Ploopy Adept -------------------------------------------
 #if defined(KEYBOARD_ploopyco_madromys_rev1_001)
+#   define CS_USE_CUSTOM_FUNCTIONS
 #    undef PLOOPY_DPI_DEFAULT
 #    define PLOOPY_DPI_DEFAULT 2
 // #    undef PLOOPY_DRAGSCROLL_INVERT
@@ -150,9 +171,15 @@
 
 // Splitkb Aurora Corne -------------------------------------------
 #if defined(KEYBOARD_splitkb_aurora_corne_rev1)
-#   define HAS_OPY_LAYER
-#   define USE_HRM
-#   define USE_FOUR_THUMB_DEFAULT
+#   define CS_INCLUDE_OPY_LAYER
+#   define CS_INCLUDE_NAV_LAYER
+#   define CS_INCLUDE_MOUSE_LAYER
+#   define CS_INCLUDE_NUM_FUNC_LAYER
+#   define CS_INCLUDE_SYMBOL_LAYER
+#   define CS_INCLUDE_ADJUST_LAYER
+#   define CS_USE_HRM
+#   define CS_USE_FOUR_THUMB_DEFAULT
+#   define CS_USE_CUSTOM_FUNCTIONS
 
 #   ifdef CONVERT_TO_HELIOS
 #       ifdef AUDIO_ENABLE
@@ -174,9 +201,15 @@
 
 // Splitkb Aurora Helix -------------------------------------------
 #if defined(KEYBOARD_splitkb_aurora_helix_rev1)
-#   define HAS_OPY_LAYER
-#   define USE_HRM
-#   define USE_FOUR_THUMB_DEFAULT
+#   define CS_INCLUDE_OPY_LAYER
+#   define CS_INCLUDE_NAV_LAYER
+#   define CS_INCLUDE_MOUSE_LAYER
+#   define CS_INCLUDE_NUM_FUNC_LAYER
+#   define CS_INCLUDE_SYMBOL_LAYER
+#   define CS_INCLUDE_ADJUST_LAYER
+#   define CS_USE_HRM
+#   define CS_USE_FOUR_THUMB_DEFAULT
+#   define CS_USE_CUSTOM_FUNCTIONS
 
 #   ifdef CONVERT_TO_HELIOS
 #       ifdef AUDIO_ENABLE
@@ -202,14 +235,14 @@
 #define NP_XMLF MEH(DE_B)
 #define GUI_SS LGUI_T(DE_SS)
 
-#ifdef USE_FOUR_THUMB_DEFAULT
+#ifdef CS_USE_FOUR_THUMB_DEFAULT
 #  define OSL_NUM OSL(NUM_FUNC)
 #  define NAV_SPC LT(NAV, KC_SPC)
 #  define MS_ENT LT(MOUSE, KC_ENT)
 #  define OSL_SYM OSL(SYMBOL)
 #endif
 
-#ifdef USE_HRM
+#ifdef CS_USE_HRM
 #  define NUM_F6 RSFT_T(KC_F6)
 #  define NUM_F7 LALT_T(KC_F7)
 #  define NUM_F8 LCTL_T(KC_F8)
@@ -220,7 +253,7 @@
 #  define NUM_6 LALT_T(DE_6)
 #  define NUM_PLS RSFT_T(DE_PLUS)
 
-#  ifdef HAS_QWERTY_LAYER
+#  ifdef CS_INCLUDE_QWERTY_LAYER
 #    define HRM_Q_A LSFT_T(DE_A)
 #    define HRM_Q_S LALT_T(DE_S)
 #    define HRM_Q_D LCTL_T(DE_D)
@@ -231,7 +264,7 @@
 #    define HRM_QOE RSFT_T(DE_ODIA)
 #  endif
 
-#  ifdef HAS_OPY_LAYER
+#  ifdef CS_INCLUDE_OPY_LAYER
 #    define HRM_O_H LSFT_T(DE_H)
 #    define HRM_O_A LALT_T(DE_A)
 #    define HRM_O_E LCTL_T(DE_E)

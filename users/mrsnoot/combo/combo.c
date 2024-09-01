@@ -2,7 +2,7 @@
 
 #ifdef COMBO_ENABLE
 enum combos {
-    #ifdef HAS_QWERTY_LAYER
+    #ifdef CS_INCLUDE_QWERTY_LAYER
     // QWERTY links
     QWERTY_TB_SCROLL,
     // QWERTY rechts
@@ -18,7 +18,7 @@ enum combos {
     QWERTY_COPY_WORD,
     QWERTY_ALT_F4,
     #endif
-    #ifdef HAS_OPY_LAYER
+    #ifdef CS_INCLUDE_OPY_LAYER
     // OPY links
     OPY_ESC,
     OPY_DOT,
@@ -47,9 +47,11 @@ enum combos {
     OPY_TAB,
     OPY_VDPR,
     OPY_VDNX,
+    NUM_BSPC,
+    NUM_DEL,
     // OPY beidseitig
     OPY_CAPS_WORD,
-#ifdef USER_NUM_WORD_ENABLE
+#ifdef CS_NUM_WORD_ENABLE
     OPY_NUM_WORD,
     NUM_NUM_WORD,
 #endif
@@ -58,7 +60,7 @@ enum combos {
     COM_MOUSE_DBL_CLICK
 };
 
-#ifdef HAS_QWERTY_LAYER
+#ifdef CS_INCLUDE_QWERTY_LAYER
 // QWERTY links
 const uint16_t PROGMEM qwerty_trackball_scroll_combo[] = { KC_BTN2, DE_LABK, COMBO_END };
 // QWERTY rechts
@@ -74,7 +76,7 @@ const uint16_t PROGMEM qwerty_copy_line_combo[] = { DE_COMM, DE_DOT, COMBO_END }
 const uint16_t PROGMEM qwerty_copy_word_combo[] = { DE_DOT, DE_MINS, COMBO_END };
 const uint16_t PROGMEM qwerty_alt_f4_combo[] = { DE_H, DE_N, COMBO_END };
 #endif
-#ifdef HAS_OPY_LAYER
+#ifdef CS_INCLUDE_OPY_LAYER
 // OPY links
 const uint16_t PROGMEM opy_esc_combo[] = { DE_Q, DE_Z, COMBO_END };
 const uint16_t PROGMEM opy_dot_combo[] = { HRM_O_E, HRM_O_I, COMBO_END };
@@ -103,9 +105,11 @@ const uint16_t PROGMEM opy_alt_f4_combo[] = { DE_G, DE_B, COMBO_END };
 const uint16_t PROGMEM opy_tab_combo[] = { HRM_O_N, DE_D, COMBO_END };
 const uint16_t PROGMEM opy_vdpr_combo[] = { HRM_O_T, DE_M, COMBO_END };
 const uint16_t PROGMEM opy_vdnx_combo[] = { HRM_O_N, DE_C, COMBO_END };
+const uint16_t PROGMEM num_bspc_combo[]  = { NUM_4, NUM_5, COMBO_END };
+const uint16_t PROGMEM num_del_combo[]  = { NUM_6, NUM_PLS, COMBO_END };
 // OPY Beidseitig
 const uint16_t PROGMEM opy_caps_word_combo[] = { HRM_O_H, HRM_O_R, COMBO_END };
-#ifdef USER_NUM_WORD_ENABLE
+#ifdef CS_NUM_WORD_ENABLE
 const uint16_t PROGMEM opy_num_word_combo[] = { HRM_O_S, DE_M, COMBO_END };
 const uint16_t PROGMEM num_num_word_combo[] = { NUM_6, DE_8, COMBO_END };
 #endif
@@ -114,7 +118,7 @@ const uint16_t PROGMEM num_num_word_combo[] = { NUM_6, DE_8, COMBO_END };
 const uint16_t PROGMEM com_mouse_double_click_combo[] = { KC_BTN1, KC_BTN2, COMBO_END };
 
 combo_t key_combos[] = {
-    #ifdef HAS_QWERTY_LAYER
+    #ifdef CS_INCLUDE_QWERTY_LAYER
     // QWERTY links
     [QWERTY_TB_SCROLL] = COMBO(qwerty_trackball_scroll_combo, TB_SCR),
     // QWERTY rechts
@@ -130,7 +134,7 @@ combo_t key_combos[] = {
     [QWERTY_COPY_WORD] = COMBO(qwerty_copy_word_combo, CP_WORD),
     [QWERTY_ALT_F4] = COMBO(qwerty_alt_f4_combo, LALT(KC_F4)),
     #endif
-    #ifdef HAS_OPY_LAYER
+    #ifdef CS_INCLUDE_OPY_LAYER
     // OPY links
     [OPY_ESC] = COMBO(opy_esc_combo, KC_ESC),
     [OPY_DOT] = COMBO(opy_dot_combo, DE_DOT),
@@ -159,9 +163,11 @@ combo_t key_combos[] = {
     [OPY_TAB] = COMBO(opy_tab_combo, KC_TAB),
     [OPY_VDPR] = COMBO(opy_vdpr_combo, CS_VDPR),
     [OPY_VDNX] = COMBO(opy_vdnx_combo, CS_VDNX),
+    [NUM_BSPC] = COMBO(num_bspc_combo, KC_BSPC),
+    [NUM_DEL] = COMBO(num_del_combo, KC_DEL),
     // OPY beidseitig
     [OPY_CAPS_WORD] = COMBO(opy_caps_word_combo, CW_TOGG),
-#ifdef USER_NUM_WORD_ENABLE
+#ifdef CS_NUM_WORD_ENABLE
     [OPY_NUM_WORD] = COMBO(opy_num_word_combo, NUMWORD),
     [NUM_NUM_WORD] = COMBO(num_num_word_combo, NUMWORD),
 #endif
@@ -172,21 +178,21 @@ combo_t key_combos[] = {
 
 bool combo_should_trigger(uint16_t combo_index, combo_t *combo, uint16_t keycode, keyrecord_t *record) {
     switch (combo_index) {
-        #ifdef HAS_QWERTY_LAYER
+        #ifdef CS_INCLUDE_QWERTY_LAYER
         case QWERTY_TB_SCROLL ... QWERTY_ALT_F4:
             if (!layer_state_cmp(default_layer_state, QWERTY)) {
                 return false;
             }
             break;
         #endif
-        #ifdef HAS_OPY_LAYER
+        #ifdef CS_INCLUDE_OPY_LAYER
         case OPY_ESC ... OPY_CAPS_WORD:
             if (!layer_state_cmp(default_layer_state, OPY)) {
                 return false;
             }
             break;
         #endif
-        #ifdef USER_NUM_WORD_ENABLE
+        #ifdef CS_NUM_WORD_ENABLE
         case OPY_NUM_WORD:
             if (!layer_state_cmp(default_layer_state, OPY)) {
                 return false;

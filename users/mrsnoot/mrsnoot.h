@@ -4,7 +4,7 @@
 #include "keymap_german.h"
 
 // NUM_WORD Feature ---------------------------------------
-#ifdef USER_NUM_WORD_ENABLE
+#ifdef CS_NUM_WORD_ENABLE
 #    include "num_word/num_word.h"
 #endif
 
@@ -50,55 +50,52 @@
 void raw_hid_send_trigger(void);
 #endif
 
-// 3x3 Macropad -------------------------------------------
-#if defined (KEYBOARD_3x3macropad)
+// Layer -------------------------------------------------- 
 enum layers {
-    BASIS = 0,
-	ADJUST,
-    FUN
-};
+#ifdef CS_INCLUDE_BASIS_LAYER
+    BASIS,
 #endif
 
-// DASBOB / HMKB EON40 / Horizon ---------------------------------------------
-#if defined(KEYBOARD_dasbob) || defined(KEYBOARD_evyd13_eon40) || defined(KEYBOARD_horizon)
-enum layers {
-    OPY = 0,
+#ifdef CS_INCLUDE_QWERTY_LAYER
+    QWERTY,
+#endif
+
+#ifdef CS_INCLUDE_OPY_LAYER
+    OPY,
+#endif
+
+#ifdef CS_INCLUDE_NAV_LAYER
     NAV,
+#endif
+
+#ifdef CS_INCLUDE_MOUSE_LAYER
     MOUSE,
+#endif
+
+#ifdef CS_INCLUDE_NAV_FUNC_LAYER
+    NAV_FUNC,
+#endif
+
+#ifdef CS_INCLUDE_NUM_FUNC_LAYER
     NUM_FUNC,
+#endif
+
+#ifdef CS_INCLUDE_SYMBOL_LAYER
     SYMBOL,
-    ADJUST
-};
 #endif
 
-// HMKB EON95 ---------------------------------------------
-#if defined (KEYBOARD_evyd13_eon95)
-enum layers {
-    QWERTY = 0,
-    NAV,
-	ADJUST
-};
+#ifdef CS_INCLUDE_ADJUST_LAYER
+    ADJUST,
 #endif
 
-// BM60 HSRGB ---------------------------------------------
-#if defined(KEYBOARD_kprepublic_bm60hsrgb_iso_rev1)
-enum layers {
-    QWERTY = 0,
-    NAV_FUNC
-};
+#ifdef CS_INCLUDE_FUN_LAYER
+    FUN,
 #endif
+    _LAYER_SAFE_RANGE
+};
 
 // Aurora Corne / Aurora Helix ----------------------------
 #if defined(KEYBOARD_splitkb_aurora_corne_rev1) || defined(KEYBOARD_splitkb_aurora_helix_rev1)
-enum layers {
-    OPY = 0,
-    NAV,
-    MOUSE,
-    NUM_FUNC,
-    SYMBOL,
-    ADJUST
-};
-
 #   ifdef ENCODER_ENABLE
 enum encoder {
     BOTTOM_LEFT = 0,
@@ -108,6 +105,7 @@ enum encoder {
 #endif
 
 // Custom Functions ---------------------------------------
+#ifdef CS_USE_CUSTOM_FUNCTIONS
 void cs_mouse_wheel_up(void);
 void cs_mouse_wheel_down(void);
 void cs_mouse_wheel_up_accelerated(void);
@@ -137,8 +135,9 @@ enum custom_keycodes {
     S_LN_F5,
     F2_CPLN,
     IM1_INS,
-#ifdef USER_NUM_WORD_ENABLE
+#ifdef CS_NUM_WORD_ENABLE
     NUMWORD,
 #endif
     MS_BN13
 };
+#endif
