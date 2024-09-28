@@ -110,8 +110,8 @@ const uint16_t PROGMEM num_del_combo[]  = { NUM_6, NUM_PLS, COMBO_END };
 // OPY Beidseitig
 const uint16_t PROGMEM opy_caps_word_combo[] = { HRM_O_H, HRM_O_R, COMBO_END };
 #ifdef CS_NUM_WORD_ENABLE
-const uint16_t PROGMEM opy_num_word_combo[] = { HRM_O_S, DE_M, COMBO_END };
-const uint16_t PROGMEM num_num_word_combo[] = { NUM_6, DE_8, COMBO_END };
+const uint16_t PROGMEM opy_num_word_combo[] = { DE_M, HRM_O_S, COMBO_END };
+const uint16_t PROGMEM num_num_word_combo[] = { DE_8, NUM_6, COMBO_END };
 #endif
 #endif
 // Alle Base Layer

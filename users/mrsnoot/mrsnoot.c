@@ -110,14 +110,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case KC_CAPS:
             if (record->event.pressed) {
                 #ifdef AUDIO_ENABLE
-                host_keyboard_led_state().num_lock? PLAY_SONG(tone_caps_lock_on) : PLAY_SONG(tone_caps_lock_off);
+                host_keyboard_led_state().caps_lock? PLAY_SONG(tone_caps_lock_on) : PLAY_SONG(tone_caps_lock_off);
                 #endif
             }
             break;
         case KC_SCRL:
             if (record->event.pressed) {
                 #ifdef AUDIO_ENABLE
-                host_keyboard_led_state().num_lock? PLAY_SONG(tone_scroll_lock_on) : PLAY_SONG(tone_scroll_lock_off);
+                host_keyboard_led_state().scroll_lock? PLAY_SONG(tone_scroll_lock_on) : PLAY_SONG(tone_scroll_lock_off);
                 #endif
             }
             break;
