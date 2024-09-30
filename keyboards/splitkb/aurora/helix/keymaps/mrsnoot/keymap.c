@@ -19,10 +19,10 @@
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [OPY] = LAYOUT(
-    KC_ESC , DE_Q   , DE_Z   , DE_O   , DE_P   , DE_Y   ,                   DE_W   , DE_C   , DE_M   , DE_V   , DE_X   , KC_LGUI,
-    XXXXXXX, HRM_O_H, HRM_O_A, HRM_O_E, HRM_O_I, DE_K   ,                   DE_G   , HRM_O_T, HRM_O_N, HRM_O_S, HRM_O_R, KC_ENT ,
-    KC_BTN2, DE_J   , DE_ODIA, DE_ADIA, DE_U   , DE_UDIA,                   DE_B   , DE_D   , DE_L   , DE_F   , DE_SS  , V_DESKT,
-    KC_BTN1, TB_SCR , XXXXXXX, XXXXXXX, OSL_NUM, NAV_SPC, XXXXXXX, XXXXXXX, MS_ENT , OSL_SYM, CS_VDPR, CS_VDNX, CS_TSPR, CS_TSNX,
+    XXXXXXX, DE_Q   , DE_Z   , DE_O   , DE_P   , DE_Y   ,                   DE_W   , DE_C   , DE_M   , DE_V   , DE_X   , XXXXXXX,
+    XXXXXXX, HRM_O_H, HRM_O_A, HRM_O_E, HRM_O_I, DE_K   ,                   DE_G   , HRM_O_T, HRM_O_N, HRM_O_S, HRM_O_R, XXXXXXX,
+    XXXXXXX, DE_J   , DE_ODIA, DE_ADIA, DE_U   , DE_UDIA,                   DE_B   , DE_D   , DE_L   , DE_F   , GUI_SS , XXXXXXX,
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, OSL_NUM, NAV_SPC, XXXXXXX, XXXXXXX, MS_ENT , OSL_SYM, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
 ),
 
@@ -46,15 +46,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     XXXXXXX, KC_F1  , KC_F2  , KC_F3  , KC_F4  , KC_F5  ,                   DE_SLSH, DE_7   , DE_8   , DE_9   , DE_MINS, XXXXXXX,
     XXXXXXX, NUM_F6 , NUM_F7 , NUM_F8 , NUM_F9 , KC_F10 ,                   DE_ASTR, NUM_4  , NUM_5  , NUM_6  , NUM_PLS, XXXXXXX,
     XXXXXXX, KC_F11 , KC_F12 , XXXXXXX, S_LN_F5, XXXXXXX,                   DE_COMM, DE_1   , DE_2   , DE_3   , DE_DOT , XXXXXXX,
-    _______, _______, CS_PGU , CS_PGD , _______, _______, _______, _______, DE_0   , MO_ADJ , _______, _______, _______, _______,
+    _______, _______, _______, _______, _______, _______, _______, _______, DE_0   , MO_ADJ , _______, _______, _______, _______,
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
 ),
 
 [SYMBOL] = LAYOUT(
     XXXXXXX, DE_EXLM, DE_DEG , DE_SECT, DE_DLR , DE_AMPR,                   XXXXXXX, DE_PIPE, DE_CIRC, DE_TILD, XXXXXXX, XXXXXXX,
-    XXXXXXX, DE_QUES, DE_LCBR, DE_LBRC, DE_LPRN, DE_LABK,                   XXXXXXX, NP_XMLL, NP_XMLF, DE_ACUT, DE_GRV , XXXXXXX,
-    XXXXXXX, XXXXXXX, DE_RCBR, DE_RBRC, DE_RPRN, DE_RABK,                   XXXXXXX, F2_CPLN, IM1_INS, XXXXXXX, KC_PSCR, XXXXXXX,
-    MS_BN13, KC_BTN3, XXXXXXX, XXXXXXX, MO_ADJ , _______, _______, _______, _______, _______, _______, _______, _______, _______,
+    XXXXXXX, DE_QUES, DE_LCBR, DE_RCBR, DE_LPRN, DE_RPRN,                   XXXXXXX, NP_XMLL, NP_XMLF, DE_ACUT, DE_GRV , XXXXXXX,
+    XXXXXXX, XXXXXXX, DE_LBRC, DE_RBRC, DE_LABK, DE_RABK,                   XXXXXXX, F2_CPLN, IM1_INS, XXXXXXX, KC_PSCR, XXXXXXX,
+    _______, _______, _______, _______, MO_ADJ , _______, _______, _______, _______, _______, _______, _______, _______, _______,
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
 ),
 

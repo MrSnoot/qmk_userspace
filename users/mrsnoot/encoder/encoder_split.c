@@ -18,9 +18,9 @@ void mouse_wheel_up_down_accelerated(bool clockwise)
 
 void page_up_down(bool clockwise) {
     if (clockwise) {
-        cs_page_down();
+        tap_code(KC_PGDN);
     } else {
-        cs_page_up();
+        tap_code(KC_PGUP);
     }
 }
 

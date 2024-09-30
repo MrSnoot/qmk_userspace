@@ -18,9 +18,9 @@
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [OPY] = LAYOUT_split_3x6_3(
-    KC_ESC , DE_Q   , DE_Z   , DE_O   , DE_P   , DE_Y,                      DE_W   , DE_C   , DE_M   , DE_V   , DE_X   , KC_LGUI,
-    KC_BTN2, HRM_O_H, HRM_O_A, HRM_O_E, HRM_O_I, DE_K,                      DE_G,    HRM_O_T, HRM_O_N, HRM_O_S, HRM_O_R, KC_ENT,
-    KC_BTN1, DE_J,    DE_ODIA, DE_ADIA, DE_U,    DE_UDIA,                   DE_B,    DE_D,    DE_L,    DE_F,    DE_SS,   V_DESKT,
+    XXXXXXX, DE_Q   , DE_Z   , DE_O   , DE_P   , DE_Y,                      DE_W   , DE_C   , DE_M   , DE_V   , DE_X   , XXXXXXX,
+    XXXXXXX, HRM_O_H, HRM_O_A, HRM_O_E, HRM_O_I, DE_K,                      DE_G   , HRM_O_T, HRM_O_N, HRM_O_S, HRM_O_R, XXXXXXX,
+    XXXXXXX, DE_J   , DE_ODIA, DE_ADIA, DE_U   , DE_UDIA,                   DE_B   , DE_D   , DE_L   , DE_F   , GUI_SS , XXXXXXX,
                                         XXXXXXX, OSL_NUM, NAV_SPC, MS_ENT , OSL_SYM, XXXXXXX 
 ),
   
@@ -33,7 +33,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [MOUSE] = LAYOUT_split_3x6_3(
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-    XXXXXXX, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,                   TB_DPI , KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN, XXXXXXX,
+    XXXXXXX, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,                   TB_DPI , KC_BTN1, KC_BTN2, KC_LCTL, KC_LSFT, XXXXXXX,
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, TB_SCR , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
                                         _______, _______, _______, _______, _______, _______
 ),
@@ -46,9 +46,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 [SYMBOL] = LAYOUT_split_3x6_3(
-    XXXXXXX, DE_EXLM, DE_DEG,  DE_SECT, DE_DLR,  DE_AMPR,                   XXXXXXX, DE_PIPE, DE_CIRC, DE_TILD, XXXXXXX, XXXXXXX,
-    XXXXXXX, DE_QUES, DE_LCBR, DE_LBRC, DE_LPRN, DE_LABK,                   XXXXXXX, NP_XMLL, NP_XMLF, DE_ACUT, DE_GRV , XXXXXXX,
-    MS_BN13, KC_BTN3, DE_RCBR, DE_RBRC, DE_RPRN, DE_RABK,                   XXXXXXX, F2_CPLN, IM1_INS, XXXXXXX, KC_PSCR, XXXXXXX,
+    XXXXXXX, DE_EXLM, DE_DEG , DE_SECT, DE_DLR , DE_AMPR,                   XXXXXXX, DE_PIPE, DE_CIRC, DE_TILD, XXXXXXX, XXXXXXX,
+    XXXXXXX, DE_QUES, DE_LCBR, DE_RCBR, DE_LPRN, DE_RPRN,                   XXXXXXX, NP_XMLL, NP_XMLF, DE_ACUT, DE_GRV , XXXXXXX,
+    XXXXXXX, XXXXXXX, DE_LBRC, DE_RBRC, DE_LABK, DE_RABK,                   XXXXXXX, F2_CPLN, IM1_INS, XXXXXXX, KC_PSCR, XXXXXXX,
                                         _______, MO_ADJ,  _______, _______, _______, _______
 ),
 
