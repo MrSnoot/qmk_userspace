@@ -108,7 +108,7 @@ const uint16_t PROGMEM opy_vdpr_combo[] = { HRM_O_T, DE_M, COMBO_END };
 const uint16_t PROGMEM opy_vdnx_combo[] = { HRM_O_N, DE_C, COMBO_END };
 const uint16_t PROGMEM num_bspc_combo[]  = { NUM_4, NUM_5, COMBO_END };
 const uint16_t PROGMEM num_del_combo[]  = { NUM_6, NUM_PLS, COMBO_END };
-const uint16_t PROGMEM opy_tg_mouse_layer_combo[]  = { MS_ENT, HRM_O_N, COMBO_END };
+const uint16_t PROGMEM opy_tg_mouse_layer_combo[]  = { MS_ENT, HRM_O_S, COMBO_END };
 // OPY Beidseitig
 const uint16_t PROGMEM opy_caps_word_combo[] = { HRM_O_H, HRM_O_R, COMBO_END };
 #ifdef CS_NUM_WORD_ENABLE
