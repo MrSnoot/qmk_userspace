@@ -240,6 +240,7 @@
 #  define NAV_SPC LT(NAV, KC_SPC)
 #  define MS_ENT LT(MOUSE, KC_ENT)
 #  define OSL_SYM OSL(SYMBOL)
+#  define TG_MS_L TG(MOUSE)
 #endif
 
 #ifdef CS_USE_HRM

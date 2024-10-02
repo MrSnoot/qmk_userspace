@@ -49,6 +49,7 @@ enum combos {
     OPY_VDNX,
     NUM_BSPC,
     NUM_DEL,
+    OPY_TG_MOUSE_LAYER,
     // OPY beidseitig
     OPY_CAPS_WORD,
 #ifdef CS_NUM_WORD_ENABLE
@@ -107,11 +108,12 @@ const uint16_t PROGMEM opy_vdpr_combo[] = { HRM_O_T, DE_M, COMBO_END };
 const uint16_t PROGMEM opy_vdnx_combo[] = { HRM_O_N, DE_C, COMBO_END };
 const uint16_t PROGMEM num_bspc_combo[]  = { NUM_4, NUM_5, COMBO_END };
 const uint16_t PROGMEM num_del_combo[]  = { NUM_6, NUM_PLS, COMBO_END };
+const uint16_t PROGMEM opy_tg_mouse_layer_combo[]  = { MS_ENT, HRM_O_N, COMBO_END };
 // OPY Beidseitig
 const uint16_t PROGMEM opy_caps_word_combo[] = { HRM_O_H, HRM_O_R, COMBO_END };
 #ifdef CS_NUM_WORD_ENABLE
-const uint16_t PROGMEM opy_num_word_combo[] = { DE_M, HRM_O_S, COMBO_END };
-const uint16_t PROGMEM num_num_word_combo[] = { DE_8, NUM_6, COMBO_END };
+const uint16_t PROGMEM opy_num_word_combo[] = { HRM_O_T, DE_L, COMBO_END };
+const uint16_t PROGMEM num_num_word_combo[] = { NUM_4, DE_2, COMBO_END };
 #endif
 #endif
 // Alle Base Layer
@@ -165,6 +167,7 @@ combo_t key_combos[] = {
     [OPY_VDNX] = COMBO(opy_vdnx_combo, CS_VDNX),
     [NUM_BSPC] = COMBO(num_bspc_combo, KC_BSPC),
     [NUM_DEL] = COMBO(num_del_combo, KC_DEL),
+    [OPY_TG_MOUSE_LAYER] = COMBO(opy_tg_mouse_layer_combo, TG_MS_L),
     // OPY beidseitig
     [OPY_CAPS_WORD] = COMBO(opy_caps_word_combo, CW_TOGG),
 #ifdef CS_NUM_WORD_ENABLE
