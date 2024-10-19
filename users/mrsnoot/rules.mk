@@ -15,7 +15,7 @@ LTO_ENABLE = no
 #endif
 
 # Common features -----------------------------------------
-ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), dasbob evyd13/eon40 evyd13/eon95 horizon kprepublic/bm60hsrgb_iso/rev1 ploopyco/madromys/rev1_001 ploopyco/trackball_nano/rev1_001 splitkb/aurora/corne/rev1 splitkb/aurora/helix/rev1))
+ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), dasbob endgame/rev6 evyd13/eon40 evyd13/eon95 horizon kprepublic/bm60hsrgb_iso/rev1 ploopyco/madromys/rev1_001 ploopyco/trackball_nano/rev1_001 splitkb/aurora/corne/rev1 splitkb/aurora/helix/rev1))
 	EXTRAKEY_ENABLE = no
 endif
 
@@ -30,7 +30,7 @@ ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), 3x3macropad evyd13/eon40 evyd1
 	AUDIO_ENABLE = no
 endif
 
-ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), dasbob horizon ploopyco/madromys/rev1_001 splitkb/aurora/corne/rev1 splitkb/aurora/helix/rev1))
+ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), dasbob endgame/rev6 horizon ploopyco/madromys/rev1_001 splitkb/aurora/corne/rev1 splitkb/aurora/helix/rev1))
 	AUDIO_ENABLE = yes
 	AUDIO_DRIVER = pwm_hardware
 endif
@@ -40,7 +40,7 @@ ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), 3x3macropad evyd13/eon95 kprep
 	CS_NUM_WORD_ENABLE = no 
 endif
 
-ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), dasbob evyd13/eon40 horizon splitkb/aurora/corne/rev1 splitkb/aurora/helix/rev1))
+ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), dasbob endgame/rev6 evyd13/eon40 horizon splitkb/aurora/corne/rev1 splitkb/aurora/helix/rev1))
 	CS_NUM_WORD_ENABLE = yes
 	SRC += num_word/num_word.c
     OPT_DEFS += -DCS_NUM_WORD_ENABLE
@@ -51,13 +51,13 @@ ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), 3x3macropad kprepublic/bm60hsr
 	COMBO_ENABLE = no
 endif
 
-ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), dasbob evyd13/eon40 evyd13/eon95 horizon splitkb/aurora/corne/rev1 splitkb/aurora/helix/rev1))
+ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), dasbob endgame/rev6 evyd13/eon40 evyd13/eon95 horizon splitkb/aurora/corne/rev1 splitkb/aurora/helix/rev1))
 	COMBO_ENABLE = yes
 	INTROSPECTION_KEYMAP_C = combo/combo.c
 endif
 
 # Encoder -------------------------------------------------
-ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), dasbob evyd13/eon40 evyd13/eon95 horizon kprepublic/bm60hsrgb_iso/rev1 ploopyco/madromys/rev1_001 ploopyco/trackball_nano/rev1_001))
+ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), dasbob endgame/rev6 evyd13/eon40 evyd13/eon95 horizon kprepublic/bm60hsrgb_iso/rev1 ploopyco/madromys/rev1_001 ploopyco/trackball_nano/rev1_001))
 	ENCODER_ENABLE = no
 endif
 
@@ -72,7 +72,7 @@ ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), splitkb/aurora/corne/rev1 spli
 endif
 
 # OLED ----------------------------------------------------
-ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), dasbob evyd13/eon40 evyd13/eon95 horizon kprepublic/bm60hsrgb_iso/rev1 ploopyco/madromys/rev1_001 ploopyco/trackball_nano/rev1_001))
+ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), dasbob endgame/rev6 evyd13/eon40 evyd13/eon95 horizon kprepublic/bm60hsrgb_iso/rev1 ploopyco/madromys/rev1_001 ploopyco/trackball_nano/rev1_001))
 	OLED_ENABLE = no
 endif
 
@@ -92,7 +92,7 @@ ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), xxx))
 endif
 
 # RGB -----------------------------------------------------
-ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), dasbob evyd13/eon40 evyd13/eon95 horizon ploopyco/madromys/rev1_001 ploopyco/trackball_nano/rev1_001))
+ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), dasbob endgame/rev6 evyd13/eon40 evyd13/eon95 horizon ploopyco/madromys/rev1_001 ploopyco/trackball_nano/rev1_001))
 	RGBLIGHT_ENABLE = no
 	RGB_MATRIX_ENABLE = no
 endif
@@ -101,6 +101,12 @@ ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), 3x3macropad))
 	RGBLIGHT_ENABLE = yes
 	RGB_MATRIX_ENABLE = no
 	SRC += rgb/rgb_light.c
+endif
+
+ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), endgame/rev6))
+	RGBLIGHT_ENABLE = no
+	RGB_MATRIX_ENABLE = yes
+	SRC += rgb/rgb_matrix_endgame.c
 endif
 
 ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), kprepublic/bm60hsrgb_iso/rev1 splitkb/aurora/corne/rev1 splitkb/aurora/helix/rev1))
@@ -114,12 +120,12 @@ ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), 3x3macropad kprepublic/bm60hsr
 	MOUSEKEY_ENABLE = no
 endif
 
-ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), dasbob evyd13/eon40 evyd13/eon95 horizon ploopyco/madromys/rev1_001 splitkb/aurora/corne/rev1 splitkb/aurora/helix/rev1))
+ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), dasbob endgame/rev6 evyd13/eon40 evyd13/eon95 horizon ploopyco/madromys/rev1_001 splitkb/aurora/corne/rev1 splitkb/aurora/helix/rev1))
 	MOUSEKEY_ENABLE = yes
 endif
 
 # WPM -----------------------------------------------------
-ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), 3x3macropad dasbob evyd13/eon40 evyd13/eon95 horizon kprepublic/bm60hsrgb_iso/rev1 ploopyco/madromys/rev1_001 ploopyco/trackball_nano/rev1_001))
+ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), 3x3macropad dasbob endgame/rev6 evyd13/eon40 evyd13/eon95 horizon kprepublic/bm60hsrgb_iso/rev1 ploopyco/madromys/rev1_001 ploopyco/trackball_nano/rev1_001))
 	WPM_ENABLE = no
 endif
 
@@ -132,7 +138,7 @@ ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), 3x3macropad kprepublic/bm60hsr
 	CAPS_WORD_ENABLE = no 
 endif
 
-ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), dasbob evyd13/eon40 evyd13/eon95 horizon splitkb/aurora/corne/rev1 splitkb/aurora/helix/rev1))
+ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), dasbob endgame/rev6 evyd13/eon40 evyd13/eon95 horizon splitkb/aurora/corne/rev1 splitkb/aurora/helix/rev1))
 	CAPS_WORD_ENABLE = yes
 endif
 
@@ -141,6 +147,6 @@ ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), 3x3macropad kprepublic/bm60hsr
 	AUTO_SHIFT_ENABLE = no 
 endif
 
-ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), dasbob evyd13/eon40 evyd13/eon95 horizon splitkb/aurora/corne/rev1 splitkb/aurora/helix/rev1))
+ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), dasbob endgame/rev6 evyd13/eon40 evyd13/eon95 horizon splitkb/aurora/corne/rev1 splitkb/aurora/helix/rev1))
 	AUTO_SHIFT_ENABLE = no
 endif

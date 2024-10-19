@@ -85,7 +85,7 @@
 #   endif
 #endif
 
-// Dasbob ------------------------------------------------
+// Dasbob -------------------------------------------------
 #if defined(KEYBOARD_dasbob)
 #   define CS_INCLUDE_OPY_LAYER
 #   define CS_INCLUDE_NAV_LAYER
@@ -96,10 +96,23 @@
 #   define CS_USE_HRM
 #   define CS_USE_FOUR_THUMB_DEFAULT
 #   define CS_USE_CUSTOM_FUNCTIONS
-    // Frood Bootloeader ueber Doppeltap auf Resetknopf
+    // Frood Bootloader ueber Doppeltap auf Resetknopf
 #   define RP2040_BOOTLOADER_DOUBLE_TAP_RESET
 #   define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_TIMEOUT 500U
 #   define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_LED 17U
+#endif
+
+// Endgame ------------------------------------------------
+#if defined(KEYBOARD_endgame_rev6)
+#   define CS_INCLUDE_OPY_LAYER
+#   define CS_INCLUDE_NAV_LAYER
+#   define CS_INCLUDE_MOUSE_LAYER
+#   define CS_INCLUDE_NUM_FUNC_LAYER
+#   define CS_INCLUDE_SYMBOL_LAYER
+#   define CS_INCLUDE_ADJUST_LAYER
+#   define CS_USE_HRM
+#   define CS_USE_FOUR_THUMB_DEFAULT
+#   define CS_USE_CUSTOM_FUNCTIONS
 #endif
 
 // HMKB EON40 ---------------------------------------------

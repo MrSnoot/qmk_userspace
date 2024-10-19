@@ -40,7 +40,9 @@
 
 // RGB Matrix Feature -------------------------------------
 #if defined(RGB_MATRIX_ENABLE)
-#   if defined(KEYBOARD_splitkb_aurora_corne_rev1) || defined(KEYBOARD_splitkb_aurora_helix_rev1)
+#   if defined(KEYBOARD_endgame_rev6)
+#       include "rgb/rgb_matrix_endgame.h"
+#   elif defined(KEYBOARD_splitkb_aurora_corne_rev1) || defined(KEYBOARD_splitkb_aurora_helix_rev1)
 #       include "rgb/rgb_matrix.h"
 #   endif
 #endif
