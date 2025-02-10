@@ -1,11 +1,10 @@
 {
     "userspace_version": "1.0",
     "build_targets": [
-        ["evyd13/eon40", "mrsnoot"],
-        ["horizon", "mrsnoot"],
-        ["splitkb/aurora/corne/rev1", "mrsnoot"],
-        ["splitkb/aurora/helix/rev1", "mrsnoot"],
         ["dasbob", "mrsnoot"],
-        ["endgame/rev6", "mrsnoot"]
+        ["endgame/rev6", "mrsnoot"],
+        ["evyd13/eon40", "mrsnoot"],
+        ["splitkb/aurora/corne/rev1", "mrsnoot"],
+        ["splitkb/aurora/helix/rev1", "mrsnoot"]
     ]
 }
