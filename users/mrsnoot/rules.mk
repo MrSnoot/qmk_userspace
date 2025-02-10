@@ -14,6 +14,8 @@ LTO_ENABLE = no
 #	CONVERT_TO = helios
 #endif
 
+# INTROSPECTION_KEYMAP_C = mrsnoot.c
+
 # Common features -----------------------------------------
 ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), dasbob endgame/rev6 evyd13/eon40 evyd13/eon95 horizon kprepublic/bm60hsrgb_iso/rev1 ploopyco/madromys/rev1_001 ploopyco/trackball_nano/rev1_001 splitkb/aurora/corne/rev1 splitkb/aurora/helix/rev1))
 	EXTRAKEY_ENABLE = no
@@ -54,6 +56,8 @@ endif
 ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), dasbob endgame/rev6 evyd13/eon40 evyd13/eon95 horizon splitkb/aurora/corne/rev1 splitkb/aurora/helix/rev1))
 	COMBO_ENABLE = yes
 	INTROSPECTION_KEYMAP_C = combo/combo.c
+# SRC += combo/combo.c
+
 endif
 
 # Encoder -------------------------------------------------
