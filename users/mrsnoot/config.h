@@ -113,6 +113,14 @@
 #   define CS_USE_HRM
 #   define CS_USE_FOUR_THUMB_DEFAULT
 #   define CS_USE_CUSTOM_FUNCTIONS
+
+#   ifdef RGB_MATRIX_ENABLE
+#      define RGB_MATRIX_MAXIMUM_BRIGHTNESS 160
+#      undef ENABLE_RGB_MATRIX_BREATHING
+#      undef ENABLE_RGB_MATRIX_CYCLE_ALL
+#      undef ENABLE_RGB_MATRIX_PIXEL_RAIN
+#      undef ENABLE_RGB_MATRIX_TYPING_HEATMAP
+#   endif
 #endif
 
 // HMKB EON40 ---------------------------------------------
@@ -247,6 +255,7 @@
 #define NP_XMLL MEH(DE_L)
 #define NP_XMLF MEH(DE_B)
 #define GUI_SS LGUI_T(DE_SS)
+#define MICMUTE C(S(KC_M))
 
 #ifdef CS_USE_FOUR_THUMB_DEFAULT
 #  define OSL_NUM OSL(NUM_FUNC)
