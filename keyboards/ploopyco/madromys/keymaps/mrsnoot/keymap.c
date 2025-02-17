@@ -31,4 +31,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [2] = LAYOUT( XXXXXXX    , CK_TOGG, AU_TOGG, XXXXXXX   ,
                   _______    ,                   QK_BOOT    ),
-}; 
+};
+
+// const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+//     [0] = LAYOUT( DRAG_SCROLL, SW_L_1 , KC_BTN1, DBL_CLK    , 
+//                   CS_VDPR    ,                   CS_VDNX    ),
+
+//     [1] = LAYOUT( XXXXXXX    , XXXXXXX, CS_TSNX, CS_TSPR   , 
+//                   SW_L_2     ,                   DPI_CONFIG),
+
+//     [2] = LAYOUT( XXXXXXX    , _______, AU_TOGG, CK_TOGG   ,
+//                   _______    ,                   QK_BOOT   ),
+// };
