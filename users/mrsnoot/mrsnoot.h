@@ -66,6 +66,10 @@ enum layers {
     OPY,
 #endif
 
+#ifdef CS_INCLUDE_SONNE_LAYER
+    SONNE,
+#endif
+
 #ifdef CS_INCLUDE_NAV_LAYER
     NAV,
 #endif

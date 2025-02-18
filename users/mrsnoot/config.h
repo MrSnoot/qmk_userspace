@@ -193,6 +193,7 @@
 // Splitkb Aurora Corne -------------------------------------------
 #if defined(KEYBOARD_splitkb_aurora_corne_rev1)
 #   define CS_INCLUDE_OPY_LAYER
+#   define CS_INCLUDE_SONNE_LAYER
 #   define CS_INCLUDE_NAV_LAYER
 #   define CS_INCLUDE_MOUSE_LAYER
 #   define CS_INCLUDE_NUM_FUNC_LAYER
@@ -296,5 +297,20 @@
 #    define HRM_O_N LCTL_T(DE_N)
 #    define HRM_O_S LALT_T(DE_S)
 #    define HRM_O_R RSFT_T(DE_R)
+#  endif
+
+/* ä u o m ß  p d c l q
+   a i e s f  g h t n r
+   ü j ö w v  z k b x y 
+*/
+#  ifdef CS_INCLUDE_SONNE_LAYER
+#    define HRM_S_A LSFT_T(DE_A)
+#    define HRM_S_I LALT_T(DE_I)
+#    define HRM_S_E LCTL_T(DE_E)
+#    define HRM_S_S DE_S
+#    define HRM_S_H DE_H
+#    define HRM_S_T LCTL_T(DE_T)
+#    define HRM_S_N LALT_T(DE_N)
+#    define HRM_S_R RSFT_T(DE_R)
 #  endif
 #endif
