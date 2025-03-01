@@ -88,6 +88,7 @@
 // Dasbob -------------------------------------------------
 #if defined(KEYBOARD_dasbob)
 #   define CS_INCLUDE_OPY_LAYER
+#   define CS_INCLUDE_SONNE_LAYER
 #   define CS_INCLUDE_NAV_LAYER
 #   define CS_INCLUDE_MOUSE_LAYER
 #   define CS_INCLUDE_NUM_FUNC_LAYER
@@ -105,6 +106,7 @@
 // Endgame ------------------------------------------------
 #if defined(KEYBOARD_endgame_rev6)
 #   define CS_INCLUDE_OPY_LAYER
+#   define CS_INCLUDE_SONNE_LAYER
 #   define CS_INCLUDE_NAV_LAYER
 #   define CS_INCLUDE_MOUSE_LAYER
 #   define CS_INCLUDE_NUM_FUNC_LAYER
@@ -126,6 +128,7 @@
 // HMKB EON40 ---------------------------------------------
 #if defined(KEYBOARD_evyd13_eon40)
 #   define CS_INCLUDE_OPY_LAYER
+#   define CS_INCLUDE_SONNE_LAYER
 #   define CS_INCLUDE_NAV_LAYER
 #   define CS_INCLUDE_MOUSE_LAYER
 #   define CS_INCLUDE_NUM_FUNC_LAYER
@@ -224,6 +227,7 @@
 // Splitkb Aurora Helix -------------------------------------------
 #if defined(KEYBOARD_splitkb_aurora_helix_rev1)
 #   define CS_INCLUDE_OPY_LAYER
+#   define CS_INCLUDE_SONNE_LAYER
 #   define CS_INCLUDE_NAV_LAYER
 #   define CS_INCLUDE_MOUSE_LAYER
 #   define CS_INCLUDE_NUM_FUNC_LAYER

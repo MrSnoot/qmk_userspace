@@ -32,7 +32,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     XXXXXXX, DE_ADIA, DE_U   , DE_O   , DE_M   , DE_Y   ,                   DE_P   , DE_D   , DE_C   , DE_L   , DE_Q   , XXXXXXX,
     XXXXXXX, HRM_S_A, HRM_S_I, HRM_S_E, HRM_S_S, DE_F   ,                   DE_G   , HRM_S_H, HRM_S_T, HRM_S_N, HRM_S_R, XXXXXXX,
     XXXXXXX, DE_UDIA, DE_J   , DE_ODIA, DE_W   , DE_V   ,                   DE_Z   , DE_K   , DE_B   , DE_X   , GUI_SS , XXXXXXX,
-                                        _______, _______, _______, _______, _______, _______
+                                        XXXXXXX, OSL_NUM, NAV_SPC, MS_ENT , OSL_SYM, XXXXXXX
 ),
   
 [NAV] = LAYOUT_split_3x6_3(
@@ -64,9 +64,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 [ADJUST] = LAYOUT_split_3x6_3(
-    XXXXXXX, RGB_TOG, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, KC_NUM , XXXXXXX, DF(OPY), QK_BOOT, XXXXXXX,
+    XXXXXXX, RGB_TOG, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, KC_NUM , XXXXXXX, DF(OPY),   QK_BOOT, XXXXXXX,
     XXXXXXX, AU_TOGG, CK_TOGG, CK_DOWN, CK_UP  , CK_RST,                    XXXXXXX, KC_CAPS, XXXXXXX, DF(SONNE), XXXXXXX, XXXXXXX,
-    XXXXXXX, AS_TOGG, AS_DOWN, AS_UP  , AS_RPT , XXXXXXX,                   XXXXXXX, KC_SCRL, XXXXXXX, XXXXXXX, TB_RST , XXXXXXX,
+    XXXXXXX, AS_TOGG, AS_DOWN, AS_UP  , AS_RPT , XXXXXXX,                   XXXXXXX, KC_SCRL, XXXXXXX, XXXXXXX,   TB_RST , XXXXXXX,
                                         _______, _______, _______, _______, _______, _______
 ),
 };
