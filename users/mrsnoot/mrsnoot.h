@@ -62,12 +62,12 @@ enum layers {
     QWERTY,
 #endif
 
-#ifdef CS_INCLUDE_OPY_LAYER
-    OPY,
-#endif
-
 #ifdef CS_INCLUDE_SONNE_LAYER
     SONNE,
+#endif
+
+#ifdef CS_INCLUDE_OPY_LAYER
+    OPY,
 #endif
 
 #ifdef CS_INCLUDE_NAV_LAYER

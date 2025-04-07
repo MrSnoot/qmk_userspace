@@ -17,21 +17,17 @@
 #include "mrsnoot.h"
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-[OPY] = LAYOUT_ortho_4x12_2x2u(
-    DE_Q   , DE_Z   , DE_O   , DE_P   , DE_Y   , XXXXXXX, XXXXXXX, DE_W   , DE_C   , DE_M   , DE_V   , DE_X   ,
-    HRM_O_H, HRM_O_A, HRM_O_E, HRM_O_I, DE_K   , XXXXXXX, XXXXXXX, DE_G   , HRM_O_T, HRM_O_N, HRM_O_S, HRM_O_R,
-    DE_J   , DE_ODIA, DE_ADIA, DE_U   , DE_UDIA, XXXXXXX, XXXXXXX, DE_B   , DE_D   , DE_L   , DE_F   , GUI_SS ,
-    XXXXXXX, XXXXXXX, XXXXXXX, OSL_NUM, NAV_SPC,                   MS_ENT , OSL_SYM, XXXXXXX, XXXXXXX, XXXXXXX
-),
-
-/* ä u o m y  p d c l q
-   a i e s f  g h t n r
-   ü j ö w v  z k b x ß 
-*/
 [SONNE] = LAYOUT_ortho_4x12_2x2u(
     DE_ADIA, DE_U   , DE_O   , DE_M   , DE_Y   , XXXXXXX, XXXXXXX, DE_P   , DE_D   , DE_C   , DE_L   , DE_Q   ,
     HRM_S_A, HRM_S_I, HRM_S_E, HRM_S_S, DE_F   , XXXXXXX, XXXXXXX, DE_G   , HRM_S_H, HRM_S_T, HRM_S_N, HRM_S_R,
     DE_UDIA, DE_J   , DE_ODIA, DE_W   , DE_V   , XXXXXXX, XXXXXXX, DE_Z   , DE_K   , DE_B   , DE_X   , GUI_SS ,
+    XXXXXXX, XXXXXXX, XXXXXXX, OSL_NUM, NAV_SPC,                   MS_ENT , OSL_SYM, XXXXXXX, XXXXXXX, XXXXXXX
+),
+    
+[OPY] = LAYOUT_ortho_4x12_2x2u(
+    DE_Q   , DE_Z   , DE_O   , DE_P   , DE_Y   , XXXXXXX, XXXXXXX, DE_W   , DE_C   , DE_M   , DE_V   , DE_X   ,
+    HRM_O_H, HRM_O_A, HRM_O_E, HRM_O_I, DE_K   , XXXXXXX, XXXXXXX, DE_G   , HRM_O_T, HRM_O_N, HRM_O_S, HRM_O_R,
+    DE_J   , DE_ODIA, DE_ADIA, DE_U   , DE_UDIA, XXXXXXX, XXXXXXX, DE_B   , DE_D   , DE_L   , DE_F   , GUI_SS ,
     XXXXXXX, XXXXXXX, XXXXXXX, OSL_NUM, NAV_SPC,                   MS_ENT , OSL_SYM, XXXXXXX, XXXXXXX, XXXXXXX
 ),
 
@@ -64,8 +60,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 [ADJUST] = LAYOUT_ortho_4x12_2x2u(
-    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_NUM , XXXXXXX, DF(OPY),   QK_BOOT,
-    AU_TOGG, CK_TOGG, CK_DOWN, CK_UP  , CK_RST , XXXXXXX, XXXXXXX, XXXXXXX, KC_CAPS, XXXXXXX, DF(SONNE), XXXXXXX,
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_NUM , XXXXXXX, DF(SONNE), QK_BOOT,
+    AU_TOGG, CK_TOGG, CK_DOWN, CK_UP  , CK_RST , XXXXXXX, XXXXXXX, XXXXXXX, KC_CAPS, XXXXXXX, DF(OPY),   XXXXXXX,
     AS_TOGG, AS_DOWN, AS_UP  , AS_RPT , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_SCRL, XXXXXXX, XXXXXXX,   TB_RST ,
     _______, _______, _______, _______, _______,                   _______, _______, _______, _______,   _______
 ),

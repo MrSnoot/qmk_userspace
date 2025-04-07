@@ -310,6 +310,21 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 wait_ms(29);
                 tap_code(KC_CAPS);
             }
+            break;
+#endif
+#if defined(KEYBOARD_ploopyco_madromys_rev1_001)
+        // case DPI_CONFIG:
+        //     if (record->event.pressed) {
+        //         #ifdef AUDIO_ENABLE
+                
+                // for (i = 1; i <= keyboard_config.dpi_config; i++) {
+                //     PLAY_SONG(tone_num_lock_on);
+                //     wait_ms(500);
+                // }
+                //keyboard_config.dpi_config = (keyboard_config.dpi_config + 1) % DPI_OPTION_SIZE;
+            //     #endif
+            // }
+            // break;
 #endif
     }
 
