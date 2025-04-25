@@ -95,8 +95,8 @@ void render_layer_status(void) {
         case QWERTY:
             oled_write_P(PSTR("QWERTZ\n"), false);
             break;
-        case OPY:
-            oled_write_P(PSTR("OPY\n"), false);
+        case SONNE:
+            oled_write_P(PSTR("SONNE\n"), false);
             break;
     }
 
@@ -105,7 +105,7 @@ void render_layer_status(void) {
 
     switch (get_highest_layer(layer_state)) {
         case QWERTY:
-        case OPY:
+        case SONNE:
             oled_write_P(PSTR("Basis\n"), hands_swapped);
             break;
         case SYMBOL:

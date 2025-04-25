@@ -142,8 +142,8 @@ uint8_t get_default_layer_color(void)
 
     switch (biton32(default_layer_state))
     {
-        case OPY:
-            color = OPY;
+        case SONNE:
+            color = SONNE;
             break;
         // case QWERTY:
         //     color = QWERTY;
@@ -166,7 +166,7 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
 
 	switch (layer)
 	{
-        case OPY:
+        case SONNE:
             set_colors(home_row_mods_left, sizeof(home_row_mods_left), get_default_layer_color());
             set_colors(home_row_mods_right, sizeof(home_row_mods_right), get_default_layer_color());
             break;

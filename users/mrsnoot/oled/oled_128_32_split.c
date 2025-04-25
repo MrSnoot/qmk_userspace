@@ -111,7 +111,7 @@ static void render_layer_state(void) {
         oled_write_P(lower_layer, false);
     } else if(layer_state_is(SYMBOL)) {
         oled_write_P(raise_layer, false);
-    } else if(layer_state_is(OPY)) {
+    } else if(layer_state_is(SONNE)) {
         oled_write_P(default_layer, false);
     } else {
         oled_write_P(adjust_layer, false);

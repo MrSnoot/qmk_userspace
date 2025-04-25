@@ -7,15 +7,8 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
     uint8_t layer = biton32(layer_state);
 
     switch (layer) {
-        case OPY:
-            switch (biton32(default_layer_state))
-            {
-                case OPY:
-                    rgb_matrix_set_color_all(RGB_TURQUOISE);
-                    break;
-                case SONNE:
-                    rgb_matrix_set_color_all(RGB_PURPLE);
-            }
+        case SONNE:
+            rgb_matrix_set_color_all(RGB_PURPLE);
             break;
         case NAV:
             rgb_matrix_set_color_all(RGB_ORANGE);

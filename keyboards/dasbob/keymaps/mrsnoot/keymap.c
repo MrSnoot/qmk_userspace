@@ -5,16 +5,16 @@
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      /*
       * ┌───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┐
-      * │ Q │ Z │ O │ P │ Y │       │ W │ C │ M │ V │ X │
+      * │ Ä │ U │ O │ M │ Y │       │ P │ D │ C │ L │ Q │
       * ├───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┤
-      * │ H │ A │ E │ I │ K │       │ G │ T │ N │ S │ R │
+      * │ A │ I │ E │ S │ F │       │ G │ H │ T │ N │ R │
       * ├───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┤
-      * │ J │ Ö │ Ä │ U │ Ü │       │ B │ D │ L │ F │ ß │
+      * │ Ü │ J │ Ö │ W │ V │       │ Z │ K │ B │ X │ ß │
       * └───┴───┴───┴───┴───┘       └───┴───┴───┴───┴───┘
       *           ┌───┐                   ┌───┐
-      *           │DEL├───┐           ┌───┤ESC│
-      *           └───┤SPC├───┐   ┌───┤BSP├───┘
-      *               └───│LOW│   │RSE├───┘
+      *           │   ├───┐           ┌───┤   │
+      *           └───┤NUM├───┐   ┌───┤SYM├───┘
+      *               └───│SPC│   │RET├───┘
       *                   └───┘   └───┘
       */
 
@@ -22,13 +22,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         DE_ADIA, DE_U   , DE_O   , DE_M   , DE_Y   ,                   DE_P   , DE_D   , DE_C   , DE_L   , DE_Q   ,
         HRM_S_A, HRM_S_I, HRM_S_E, HRM_S_S, DE_F   ,                   DE_G   , HRM_S_H, HRM_S_T, HRM_S_N, HRM_S_R,
         DE_UDIA, DE_J   , DE_ODIA, DE_W   , DE_V   ,                   DE_Z   , DE_K   , DE_B   , DE_X   , GUI_SS ,
-                                   XXXXXXX, OSL_NUM, NAV_SPC, MS_ENT , OSL_SYM, XXXXXXX
-    ),
-
-    [OPY] = LAYOUT_split_3x5_3(
-        DE_Q   , DE_Z   , DE_O   , DE_P   , DE_Y   ,                   DE_W   , DE_C   , DE_M   , DE_V   , DE_X   ,
-        HRM_O_H, HRM_O_A, HRM_O_E, HRM_O_I, DE_K   ,                   DE_G   , HRM_O_T, HRM_O_N, HRM_O_S, HRM_O_R,
-        DE_J   , DE_ODIA, DE_ADIA, DE_U   , DE_UDIA,                   DE_B   , DE_D   , DE_L   , DE_F   , GUI_SS ,
                                    XXXXXXX, OSL_NUM, NAV_SPC, MS_ENT , OSL_SYM, XXXXXXX
     ),
 
@@ -61,9 +54,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [ADJUST] = LAYOUT_split_3x5_3(
-        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, KC_NUM , XXXXXXX, DF(SONNE), QK_BOOT,
-        AU_TOGG, CK_TOGG, CK_DOWN, CK_UP  , CK_RST ,                   XXXXXXX, KC_CAPS, XXXXXXX, DF(OPY),   XXXXXXX,
-        AS_TOGG, AS_DOWN, AS_UP  , AS_RPT , XXXXXXX,                   XXXXXXX, KC_SCRL, XXXXXXX, XXXXXXX,   TB_RST ,
+        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, KC_NUM , XXXXXXX, XXXXXXX, QK_BOOT,
+        AU_TOGG, CK_TOGG, CK_DOWN, CK_UP  , CK_RST ,                   XXXXXXX, KC_CAPS, XXXXXXX, XXXXXXX, XXXXXXX,
+        AS_TOGG, AS_DOWN, AS_UP  , AS_RPT , XXXXXXX,                   XXXXXXX, KC_SCRL, XXXXXXX, XXXXXXX, TB_RST ,
                                    _______, _______, _______, _______, _______, _______
     ),
 };

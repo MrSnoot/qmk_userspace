@@ -87,7 +87,6 @@
 
 // Dasbob -------------------------------------------------
 #if defined(KEYBOARD_dasbob)
-#   define CS_INCLUDE_OPY_LAYER
 #   define CS_INCLUDE_SONNE_LAYER
 #   define CS_INCLUDE_NAV_LAYER
 #   define CS_INCLUDE_MOUSE_LAYER
@@ -105,7 +104,6 @@
 
 // Endgame ------------------------------------------------
 #if defined(KEYBOARD_endgame_rev6)
-#   define CS_INCLUDE_OPY_LAYER
 #   define CS_INCLUDE_SONNE_LAYER
 #   define CS_INCLUDE_NAV_LAYER
 #   define CS_INCLUDE_MOUSE_LAYER
@@ -127,7 +125,6 @@
 
 // HMKB EON40 ---------------------------------------------
 #if defined(KEYBOARD_evyd13_eon40)
-#   define CS_INCLUDE_OPY_LAYER
 #   define CS_INCLUDE_SONNE_LAYER
 #   define CS_INCLUDE_NAV_LAYER
 #   define CS_INCLUDE_MOUSE_LAYER
@@ -152,7 +149,6 @@
 
 // Horizon ------------------------------------------------
 #if defined(KEYBOARD_horizon)
-#   define CS_INCLUDE_OPY_LAYER
 #   define CS_INCLUDE_NAV_LAYER
 #   define CS_INCLUDE_MOUSE_LAYER
 #   define CS_INCLUDE_NUM_FUNC_LAYER
@@ -195,7 +191,6 @@
 
 // Splitkb Aurora Corne -------------------------------------------
 #if defined(KEYBOARD_splitkb_aurora_corne_rev1)
-#   define CS_INCLUDE_OPY_LAYER
 #   define CS_INCLUDE_SONNE_LAYER
 #   define CS_INCLUDE_NAV_LAYER
 #   define CS_INCLUDE_MOUSE_LAYER
@@ -226,7 +221,6 @@
 
 // Splitkb Aurora Helix -------------------------------------------
 #if defined(KEYBOARD_splitkb_aurora_helix_rev1)
-#   define CS_INCLUDE_OPY_LAYER
 #   define CS_INCLUDE_SONNE_LAYER
 #   define CS_INCLUDE_NAV_LAYER
 #   define CS_INCLUDE_MOUSE_LAYER
@@ -292,21 +286,6 @@
 #    define HRM_QOE RSFT_T(DE_ODIA)
 #  endif
 
-#  ifdef CS_INCLUDE_OPY_LAYER
-#    define HRM_O_H LSFT_T(DE_H)
-#    define HRM_O_A LALT_T(DE_A)
-#    define HRM_O_E LCTL_T(DE_E)
-#    define HRM_O_I DE_I
-#    define HRM_O_T DE_T
-#    define HRM_O_N LCTL_T(DE_N)
-#    define HRM_O_S LALT_T(DE_S)
-#    define HRM_O_R RSFT_T(DE_R)
-#  endif
-
-/* ä u o m ß  p d c l q
-   a i e s f  g h t n r
-   ü j ö w v  z k b x y 
-*/
 #  ifdef CS_INCLUDE_SONNE_LAYER
 #    define HRM_S_A LSFT_T(DE_A)
 #    define HRM_S_I LALT_T(DE_I)

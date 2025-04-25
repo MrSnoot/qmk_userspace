@@ -10,13 +10,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                    XXXXXXX, OSL_NUM, NAV_SPC, MS_ENT , OSL_SYM, XXXXXXX
     ),
 
-    [OPY] = LAYOUT_eg(
-        DE_Q   , DE_Z   , DE_O   , DE_P   , DE_Y   ,                   DE_W   , DE_C   , DE_M   , DE_V   , DE_X   ,
-        HRM_O_H, HRM_O_A, HRM_O_E, HRM_O_I, DE_K   ,                   DE_G   , HRM_O_T, HRM_O_N, HRM_O_S, HRM_O_R,
-        DE_J   , DE_ODIA, DE_ADIA, DE_U   , DE_UDIA,                   DE_B   , DE_D   , DE_L   , DE_F   , GUI_SS ,
-                                   XXXXXXX, OSL_NUM, NAV_SPC, MS_ENT , OSL_SYM, XXXXXXX
-    ),
-
     [NAV] = LAYOUT_eg(
         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, KC_HOME, KC_UP  , KC_END , KC_PGUP,
         KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,                   XXXXXXX, KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN,
@@ -46,9 +39,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [ADJUST] = LAYOUT_eg(
-        RGB_TOG, RGB_HUI, RGB_SAI, RGB_VAI, XXXXXXX,                   XXXXXXX, KC_NUM , XXXXXXX, DF(SONNE), QK_BOOT,
-        XXXXXXX, RGB_HUD, RGB_SAD, RGB_VAD, XXXXXXX,                   XXXXXXX, KC_CAPS, XXXXXXX, DF(OPY),   XXXXXXX,
-        AU_TOGG, CK_TOGG, CK_DOWN, CK_UP  , CK_RST ,                   XXXXXXX, KC_SCRL, XXXXXXX, XXXXXXX,   TB_RST ,
+        RGB_TOG, RGB_HUI, RGB_SAI, RGB_VAI, XXXXXXX,                   XXXXXXX, KC_NUM , XXXXXXX, XXXXXXX, QK_BOOT,
+        XXXXXXX, RGB_HUD, RGB_SAD, RGB_VAD, XXXXXXX,                   XXXXXXX, KC_CAPS, XXXXXXX, XXXXXXX, XXXXXXX,
+        AU_TOGG, CK_TOGG, CK_DOWN, CK_UP  , CK_RST ,                   XXXXXXX, KC_SCRL, XXXXXXX, XXXXXXX, TB_RST ,
                                    _______, _______, _______, _______, _______, _______
     ),
 };
