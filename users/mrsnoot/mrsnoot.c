@@ -105,9 +105,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 #ifdef AUDIO_ENABLE
                 host_keyboard_led_state().num_lock? PLAY_SONG(tone_num_lock_on) : PLAY_SONG(tone_num_lock_off);
                 #endif
-                // #if defined(RGB_MATRIX_ENABLE)
-                // host_keyboard_led_state().num_lock? rgb_show_num_lock_status_on() : rgb_show_num_lock_status_off();
-                // #endif
             }
             break;
         case KC_CAPS:
