@@ -24,5 +24,5 @@
 #endif
 
 #ifndef PLOOPY_DPI_DEFAULT
-#    define PLOOPY_DPI_DEFAULT 1
+#    define PLOOPY_DPI_DEFAULT 2
 #endif
