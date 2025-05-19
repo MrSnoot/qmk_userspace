@@ -19,10 +19,10 @@
 
 #pragma once
 
-#ifndef PLOOPY_DPI_OPTIONS
-#    define PLOOPY_DPI_OPTIONS { 500, 1000, 1375 }
-#endif
+// #ifndef PLOOPY_DPI_OPTIONS
+// #    define PLOOPY_DPI_OPTIONS { 500, 1000, 1375 }
+// #endif
 
-#ifndef PLOOPY_DPI_DEFAULT
-#    define PLOOPY_DPI_DEFAULT 2
-#endif
+// #ifndef PLOOPY_DPI_DEFAULT
+// #    define PLOOPY_DPI_DEFAULT 2
+// #endif

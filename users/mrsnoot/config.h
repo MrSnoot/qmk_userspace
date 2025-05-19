@@ -189,6 +189,14 @@
 #    endif
 #endif
 
+// Ploopy Adept -------------------------------------------
+#if defined(KEYBOARD_ploopyco_trackball_nano_rev1_001)
+#   undef PLOOPY_DPI_OPTIONS
+#   define PLOOPY_DPI_OPTIONS { 500, 1000, 1375 }
+#   undef PLOOPY_DPI_DEFAULT
+#   define PLOOPY_DPI_DEFAULT 2
+#endif
+
 // Splitkb Aurora Corne -------------------------------------------
 #if defined(KEYBOARD_splitkb_aurora_corne_rev1)
 #   define CS_INCLUDE_SONNE_LAYER

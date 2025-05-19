@@ -17,9 +17,19 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #include QMK_KEYBOARD_H
+#include "mrsnoot.h"
 
-#define DELTA_X_THRESHOLD 60
-#define DELTA_Y_THRESHOLD 15
+// Dummy Keymap
+const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {{{ KC_NO }}};
+
+// void suspend_power_down_user(void) {
+//     // Switch off sensor + LED making trackball unable to wake host
+//     adns5050_power_down();
+// }
+
+// void suspend_wakeup_init_user(void) {
+//     adns5050_init();
+// }
 
 #ifdef RAW_ENABLE
 #include "raw_hid.h"
@@ -36,11 +46,12 @@ void raw_hid_receive(uint8_t* data, uint8_t length) {
 }
 #endif
 
+#define DELTA_X_THRESHOLD 30
+#define DELTA_Y_THRESHOLD 15
+
 static int8_t delta_x = 0;
 static int8_t delta_y = 0;
 static uint8_t scroll_enabled = false;
-
-uint16_t dpi_options[] = PLOOPY_DPI_OPTIONS;
 
 enum host_led_reference {
 	CAPS_LOCK_REF,
@@ -68,19 +79,16 @@ struct action_trigger_t {
 
 struct action_trigger_t action_trigger[TRIGGER_LENGTH];
 
-// Dummy Keymap
-const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {{{ KC_NO }}};
-
 report_mouse_t pointing_device_task_user(report_mouse_t mouse_report) {
     if (scroll_enabled) {
         delta_x += mouse_report.x;
         delta_y += mouse_report.y;
 
         if (delta_x > DELTA_X_THRESHOLD) {
-            mouse_report.h = 1;
+            mouse_report.h = -1;
             delta_x        = 0;
         } else if (delta_x < -DELTA_X_THRESHOLD) {
-            mouse_report.h = -1;
+            mouse_report.h = 1;
             delta_x        = 0;
         }
 
@@ -131,15 +139,8 @@ void keyboard_post_init_user(void) {
 	//debug_keyboard=true;
 	//debug_mouse=true;
 }
-
 void toggle_scroll(void) {
 	scroll_enabled = !scroll_enabled;
-}
-
-void cycle_dpi(void) {	
-	keyboard_config.dpi_config = (keyboard_config.dpi_config + 1) % (sizeof(dpi_options) / sizeof(uint16_t));
-	eeconfig_update_kb(keyboard_config.raw);
-	pointing_device_set_cpi(dpi_options[keyboard_config.dpi_config]);
 }
 
 bool has_trigger_state_led_state(struct action_trigger_t *trigger, led_t led_state) {
@@ -163,6 +164,7 @@ bool has_trigger_state_led_state(struct action_trigger_t *trigger, led_t led_sta
 void do_trigger_action(struct action_trigger_t *trigger) {
 	switch(trigger->name) {
 		case TOGGLE_SCROLL_TRIGGER:
+			//toggle_drag_scroll();
 			toggle_scroll();
 			break;
 		case CYCLE_DPI_TRIGGER:
