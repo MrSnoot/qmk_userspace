@@ -1,7 +1,6 @@
 #include QMK_KEYBOARD_H
 #include "mrsnoot.h"
 
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [SONNE] = LAYOUT_eg(
         DE_ADIA, DE_U   , DE_O   , DE_M   , DE_Y   ,                   DE_P   , DE_D   , DE_C   , DE_L   , DE_Q   ,
@@ -45,3 +44,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                    _______, _______, _______, _______, _______, _______
     ),
 };
+
+bool led_update_user(led_t led_state) {
+
+    return true;
+}

@@ -96,6 +96,7 @@
 #   define CS_USE_HRM
 #   define CS_USE_FOUR_THUMB_DEFAULT
 #   define CS_USE_CUSTOM_FUNCTIONS
+#   define CS_IS_KB_TO_TB_SENDER
     // Frood Bootloader ueber Doppeltap auf Resetknopf
 #   define RP2040_BOOTLOADER_DOUBLE_TAP_RESET
 #   define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_TIMEOUT 500U
@@ -113,9 +114,11 @@
 #   define CS_USE_HRM
 #   define CS_USE_FOUR_THUMB_DEFAULT
 #   define CS_USE_CUSTOM_FUNCTIONS
+#   define CS_IS_TB_TO_KB_RECEIVER
+#   define CS_IS_KB_TO_TB_SENDER
 
 #   ifdef RGB_MATRIX_ENABLE
-#      define RGB_MATRIX_MAXIMUM_BRIGHTNESS 160
+#      define RGB_MATRIX_MAXIMUM_BRIGHTNESS 100
 #      undef ENABLE_RGB_MATRIX_BREATHING
 #      undef ENABLE_RGB_MATRIX_CYCLE_ALL
 #      undef ENABLE_RGB_MATRIX_PIXEL_RAIN
@@ -134,6 +137,7 @@
 #   define CS_USE_HRM
 #   define CS_USE_FOUR_THUMB_DEFAULT
 #   define CS_USE_CUSTOM_FUNCTIONS
+#   define CS_IS_KB_TO_TB_SENDER
 #endif
 
 // HMKB EON95 ---------------------------------------------
@@ -191,9 +195,9 @@
 
 // Ploopy Adept -------------------------------------------
 #if defined(KEYBOARD_ploopyco_trackball_nano_rev1_001)
-#   undef PLOOPY_DPI_OPTIONS
+// #   undef PLOOPY_DPI_OPTIONS
 #   define PLOOPY_DPI_OPTIONS { 500, 1000, 1375 }
-#   undef PLOOPY_DPI_DEFAULT
+// #   undef PLOOPY_DPI_DEFAULT
 #   define PLOOPY_DPI_DEFAULT 2
 #endif
 
@@ -208,6 +212,7 @@
 #   define CS_USE_HRM
 #   define CS_USE_FOUR_THUMB_DEFAULT
 #   define CS_USE_CUSTOM_FUNCTIONS
+#   define CS_IS_KB_TO_TB_SENDER
 
 #   ifdef CONVERT_TO_HELIOS
 #       ifdef AUDIO_ENABLE
@@ -238,6 +243,7 @@
 #   define CS_USE_HRM
 #   define CS_USE_FOUR_THUMB_DEFAULT
 #   define CS_USE_CUSTOM_FUNCTIONS
+#   define CS_IS_KB_TO_TB_SENDER
 
 #   ifdef CONVERT_TO_HELIOS
 #       ifdef AUDIO_ENABLE

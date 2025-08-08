@@ -131,12 +131,14 @@ enum custom_keycodes {
     CS_TSPR,
     CS_TSNX,
     DBL_CLK,
-    TB_SCR,
-    TB_DPI,
-    TB_RST,
     S_LN_F5,
     F2_CPLN,
     IM1_INS,
+#ifdef CS_IS_KB_TO_TB_SENDER
+    TB_SCR,
+    TB_DPI,
+    TB_RST,
+#endif
 #ifdef CS_NUM_WORD_ENABLE
     NUMWORD,
 #endif

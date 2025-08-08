@@ -9,6 +9,7 @@ float tone_num_lock_off[][2]    = SONG(NUM_LOCK_OFF_SOUND);
 float tone_scroll_lock_on[][2]  = SONG(SCROLL_LOCK_ON_SOUND);
 float tone_scroll_lock_off[][2] = SONG(SCROLL_LOCK_OFF_SOUND);
 float tone_startup[][2]         = SONG(STARTUP_SOUND);
+// float tone_tb_dpi_value[][2]    = SONG(Q__NOTE(_D5));
 #endif
 
 // Custom Functions ---------------------------------------
@@ -284,6 +285,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 unregister_code(KC_BTN3);
             }
             break;
+#endif
+#ifdef CS_IS_KB_TO_TB_SENDER
         case TB_SCR:
             if (record->event.pressed) {
                 #ifdef AUDIO_ENABLE
@@ -308,20 +311,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 tap_code(KC_CAPS);
             }
             break;
-#endif
-#if defined(KEYBOARD_ploopyco_madromys_rev1_001)
-        // case DPI_CONFIG:
-        //     if (record->event.pressed) {
-        //         #ifdef AUDIO_ENABLE
-                
-                // for (i = 1; i <= keyboard_config.dpi_config; i++) {
-                //     PLAY_SONG(tone_num_lock_on);
-                //     wait_ms(500);
-                // }
-                //keyboard_config.dpi_config = (keyboard_config.dpi_config + 1) % DPI_OPTION_SIZE;
-            //     #endif
-            // }
-            // break;
 #endif
     }
 

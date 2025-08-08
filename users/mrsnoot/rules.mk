@@ -128,6 +128,16 @@ ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), dasbob endgame/rev6 evyd13/eon
 	MOUSEKEY_ENABLE = yes
 endif
 
+
+# Deferred Executo ----------------------------------------
+ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), 3x3macropad dasbob endgame/rev6 evyd13/eon40 evyd13/eon95 horizon kprepublic/bm60hsrgb_iso/rev1 ploopyco/madromys/rev1_001 ploopyco/trackball_nano/rev1_001 splitkb/aurora/corne/rev1 splitkb/aurora/helix/rev1))
+	DEFERRED_EXEC_ENABLE = no
+endif
+
+ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), ))
+	DEFERRED_EXEC_ENABLE = yes
+endif
+
 # WPM -----------------------------------------------------
 ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), 3x3macropad dasbob endgame/rev6 evyd13/eon40 evyd13/eon95 horizon kprepublic/bm60hsrgb_iso/rev1 ploopyco/madromys/rev1_001 ploopyco/trackball_nano/rev1_001))
 	WPM_ENABLE = no
