@@ -201,6 +201,21 @@
 #   define PLOOPY_DPI_DEFAULT 2
 #endif
 
+// re_gret ------------------------------------------------
+#if defined(KEYBOARD_re_gret)
+#   define CS_INCLUDE_SONNE_LAYER
+#   define CS_INCLUDE_NAV_LAYER
+#   define CS_INCLUDE_MOUSE_LAYER
+#   define CS_INCLUDE_NUM_FUNC_LAYER
+#   define CS_INCLUDE_SYMBOL_LAYER
+#   define CS_INCLUDE_ADJUST_LAYER
+#   define CS_USE_HRM
+#   define CS_USE_FOUR_THUMB_DEFAULT
+#   define CS_USE_CUSTOM_FUNCTIONS
+#   define CS_IS_TB_TO_KB_RECEIVER
+#   define CS_IS_KB_TO_TB_SENDER
+#endif
+
 // Splitkb Aurora Corne -------------------------------------------
 #if defined(KEYBOARD_splitkb_aurora_corne_rev1)
 #   define CS_INCLUDE_SONNE_LAYER
