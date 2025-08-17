@@ -96,7 +96,7 @@ ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), xxx))
 endif
 
 # RGB -----------------------------------------------------
-ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), dasbob endgame/rev6 evyd13/eon40 evyd13/eon95 horizon ploopyco/madromys/rev1_001 ploopyco/trackball_nano/rev1_001))
+ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), dasbob evyd13/eon40 evyd13/eon95 horizon ploopyco/madromys/rev1_001 ploopyco/trackball_nano/rev1_001))
 	RGBLIGHT_ENABLE = no
 	RGB_MATRIX_ENABLE = no
 endif
@@ -107,10 +107,10 @@ ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), 3x3macropad))
 	SRC += rgb/rgb_light.c
 endif
 
-ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), endgame/rev6))
+ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), endgame/rev6 re_gret))
 	RGBLIGHT_ENABLE = no
 	RGB_MATRIX_ENABLE = yes
-	SRC += rgb/rgb_matrix_endgame.c
+	SRC += rgb/rgb_matrix_single_led.c
 endif
 
 ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), kprepublic/bm60hsrgb_iso/rev1 splitkb/aurora/corne/rev1 splitkb/aurora/helix/rev1))

@@ -214,6 +214,13 @@
 #   define CS_USE_CUSTOM_FUNCTIONS
 #   define CS_IS_TB_TO_KB_RECEIVER
 #   define CS_IS_KB_TO_TB_SENDER
+#   ifdef RGB_MATRIX_ENABLE
+#      define RGB_MATRIX_MAXIMUM_BRIGHTNESS 100
+#      undef ENABLE_RGB_MATRIX_BREATHING
+#      undef ENABLE_RGB_MATRIX_CYCLE_ALL
+#      undef ENABLE_RGB_MATRIX_PIXEL_RAIN
+#      undef ENABLE_RGB_MATRIX_TYPING_HEATMAP
+#   endif
 #endif
 
 // Splitkb Aurora Corne -------------------------------------------

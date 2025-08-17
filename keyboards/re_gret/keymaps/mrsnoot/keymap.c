@@ -54,9 +54,26 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [ADJUST] = LAYOUT_split_3x5_2(
-        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, KC_NUM , XXXXXXX, XXXXXXX, QK_BOOT,
-        AU_TOGG, CK_TOGG, CK_DOWN, CK_UP  , CK_RST ,                   XXXXXXX, KC_CAPS, XXXXXXX, XXXXXXX, XXXXXXX,
-        AS_TOGG, AS_DOWN, AS_UP  , AS_RPT , XXXXXXX,                   XXXXXXX, KC_SCRL, XXXXXXX, XXXXXXX, TB_RST ,
+        RGB_TOG, RGB_HUI, RGB_SAI, RGB_VAI, XXXXXXX,                   XXXXXXX, KC_NUM , XXXXXXX, XXXXXXX, QK_BOOT,
+        XXXXXXX, RGB_HUD, RGB_SAD, RGB_VAD, XXXXXXX,                   XXXXXXX, KC_CAPS, XXXXXXX, XXXXXXX, XXXXXXX,
+        AU_TOGG, CK_TOGG, CK_DOWN, CK_UP  , CK_RST ,                   XXXXXXX, KC_SCRL, XXXXXXX, XXXXXXX, TB_RST ,
                                             _______, _______, _______, _______
     ),
 };
+  
+// WS2812: GPIO11 is the PWR (so it doesn't draw unless you enable it) , GPIO12 DATA
+// RGB LED: GPIO16 G, GPIO17 R, GPIO 25 B
+void keyboard_post_init_user(void) {
+    // LED Green
+    gpio_set_pin_output(GP16);
+    gpio_write_pin_high(GP16);
+    // LED Red
+    gpio_set_pin_output(GP17);
+    gpio_write_pin_high(GP17);
+    // LED Blue
+    gpio_set_pin_output(GP25);
+    gpio_write_pin_high(GP25);
+    // LED RGB
+    gpio_set_pin_output(GP11);
+    gpio_write_pin_high(GP11);
+}
