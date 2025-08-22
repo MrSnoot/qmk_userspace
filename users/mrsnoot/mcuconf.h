@@ -18,13 +18,19 @@
 #include_next "mcuconf.h"
 
 // Aurora Corne und Helix mit Helios MCU
-#if defined(CONVERT_TO_HELIOS) && (defined(KEYBOARD_splitkb_aurora_corne_rev1) || defined(KEYBOARD_splitkb_aurora_helix_rev1))
+#if defined(CONVERT_TO_HELIOS) && defined(KEYBOARD_splitkb_aurora_corne_rev1)
 #    undef  RP_PWM_USE_PWM5
 #    define RP_PWM_USE_PWM5 TRUE
 #endif
 
-// Ploopy Adept und Horizon mit Helios
-#if defined(KEYBOARD_ploopyco_madromys_rev1_001) || (defined(CONVERT_TO_HELIOS) && defined(KEYBOARD_horizon))
+// Ploopy Adept
+#if defined(KEYBOARD_ploopyco_madromys_rev1_001)
 #    undef  RP_PWM_USE_PWM6
 #    define RP_PWM_USE_PWM6 TRUE
+#endif
+
+// re_gret
+#if defined(KEYBOARD_re_gret)
+#    undef  RP_PWM_USE_PWM0
+#    define RP_PWM_USE_PWM0 TRUE
 #endif

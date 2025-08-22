@@ -17,7 +17,7 @@
 
 #include_next "halconf.h"
 
-#if defined(CONVERT_TO_HELIOS) || defined(KEYBOARD_ploopyco_madromys_rev1_001)
+#if defined(CONVERT_TO_HELIOS) || defined(KEYBOARD_ploopyco_madromys_rev1_001) || defined(KEYBOARD_re_gret)
 #    undef  HAL_USE_PWM
 #    define HAL_USE_PWM TRUE
 #endif

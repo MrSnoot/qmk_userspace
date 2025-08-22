@@ -61,38 +61,6 @@ uint8_t auto_shift_settings[] = { 10, 11, 12, 13 };
 uint8_t host_led_status[] = { 37, 42, 47 };
 #endif
 
-#if defined(KEYBOARD_splitkb_aurora_helix_rev1)
-uint8_t home_row_mods_left[] = { 13, 14, 15, 16 };
-uint8_t home_row_mods_right[] = { 51, 52, 53, 54 };
-uint8_t layout_indicators[] = { 24, 25, 26, 62, 63, 64 };
-// Nav
-uint8_t pgup_pgdn[] = { 48, 54 };
-uint8_t home_end[] = { 45, 47 };
-uint8_t cursor[] = { 46, 51, 52, 53 };
-// Mouse
-uint8_t tb_dpi[] = { 50, 57 };
-uint8_t mouse_btn[] = { 51, 52 };
-uint8_t mouse_ctrl[] = { 53, 54 };
-// Num_Func  
-uint8_t f_rows[] = { 6, 7, 8, 9, 10, 12, 13, 14, 15, 16, 19, 21, 22 };
-uint8_t num_block[] = { 45, 46, 47, 51, 52, 53, 57, 58, 59, 63 };
-uint8_t num_block_ops[] = { 44, 48, 50, 54 };
-uint8_t num_block_dots[] = { 56, 60 };
-// Symbol
-uint8_t symbols[] = { 6, 7, 8, 9, 10, 16, 53, 54 };
-uint8_t brackets[] = { 12, 13, 14, 15, 18, 19, 20, 21 };
-uint8_t xml_pretty_print[] = { 51, 52 };
-uint8_t im1_admin[] = { 57, 58 };
-uint8_t hl7_entities[] = { 45, 46, 47 };
-uint8_t print_screen = 60;
-// Adjust
-uint8_t reset_kb_tb[] = { 48, 60 };
-uint8_t rgb_toggle = 11;
-uint8_t audio_settings[] = { 12, 13, 14, 15, 16 };
-uint8_t auto_shift_settings[] = { 19, 20, 21, 22 };
-uint8_t host_led_status[] = { 45, 51, 57 };
-#endif
-
 void set_color(uint8_t led_index, uint8_t color)
 {
     rgb_matrix_set_color(led_index, color_values[color][0], color_values[color][1], color_values[color][2]);

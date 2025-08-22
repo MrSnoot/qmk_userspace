@@ -42,7 +42,7 @@
 #if defined(RGB_MATRIX_ENABLE)
 #   if defined(KEYBOARD_endgame_rev6) || defined(KEYBOARD_re_gret)
 #       include "rgb/rgb_matrix_single_led.h"
-#   elif defined(KEYBOARD_splitkb_aurora_corne_rev1) || defined(KEYBOARD_splitkb_aurora_helix_rev1)
+#   elif defined(KEYBOARD_splitkb_aurora_corne_rev1)
 #       include "rgb/rgb_matrix.h"
 #   endif
 #endif
@@ -96,8 +96,8 @@ enum layers {
     _LAYER_SAFE_RANGE
 };
 
-// Aurora Corne / Aurora Helix ----------------------------
-#if defined(KEYBOARD_splitkb_aurora_corne_rev1) || defined(KEYBOARD_splitkb_aurora_helix_rev1)
+// Aurora Corne ----------------------------
+#if defined(KEYBOARD_splitkb_aurora_corne_rev1)
 #   ifdef ENCODER_ENABLE
 enum encoder {
     BOTTOM_LEFT = 0,
