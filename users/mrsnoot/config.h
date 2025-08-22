@@ -94,7 +94,7 @@
 #   define CS_INCLUDE_SYMBOL_LAYER
 #   define CS_INCLUDE_ADJUST_LAYER
 #   define CS_USE_HRM
-#   define CS_USE_FOUR_THUMB_DEFAULT
+#   define CS_USE_TWO_THUMB_DEFAULT
 #   define CS_USE_CUSTOM_FUNCTIONS
 #   define CS_IS_KB_TO_TB_SENDER
     // Frood Bootloader ueber Doppeltap auf Resetknopf
@@ -112,7 +112,7 @@
 #   define CS_INCLUDE_SYMBOL_LAYER
 #   define CS_INCLUDE_ADJUST_LAYER
 #   define CS_USE_HRM
-#   define CS_USE_FOUR_THUMB_DEFAULT
+#   define CS_USE_TWO_THUMB_DEFAULT
 #   define CS_USE_CUSTOM_FUNCTIONS
 #   define CS_IS_TB_TO_KB_RECEIVER
 #   define CS_IS_KB_TO_TB_SENDER
@@ -135,40 +135,9 @@
 #   define CS_INCLUDE_SYMBOL_LAYER
 #   define CS_INCLUDE_ADJUST_LAYER
 #   define CS_USE_HRM
-#   define CS_USE_FOUR_THUMB_DEFAULT
+#   define CS_USE_TWO_THUMB_DEFAULT
 #   define CS_USE_CUSTOM_FUNCTIONS
 #   define CS_IS_KB_TO_TB_SENDER
-#endif
-
-// HMKB EON95 ---------------------------------------------
-#if defined(KEYBOARD_evyd13_eon95)
-#   define CS_INCLUDE_QWERTY_LAYER
-#   define CS_INCLUDE_NAV_LAYER
-#   define CS_INCLUDE_ADJUST_LAYER
-#   define CS_USE_HRM
-#   define CS_USE_CUSTOM_FUNCTIONS
-#   define LNAV_SPC LT(NAV, KC_SPC)
-#   define LADJ_CPS LT(ADJUST, KC_CAPS)
-#endif
-
-// Horizon ------------------------------------------------
-#if defined(KEYBOARD_horizon)
-#   define CS_INCLUDE_NAV_LAYER
-#   define CS_INCLUDE_MOUSE_LAYER
-#   define CS_INCLUDE_NUM_FUNC_LAYER
-#   define CS_INCLUDE_SYMBOL_LAYER
-#   define CS_INCLUDE_ADJUST_LAYER
-#   define CS_USE_HRM
-#   define CS_USE_FOUR_THUMB_DEFAULT
-#   define CS_USE_CUSTOM_FUNCTIONS
-
-#   ifdef CONVERT_TO_HELIOS
-#       ifdef AUDIO_ENABLE
-#           define AUDIO_PIN 12U
-#           define AUDIO_PWM_DRIVER PWMD6
-#           define AUDIO_PWM_CHANNEL RP2040_PWM_CHANNEL_A
-#       endif
-#   endif
 #endif
 
 // KPRepublic BM60 HSRGB ---------------------------------------------
@@ -210,10 +179,17 @@
 #   define CS_INCLUDE_SYMBOL_LAYER
 #   define CS_INCLUDE_ADJUST_LAYER
 #   define CS_USE_HRM
-#   define CS_USE_FOUR_THUMB_DEFAULT
+#   define CS_USE_TWO_THUMB_DEFAULT
 #   define CS_USE_CUSTOM_FUNCTIONS
 #   define CS_IS_TB_TO_KB_RECEIVER
 #   define CS_IS_KB_TO_TB_SENDER
+
+#   ifdef AUDIO_ENABLE
+#       define AUDIO_PIN GP1
+#       define AUDIO_PWM_DRIVER PWMD0
+#       define AUDIO_PWM_CHANNEL RP2040_PWM_CHANNEL_B
+#   endif
+
 #   ifdef RGB_MATRIX_ENABLE
 #      define RGB_MATRIX_MAXIMUM_BRIGHTNESS 100
 #      undef ENABLE_RGB_MATRIX_BREATHING
@@ -232,38 +208,7 @@
 #   define CS_INCLUDE_SYMBOL_LAYER
 #   define CS_INCLUDE_ADJUST_LAYER
 #   define CS_USE_HRM
-#   define CS_USE_FOUR_THUMB_DEFAULT
-#   define CS_USE_CUSTOM_FUNCTIONS
-#   define CS_IS_KB_TO_TB_SENDER
-
-#   ifdef CONVERT_TO_HELIOS
-#       ifdef AUDIO_ENABLE
-#           define AUDIO_PIN 11U
-#           define AUDIO_PWM_DRIVER PWMD5
-#           define AUDIO_PWM_CHANNEL RP2040_PWM_CHANNEL_B
-#       endif
-#   endif
-#   ifdef ENCODER_ENABLE
-#       define ENCODER_RESOLUTION 2
-#   endif
-#   ifdef RGB_MATRIX_ENABLE
-#       define SPLIT_LAYER_STATE_ENABLE
-#   endif
-#   ifdef WPM_ENABLE
-#       define SPLIT_WPM_ENABLE
-#   endif
-#endif
-
-// Splitkb Aurora Helix -------------------------------------------
-#if defined(KEYBOARD_splitkb_aurora_helix_rev1)
-#   define CS_INCLUDE_SONNE_LAYER
-#   define CS_INCLUDE_NAV_LAYER
-#   define CS_INCLUDE_MOUSE_LAYER
-#   define CS_INCLUDE_NUM_FUNC_LAYER
-#   define CS_INCLUDE_SYMBOL_LAYER
-#   define CS_INCLUDE_ADJUST_LAYER
-#   define CS_USE_HRM
-#   define CS_USE_FOUR_THUMB_DEFAULT
+#   define CS_USE_TWO_THUMB_DEFAULT
 #   define CS_USE_CUSTOM_FUNCTIONS
 #   define CS_IS_KB_TO_TB_SENDER
 
@@ -291,6 +236,12 @@
 #define NP_XMLF MEH(DE_B)
 #define GUI_SS LGUI_T(DE_SS)
 #define MICMUTE C(S(KC_M))
+
+#ifdef CS_USE_TWO_THUMB_DEFAULT
+#  define NUM_SPC LT(NUM_FUNC, KC_SPC)
+#  define SYM_ENT LT(SYMBOL, KC_ENT)
+#  define TG_MS_L TG(MOUSE)
+#endif
 
 #ifdef CS_USE_FOUR_THUMB_DEFAULT
 #  define OSL_NUM OSL(NUM_FUNC)
@@ -326,8 +277,8 @@
 #    define HRM_S_A LSFT_T(DE_A)
 #    define HRM_S_I LALT_T(DE_I)
 #    define HRM_S_E LCTL_T(DE_E)
-#    define HRM_S_S DE_S
-#    define HRM_S_H DE_H
+#    define HRM_S_S LT(NAV, DE_S)
+#    define HRM_S_H LT(MOUSE, DE_H)
 #    define HRM_S_T LCTL_T(DE_T)
 #    define HRM_S_N LALT_T(DE_N)
 #    define HRM_S_R RSFT_T(DE_R)
