@@ -140,6 +140,29 @@
 #   define CS_IS_KB_TO_TB_SENDER
 #endif
 
+// re_gret ------------------------------------------------
+#if defined(KEYBOARD_fidrildi_v4)
+#   define CS_INCLUDE_SONNE_LAYER
+#   define CS_INCLUDE_NAV_LAYER
+#   define CS_INCLUDE_MOUSE_LAYER
+#   define CS_INCLUDE_NUM_FUNC_LAYER
+#   define CS_INCLUDE_SYMBOL_LAYER
+#   define CS_INCLUDE_ADJUST_LAYER
+#   define CS_USE_HRM
+#   define CS_USE_TWO_THUMB_DEFAULT
+#   define CS_USE_CUSTOM_FUNCTIONS
+#   define CS_IS_TB_TO_KB_RECEIVER
+#   define CS_IS_KB_TO_TB_SENDER
+
+#   ifdef RGB_MATRIX_ENABLE
+#      define RGB_MATRIX_MAXIMUM_BRIGHTNESS 100
+#      undef ENABLE_RGB_MATRIX_BREATHING
+#      undef ENABLE_RGB_MATRIX_CYCLE_ALL
+#      undef ENABLE_RGB_MATRIX_PIXEL_RAIN
+#      undef ENABLE_RGB_MATRIX_TYPING_HEATMAP
+#   endif
+#endif
+
 // KPRepublic BM60 HSRGB ---------------------------------------------
 #if defined(KEYBOARD_kprepublic_bm60hsrgb_iso_rev1)
 #   define CS_INCLUDE_QWERTY_LAYER

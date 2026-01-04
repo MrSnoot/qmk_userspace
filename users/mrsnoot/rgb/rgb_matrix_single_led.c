@@ -25,19 +25,19 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
 
     switch (layer) {
         case SONNE:
-            rgb_matrix_set_color_all(RGB_TURQUOISE);
-            break;
-        case NAV:
             rgb_matrix_set_color_all(RGB_ORANGE);
             break;
+        case NAV:
+            rgb_matrix_set_color_all(RGB_GREEN);
+            break;
         case MOUSE:
-            rgb_matrix_set_color_all(RGB_PURPLE);
+            rgb_matrix_set_color_all(RGB_TURQUOISE);
             break;
         case NUM_FUNC:
-            rgb_matrix_set_color_all(RGB_YELLOW);
+            rgb_matrix_set_color_all(RGB_PURPLE);
             break;
         case SYMBOL:
-            rgb_matrix_set_color_all(RGB_GREEN);
+            rgb_matrix_set_color_all(RGB_PINK);
             break;
         case ADJUST:
             if (last_event == NUM && timer_elapsed(lock_led_timer) <= 2000)
