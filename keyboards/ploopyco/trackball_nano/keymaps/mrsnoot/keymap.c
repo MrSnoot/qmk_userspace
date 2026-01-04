@@ -22,36 +22,26 @@
 // Dummy Keymap
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {{{ KC_NO }}};
 
-// void suspend_power_down_user(void) {
-//     // Switch off sensor + LED making trackball unable to wake host
-//     adns5050_power_down();
-// }
-
-// void suspend_wakeup_init_user(void) {
-//     adns5050_init();
-// }
-
-#ifdef RAW_ENABLE
-#include "raw_hid.h"
-
-void raw_hid_receive(uint8_t* data, uint8_t length) {
-    // layer_clear();
-    // if (data[0] == 99) {
-    //     layer_on(_BASE);
-    // }
-    // else {
-    //     layer_on(data[0]);
-    // }
-	raw_hid_send(data, length);
-}
-#endif
-
 #define DELTA_X_THRESHOLD 30
 #define DELTA_Y_THRESHOLD 15
+
+#define NUM_LOCK_BITMASK 0b001
+#define CAPS_LOCK_BITMASK 0b010
+#define SCROLL_LOCK_BITMASK 0b100
 
 static int8_t delta_x = 0;
 static int8_t delta_y = 0;
 static uint8_t scroll_enabled = false;
+static uint8_t auto_mouse_layer_enabled = false;
+
+typedef enum {
+    // You could theoretically define 0b00 and send it by having a macro send
+    // the second tap after LED_CMD_TIMEOUT has elapsed.
+    // CMD_EXTRA = 0b00,
+    TG_SCROLL = 0b001,
+    CYC_DPI   = 0b010,
+    CMD_RESET = 0b011 // CMD_ prefix to avoid clash with QMK macro
+} led_cmd_t;
 
 enum host_led_reference {
 	CAPS_LOCK_REF,
@@ -59,11 +49,11 @@ enum host_led_reference {
 	SCROLL_LOCK_REF
 };
 
-enum trigger_names {
-	TOGGLE_SCROLL_TRIGGER,
-	CYCLE_DPI_TRIGGER,
-	RESET_TRIGGER,
-	TRIGGER_LENGTH
+enum kb_to_tb_trigger_names {
+	KB_TO_TB_TOGGLE_SCROLL_TRIGGER,
+	KB_TO_TB_CYCLE_DPI_TRIGGER,
+	KB_TO_TB_RESET_TRIGGER,
+	KB_TO_TB_TRIGGER_LENGTH
 };
 
 struct action_trigger_t {
@@ -77,7 +67,15 @@ struct action_trigger_t {
 	uint16_t timer;
 };
 
-struct action_trigger_t action_trigger[TRIGGER_LENGTH];
+struct action_trigger_t kb_to_tb_trigger[KB_TO_TB_TRIGGER_LENGTH];
+
+void send_auto_mouse_off() {
+
+}
+
+void send_auto_mouse_on() {
+
+}
 
 report_mouse_t pointing_device_task_user(report_mouse_t mouse_report) {
     if (scroll_enabled) {
@@ -102,6 +100,12 @@ report_mouse_t pointing_device_task_user(report_mouse_t mouse_report) {
         mouse_report.x = 0;
         mouse_report.y = 0;
     }
+
+	if (auto_mouse_activation(mouse_report) != auto_mouse_layer_enabled) {
+		auto_mouse_layer_enabled = !auto_mouse_layer_enabled;
+		auto_mouse_layer_enabled ? send_auto_mouse_on() : send_auto_mouse_off();
+	}
+
     return mouse_report;
 }
 
@@ -120,24 +124,24 @@ void set_led_state_to_trigger(struct action_trigger_t *trigger, led_t led_state)
 }
 
 void keyboard_post_init_user(void) {
-	struct action_trigger_t toggle_scroll_trigger = { TOGGLE_SCROLL_TRIGGER, SCROLL_LOCK_REF, 0, 0, 35, 2, 0, 0 };
-	struct action_trigger_t cycle_dpi_trigger = { CYCLE_DPI_TRIGGER, NUM_LOCK_REF, 0, 0, 35, 2, 0, 0 };
-	struct action_trigger_t reset_trigger = { RESET_TRIGGER, CAPS_LOCK_REF, 0, 0, 35, 2, 0, 0 };
-	action_trigger[TOGGLE_SCROLL_TRIGGER] = toggle_scroll_trigger;
-	action_trigger[CYCLE_DPI_TRIGGER] = cycle_dpi_trigger;
-	action_trigger[RESET_TRIGGER] = reset_trigger;
+	struct action_trigger_t kb_to_tb_toggle_scroll_trigger = { KB_TO_TB_TOGGLE_SCROLL_TRIGGER, SCROLL_LOCK_REF, 0, 0, 35, 2, 0, 0 };
+	struct action_trigger_t kb_to_tb_cycle_dpi_trigger = { KB_TO_TB_CYCLE_DPI_TRIGGER, NUM_LOCK_REF, 0, 0, 35, 2, 0, 0 };
+	struct action_trigger_t kb_to_tb_reset_trigger = { KB_TO_TB_RESET_TRIGGER, CAPS_LOCK_REF, 0, 0, 35, 2, 0, 0 };
+	kb_to_tb_trigger[KB_TO_TB_TOGGLE_SCROLL_TRIGGER] = kb_to_tb_toggle_scroll_trigger;
+	kb_to_tb_trigger[KB_TO_TB_CYCLE_DPI_TRIGGER] = kb_to_tb_cycle_dpi_trigger;
+	kb_to_tb_trigger[KB_TO_TB_RESET_TRIGGER] = kb_to_tb_reset_trigger;
 
 	led_t led_state = host_keyboard_led_state();
 	int i;
 
-	for (i = 0; i < TRIGGER_LENGTH; i++) {
-		set_led_state_to_trigger(&action_trigger[i], led_state);
+	for (i = 0; i < KB_TO_TB_TRIGGER_LENGTH; i++) {
+		set_led_state_to_trigger(&kb_to_tb_trigger[i], led_state);
 	}
 	
-	//debug_enable=true;
-	//debug_matrix=true;
-	//debug_keyboard=true;
-	//debug_mouse=true;
+	// debug_enable=true;
+	// debug_matrix=true;
+	// debug_keyboard=true;
+	// debug_mouse=true;
 }
 void toggle_scroll(void) {
 	scroll_enabled = !scroll_enabled;
@@ -161,16 +165,39 @@ bool has_trigger_state_led_state(struct action_trigger_t *trigger, led_t led_sta
 	return state_is_matching;
 }
 
+// void send_dpi_value_to_kb(void) {
+// 	switch (keyboard_config.dpi_config) {
+// 		case 0:
+// 			tap_code(KC_SCRL);
+//             wait_ms(39);
+//             tap_code(KC_SCRL);
+// 			break;
+// 		case 1 :
+// 			tap_code(KC_SCRL);
+//             wait_ms(49);
+//             tap_code(KC_SCRL);
+// 			break;
+// 		case 2:
+// 			tap_code(KC_SCRL);
+//             wait_ms(59);
+//             tap_code(KC_SCRL);
+// 			break;
+// 	}
+// }
+
 void do_trigger_action(struct action_trigger_t *trigger) {
 	switch(trigger->name) {
-		case TOGGLE_SCROLL_TRIGGER:
-			//toggle_drag_scroll();
+		case KB_TO_TB_TOGGLE_SCROLL_TRIGGER:
 			toggle_scroll();
 			break;
-		case CYCLE_DPI_TRIGGER:
+		case KB_TO_TB_CYCLE_DPI_TRIGGER:
 			cycle_dpi();
+			// send_dpi_value_to_kb();
+#           ifdef CONSOLE_ENABLE
+        	dprintf("dpi_config: %u\n", keyboard_config.dpi_config);
+#			endif
 			break;
-		case RESET_TRIGGER:
+		case KB_TO_TB_RESET_TRIGGER:
 			reset_keyboard();
 			break;
 	}
@@ -196,8 +223,8 @@ void update_trigger(struct action_trigger_t *trigger, led_t led_state) {
 
 void update_trigger_list(led_t led_state) {
 	int i;
-	for(i = 0; i < TRIGGER_LENGTH; i++) {
-		update_trigger(&action_trigger[i], led_state);
+	for(i = 0; i < KB_TO_TB_TRIGGER_LENGTH; i++) {
+		update_trigger(&kb_to_tb_trigger[i], led_state);
 	}
 }
 
