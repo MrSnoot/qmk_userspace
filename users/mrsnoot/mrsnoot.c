@@ -18,11 +18,11 @@ bool is_alt_tab_active = false;
 uint16_t alt_tab_timer = 0;
 
 void cs_mouse_wheel_up(void) {
-    tap_code(KC_WH_U);
+    tap_code(MS_WHLU);
 }
 
 void cs_mouse_wheel_down(void) {
-    tap_code(KC_WH_D);
+    tap_code(MS_WHLD);
 }
 
 void cs_mouse_wheel_up_accelerated(void) {
@@ -122,8 +122,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 #endif
             }
             break;
-        case KC_BTN1:
-        case KC_BTN2:
+        case MS_BTN1:
+        case MS_BTN2:
             #ifdef AUDIO_ENABLE
             if(record->event.pressed) {
                 audio_stop_all();
@@ -239,8 +239,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 #ifdef AUDIO_ENABLE
                 audio_stop_all();
                 #endif
-                tap_code16(KC_BTN1);
-                tap_code16(KC_BTN1);
+                tap_code16(MS_BTN1);
+                tap_code16(MS_BTN1);
             }
             break;
         case S_LN_F5:
@@ -277,12 +277,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             break;
         case MS_BN13:
             if (record->event.pressed) {
-                register_code(KC_BTN3);
-                register_code(KC_BTN1);
+                register_code(MS_BTN3);
+                register_code(MS_BTN1);
             }
             else {
-                unregister_code(KC_BTN1);
-                unregister_code(KC_BTN3);
+                unregister_code(MS_BTN1);
+                unregister_code(MS_BTN3);
             }
             break;
 #endif

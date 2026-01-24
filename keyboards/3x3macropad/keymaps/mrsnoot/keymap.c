@@ -24,7 +24,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_F11,  LALT(KC_F4), SGUI(KC_S)),
 		
 [ADJUST] = LAYOUT(
-        _______, _______, RGB_TOG,
+        _______, _______, RM_TOGG,
         RGB_HUI, RGB_SAI, TO(FUN),
         RGB_HUD, RGB_SAD, RGB_MOD),
 

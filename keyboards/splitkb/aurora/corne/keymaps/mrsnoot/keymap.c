@@ -33,9 +33,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [MOUSE] = LAYOUT_split_3x6_3(
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, MICMUTE, XXXXXXX,                   XXXXXXX, XXXXXXX, TB_SCR , TG_MS_L, XXXXXXX, XXXXXXX,
-    XXXXXXX, KC_LSFT, KC_LALT, KC_LCTL, XXXXXXX, XXXXXXX,                   XXXXXXX, _______, KC_BTN2, KC_LCTL, KC_LSFT, XXXXXXX,
+    XXXXXXX, KC_LSFT, KC_LALT, KC_LCTL, XXXXXXX, XXXXXXX,                   XXXXXXX, _______, MS_BTN2, KC_LCTL, KC_LSFT, XXXXXXX,
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, DBL_CLK, XXXXXXX, TB_DPI , XXXXXXX,
-                                        _______, _______, KC_LGUI, KC_BTN1, _______, _______
+                                        _______, _______, KC_LGUI, MS_BTN1, _______, _______
 ),
 
 [NUM_FUNC] = LAYOUT_split_3x6_3(
@@ -53,7 +53,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 [ADJUST] = LAYOUT_split_3x6_3(
-    XXXXXXX, RGB_TOG, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, KC_NUM , XXXXXXX, XXXXXXX, QK_BOOT, XXXXXXX,
+    XXXXXXX, RM_TOGG, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, KC_NUM , XXXXXXX, XXXXXXX, QK_BOOT, XXXXXXX,
     XXXXXXX, AU_TOGG, CK_TOGG, CK_DOWN, CK_UP  , CK_RST,                    XXXXXXX, KC_CAPS, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
     XXXXXXX, AS_TOGG, AS_DOWN, AS_UP  , AS_RPT , XXXXXXX,                   XXXXXXX, KC_SCRL, XXXXXXX, XXXXXXX, TB_RST , XXXXXXX,
                                         _______, _______, _______, _______, _______, _______

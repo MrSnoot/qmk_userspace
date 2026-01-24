@@ -24,7 +24,7 @@
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT( SW_L_1     , CS_VDPR, CS_VDNX, DBL_CLK   , 
-                  DRAG_SCROLL,                   KC_BTN1    ),
+                  DRAG_SCROLL,                   MS_BTN1    ),
 
     [1] = LAYOUT( XXXXXXX    , CS_TSNX, CS_TSPR, XXXXXXX   , 
                   SW_L_2     ,                   DPI_CONFIG ),
@@ -34,7 +34,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 // const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-//     [0] = LAYOUT( DRAG_SCROLL, SW_L_1 , KC_BTN1, DBL_CLK    , 
+//     [0] = LAYOUT( DRAG_SCROLL, SW_L_1 , MS_BTN1, DBL_CLK    , 
 //                   CS_VDPR    ,                   CS_VDNX    ),
 
 //     [1] = LAYOUT( XXXXXXX    , XXXXXXX, CS_TSNX, CS_TSPR   , 

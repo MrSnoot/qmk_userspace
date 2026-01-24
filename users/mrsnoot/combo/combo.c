@@ -89,7 +89,7 @@ const uint16_t PROGMEM num_num_word_combo[] = { NUM_4, DE_2, COMBO_END };
 #endif
 const uint16_t PROGMEM num_num_bspc_combo[]  = { NUM_4, NUM_5, COMBO_END };
 const uint16_t PROGMEM num_num_del_combo[]  = { NUM_6, NUM_PLS, COMBO_END };
-const uint16_t PROGMEM com_mouse_double_click_combo[] = { KC_BTN1, KC_BTN2, COMBO_END };
+const uint16_t PROGMEM com_mouse_double_click_combo[] = { MS_BTN1, MS_BTN2, COMBO_END };
 
 combo_t key_combos[] = {
     #ifdef CS_INCLUDE_SONNE_LAYER

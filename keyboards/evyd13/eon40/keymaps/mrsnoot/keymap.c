@@ -33,9 +33,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [MOUSE] = LAYOUT_ortho_4x12_2x2u(
     XXXXXXX, XXXXXXX, XXXXXXX, MICMUTE, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, TB_SCR , TG_MS_L, XXXXXXX,
-    KC_LSFT, KC_LALT, KC_LCTL, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______, KC_BTN2, KC_LCTL, KC_LSFT,
+    KC_LSFT, KC_LALT, KC_LCTL, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______, MS_BTN2, KC_LCTL, KC_LSFT,
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, DBL_CLK, XXXXXXX, TB_DPI ,
-    _______, _______, _______, _______, KC_LGUI,                   KC_BTN1, _______, _______, _______, _______
+    _______, _______, _______, _______, KC_LGUI,                   MS_BTN1, _______, _______, _______, _______
 ),
 
 [NUM_FUNC] = LAYOUT_ortho_4x12_2x2u(
