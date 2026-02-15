@@ -94,7 +94,7 @@
 #   define CS_INCLUDE_SYMBOL_LAYER
 #   define CS_INCLUDE_ADJUST_LAYER
 #   define CS_USE_HRM
-#   define CS_USE_TWO_THUMB_DEFAULT
+#   define CS_USE_ONE_THUMB_DEFAULT
 #   define CS_USE_CUSTOM_FUNCTIONS
 #   define CS_IS_KB_TO_TB_SENDER
     // Frood Bootloader ueber Doppeltap auf Resetknopf
@@ -112,7 +112,7 @@
 #   define CS_INCLUDE_SYMBOL_LAYER
 #   define CS_INCLUDE_ADJUST_LAYER
 #   define CS_USE_HRM
-#   define CS_USE_TWO_THUMB_DEFAULT
+#   define CS_USE_ONE_THUMB_DEFAULT
 #   define CS_USE_CUSTOM_FUNCTIONS
 #   define CS_IS_TB_TO_KB_RECEIVER
 #   define CS_IS_KB_TO_TB_SENDER
@@ -135,12 +135,12 @@
 #   define CS_INCLUDE_SYMBOL_LAYER
 #   define CS_INCLUDE_ADJUST_LAYER
 #   define CS_USE_HRM
-#   define CS_USE_TWO_THUMB_DEFAULT
+#   define CS_USE_ONE_THUMB_DEFAULT
 #   define CS_USE_CUSTOM_FUNCTIONS
 #   define CS_IS_KB_TO_TB_SENDER
 #endif
 
-// re_gret ------------------------------------------------
+// fidrildi -----------------------------------------------
 #if defined(KEYBOARD_fidrildi_v4)
 #   define CS_INCLUDE_SONNE_LAYER
 #   define CS_INCLUDE_NAV_LAYER
@@ -149,7 +149,7 @@
 #   define CS_INCLUDE_SYMBOL_LAYER
 #   define CS_INCLUDE_ADJUST_LAYER
 #   define CS_USE_HRM
-#   define CS_USE_TWO_THUMB_DEFAULT
+#   define CS_USE_ONE_THUMB_DEFAULT
 #   define CS_USE_CUSTOM_FUNCTIONS
 #   define CS_IS_TB_TO_KB_RECEIVER
 #   define CS_IS_KB_TO_TB_SENDER
@@ -161,6 +161,20 @@
 #      undef ENABLE_RGB_MATRIX_PIXEL_RAIN
 #      undef ENABLE_RGB_MATRIX_TYPING_HEATMAP
 #   endif
+#endif
+
+// nachie_syndrom_ortho ------------------------------------------
+#if defined(KEYBOARD_nachie_syndrome_ortho)
+#   define CS_INCLUDE_SONNE_LAYER
+#   define CS_INCLUDE_NAV_LAYER
+#   define CS_INCLUDE_MOUSE_LAYER
+#   define CS_INCLUDE_NUM_FUNC_LAYER
+#   define CS_INCLUDE_SYMBOL_LAYER
+#   define CS_INCLUDE_ADJUST_LAYER
+#   define CS_USE_HRM
+#   define CS_USE_ONE_THUMB_DEFAULT
+#   define CS_USE_CUSTOM_FUNCTIONS
+#   define CS_IS_KB_TO_TB_SENDER
 #endif
 
 // KPRepublic BM60 HSRGB ---------------------------------------------
@@ -185,7 +199,7 @@
 #    endif
 #endif
 
-// Ploopy Adept -------------------------------------------
+// Ploopy Nano --------------------------------------------
 #if defined(KEYBOARD_ploopyco_trackball_nano_rev1_001)
 // #   undef PLOOPY_DPI_OPTIONS
 #   define PLOOPY_DPI_OPTIONS { 500, 1000, 1375 }
@@ -202,7 +216,7 @@
 #   define CS_INCLUDE_SYMBOL_LAYER
 #   define CS_INCLUDE_ADJUST_LAYER
 #   define CS_USE_HRM
-#   define CS_USE_TWO_THUMB_DEFAULT
+#   define CS_USE_ONE_THUMB_DEFAULT
 #   define CS_USE_CUSTOM_FUNCTIONS
 #   define CS_IS_TB_TO_KB_RECEIVER
 #   define CS_IS_KB_TO_TB_SENDER
@@ -231,7 +245,7 @@
 #   define CS_INCLUDE_SYMBOL_LAYER
 #   define CS_INCLUDE_ADJUST_LAYER
 #   define CS_USE_HRM
-#   define CS_USE_TWO_THUMB_DEFAULT
+#   define CS_USE_ONE_THUMB_DEFAULT
 #   define CS_USE_CUSTOM_FUNCTIONS
 #   define CS_IS_KB_TO_TB_SENDER
 
@@ -259,6 +273,15 @@
 #define NP_XMLF MEH(DE_B)
 #define GUI_SS LGUI_T(DE_SS)
 #define MICMUTE C(S(KC_M))
+#define LT_MS_C LT(MOUSE, DE_C)
+#define LT_CMB2 LCTL_T(MS_BTN2)
+#define LT_STBS RSFT_T(TB_SCR)
+
+#ifdef CS_USE_ONE_THUMB_DEFAULT
+#  define NUM_SPC LT(NUM_FUNC, KC_SPC)
+#  define NUM_ENT LT(NUM_FUNC, KC_ENT)
+#  define TG_MS_L TG(MOUSE)
+#endif
 
 #ifdef CS_USE_TWO_THUMB_DEFAULT
 #  define NUM_SPC LT(NUM_FUNC, KC_SPC)
@@ -266,24 +289,29 @@
 #  define TG_MS_L TG(MOUSE)
 #endif
 
-#ifdef CS_USE_FOUR_THUMB_DEFAULT
-#  define OSL_NUM OSL(NUM_FUNC)
-#  define NAV_SPC LT(NAV, KC_SPC)
-#  define MS_ENT LT(MOUSE, KC_ENT)
-#  define OSL_SYM OSL(SYMBOL)
-#  define TG_MS_L TG(MOUSE)
-#endif
-
 #ifdef CS_USE_HRM
-#  define NUM_F6 RSFT_T(KC_F6)
-#  define NUM_F7 LALT_T(KC_F7)
-#  define NUM_F8 LCTL_T(KC_F8)
-#  define NUM_F9 LGUI_T(KC_F9)
+#  ifdef CS_USE_ONE_THUMB_DEFAULT
+#    define NUM_F8 RSFT_T(KC_F8)
+#    define NUM_F7 LALT_T(KC_F7)
+#    define NUM_F6 LCTL_T(KC_F6)
+#    define NUM_F5 LGUI_T(KC_F5)
 
-#  define NUM_4 LGUI_T(DE_4)
-#  define NUM_5 LCTL_T(DE_5)
-#  define NUM_6 LALT_T(DE_6)
-#  define NUM_PLS RSFT_T(DE_PLUS)
+#    define NUM_4 LGUI_T(DE_4)
+#    define NUM_5 LCTL_T(DE_5)
+#    define NUM_6 LALT_T(DE_6)
+#    define NUM_DOT RSFT_T(DE_DOT)
+#  endif
+#  ifdef CS_USE_TWO_THUMB_DEFAULT
+#    define NUM_F6 RSFT_T(KC_F6)
+#    define NUM_F7 LALT_T(KC_F7)
+#    define NUM_F8 LCTL_T(KC_F8)
+#    define NUM_F9 LGUI_T(KC_F9)
+
+#    define NUM_4 LGUI_T(DE_4)
+#    define NUM_5 LCTL_T(DE_5)
+#    define NUM_6 LALT_T(DE_6)
+#    define NUM_DOT RSFT_T(DE_DOT)
+#  endif
 
 #  ifdef CS_INCLUDE_QWERTY_LAYER
 #    define HRM_Q_A LSFT_T(DE_A)
@@ -301,7 +329,7 @@
 #    define HRM_S_I LALT_T(DE_I)
 #    define HRM_S_E LCTL_T(DE_E)
 #    define HRM_S_S LT(NAV, DE_S)
-#    define HRM_S_H LT(MOUSE, DE_H)
+#    define HRM_S_H LT(SYMBOL, DE_H)
 #    define HRM_S_T LCTL_T(DE_T)
 #    define HRM_S_N LALT_T(DE_N)
 #    define HRM_S_R RSFT_T(DE_R)

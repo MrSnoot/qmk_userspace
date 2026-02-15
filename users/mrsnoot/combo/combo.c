@@ -44,7 +44,7 @@ enum combos {
     #endif
     NUM_NUM_BSPC,
     NUM_NUM_DEL,
-    COM_MOUSE_DBL_CLICK
+    // COM_MOUSE_DBL_CLICK
 };
 
 #ifdef CS_INCLUDE_SONNE_LAYER
@@ -66,16 +66,16 @@ const uint16_t PROGMEM sonne_bspc_combo[]  = { HRM_S_H, HRM_S_T, COMBO_END };
 const uint16_t PROGMEM sonne_bspc_word_combo[]  = { HRM_S_H, HRM_S_T, HRM_S_N, COMBO_END };
 const uint16_t PROGMEM sonne_del_combo[]  = { HRM_S_N, HRM_S_R, COMBO_END };
 const uint16_t PROGMEM sonne_del_word_combo[]  = { HRM_S_T, HRM_S_N, HRM_S_R, COMBO_END };
-const uint16_t PROGMEM sonne_copy_combo[]  = { DE_D, DE_C, COMBO_END };
-const uint16_t PROGMEM sonne_paste_combo[]  = { DE_C, DE_L, COMBO_END };
+const uint16_t PROGMEM sonne_copy_combo[]  = { DE_D, LT_MS_C, COMBO_END };
+const uint16_t PROGMEM sonne_paste_combo[]  = { LT_MS_C, DE_L, COMBO_END };
 const uint16_t PROGMEM sonne_cut_combo[] = { DE_L, DE_Q, COMBO_END };
 const uint16_t PROGMEM sonne_copy_all_combo[] = { DE_K, DE_B, COMBO_END };
 const uint16_t PROGMEM sonne_copy_line_combo[] = { DE_B, DE_X, COMBO_END };
 const uint16_t PROGMEM sonne_copy_word_combo[] = { DE_X, GUI_SS, COMBO_END };
 const uint16_t PROGMEM sonne_alt_f4_combo[] = { DE_G, DE_Z, COMBO_END };
 const uint16_t PROGMEM sonne_tab_combo[] = { HRM_S_T, DE_K, COMBO_END };
-const uint16_t PROGMEM sonne_vdpr_combo[] = { HRM_S_H, DE_C, COMBO_END };
-const uint16_t PROGMEM sonne_vdnx_combo[] = { HRM_S_T, DE_D, COMBO_END };
+const uint16_t PROGMEM sonne_vdpr_combo[] = { HRM_S_H, DE_D, COMBO_END };
+const uint16_t PROGMEM sonne_vdnx_combo[] = { HRM_S_T, LT_MS_C, COMBO_END };
 //const uint16_t PROGMEM sonne_tg_mouse_layer_combo[]  = { MS_ENT, HRM_S_N, COMBO_END };
 #ifdef CS_NUM_WORD_ENABLE
 const uint16_t PROGMEM sonne_num_word_combo[] = { HRM_S_H, DE_B, COMBO_END };
@@ -88,12 +88,12 @@ const uint16_t PROGMEM sonne_caps_word_combo[] = { HRM_S_A, HRM_S_R, COMBO_END }
 const uint16_t PROGMEM num_num_word_combo[] = { NUM_4, DE_2, COMBO_END };
 #endif
 const uint16_t PROGMEM num_num_bspc_combo[]  = { NUM_4, NUM_5, COMBO_END };
-const uint16_t PROGMEM num_num_del_combo[]  = { NUM_6, NUM_PLS, COMBO_END };
-const uint16_t PROGMEM com_mouse_double_click_combo[] = { MS_BTN1, MS_BTN2, COMBO_END };
+const uint16_t PROGMEM num_num_del_combo[]  = { NUM_6, NUM_DOT, COMBO_END };
+// const uint16_t PROGMEM com_mouse_double_click_combo[] = { MS_BTN1, MS_BTN2, COMBO_END };
 
 combo_t key_combos[] = {
     #ifdef CS_INCLUDE_SONNE_LAYER
-    // SONNE links
+    // SONNE linksß
     [SONNE_ESC] = COMBO(sonne_esc_combo, KC_ESC),
     [SONNE_DOT] = COMBO(sonne_dot_combo, DE_DOT),
     [SONNE_COMMA] = COMBO(sonne_comma_combo, DE_COMM),
@@ -134,7 +134,7 @@ combo_t key_combos[] = {
     #endif
     [NUM_NUM_BSPC] = COMBO(num_num_bspc_combo, KC_BSPC),
     [NUM_NUM_DEL] = COMBO(num_num_del_combo, KC_DEL),
-    [COM_MOUSE_DBL_CLICK] = COMBO(com_mouse_double_click_combo, DBL_CLK),
+    // [COM_MOUSE_DBL_CLICK] = COMBO(com_mouse_double_click_combo, DBL_CLK),
 };
 
 bool combo_should_trigger(uint16_t combo_index, combo_t *combo, uint16_t keycode, keyrecord_t *record) {
