@@ -61,7 +61,11 @@ ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), dasbob endgame/rev6 evyd13/eon
 endif
 
 # Encoder -------------------------------------------------
-ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), dasbob endgame/rev6 evyd13/eon40 fidrildi/v4 kprepublic/bm60hsrgb_iso/rev1 nachie/syndrome_ortho ploopyco/madromys/rev1_001 ploopyco/trackball_nano/rev1_001 re_gret))
+ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), dasbob endgame/rev6 evyd13/eon40 fidrildi/v4 kprepublic/bm60hsrgb_iso/rev1 ploopyco/madromys/rev1_001 ploopyco/trackball_nano/rev1_001 re_gret))
+	ENCODER_ENABLE = no
+endif
+
+ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), nachie/syndrome_ortho))
 	ENCODER_ENABLE = no
 endif
 
@@ -76,7 +80,11 @@ ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), splitkb/aurora/corne/rev1))
 endif
 
 # OLED ----------------------------------------------------
-ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), dasbob endgame/rev6 evyd13/eon40 fidrildi/v4 kprepublic/bm60hsrgb_iso/rev1 nachie/syndrome_ortho ploopyco/madromys/rev1_001 ploopyco/trackball_nano/rev1_001 re_gret))
+ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), dasbob endgame/rev6 evyd13/eon40 fidrildi/v4 kprepublic/bm60hsrgb_iso/rev1 ploopyco/madromys/rev1_001 ploopyco/trackball_nano/rev1_001 re_gret))
+	OLED_ENABLE = no
+endif
+
+ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), nachie/syndrome_ortho))
 	OLED_ENABLE = no
 endif
 
@@ -96,9 +104,14 @@ ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), xxx))
 endif
 
 # RGB -----------------------------------------------------
-ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), dasbob evyd13/eon40 nachie/syndrome_ortho ploopyco/madromys/rev1_001 ploopyco/trackball_nano/rev1_001))
+ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), dasbob evyd13/eon40 ploopyco/madromys/rev1_001 ploopyco/trackball_nano/rev1_001))
 	RGBLIGHT_ENABLE = no
 	RGB_MATRIX_ENABLE = no
+endif
+
+ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), nachie/syndrome_ortho))
+	RGBLIGHT_ENABLE = no
+	RGB_MATRIX_ENABLE = yes
 endif
 
 ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), 3x3macropad))
