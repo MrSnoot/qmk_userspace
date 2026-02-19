@@ -45,7 +45,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [NUM_FUNC] = LAYOUT(
     _______,                                                       _______, _______, _______, _______,
 		KC_F12 , KC_F11 , KC_F10 , KC_F9  , XXXXXXX, XXXXXXX, DE_MINS, DE_7   , DE_8   , DE_9   , DE_PLUS,
-    NUM_F8 , NUM_F7 , NUM_F6 , NUM_F5 , S_LN_F5, XXXXXXX, DE_COMM, NUM_4  , NUM_5  , NUM_6  , NUM_DOT,
+    NUM_F8 , NUM_F7 , NUM_F6 , NUM_F5 , ALT_F5 , XXXXXXX, DE_COMM, NUM_4  , NUM_5  , NUM_6  , NUM_DOT,
     KC_F4  , KC_F3  , KC_F2  , KC_F1  , XXXXXXX, XXXXXXX, DE_COMM, DE_1   , DE_2   , DE_3   , DE_0   ,
     _______, _______, _______, _______, _______, XXXXXXX, XXXXXXX, _______, _______, _______, _______
 ),

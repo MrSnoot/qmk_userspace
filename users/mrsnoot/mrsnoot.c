@@ -25,16 +25,6 @@ void cs_mouse_wheel_down(void) {
     tap_code(MS_WHLD);
 }
 
-void cs_mouse_wheel_up_accelerated(void) {
-    cs_mouse_wheel_up();
-    cs_mouse_wheel_up();
-}
-
-void cs_mouse_wheel_down_accelerated(void) {
-    cs_mouse_wheel_down();
-    cs_mouse_wheel_down();
-}
-
 void cs_cursor_left(void) {
     tap_code(KC_LEFT);
 }
@@ -204,16 +194,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 #endif
             }
             break;
-        case CS_CSRL:
-            if (record->event.pressed) {
-                cs_cursor_left();
-            }
-            break;
-        case CS_CSRR:
-            if (record->event.pressed) {
-                cs_cursor_right();
-            }
-            break;
         case CS_VDPR:
             if (record->event.pressed) {
                 cs_virtual_desktop_previous();
@@ -241,13 +221,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 #endif
                 tap_code16(MS_BTN1);
                 tap_code16(MS_BTN1);
-            }
-            break;
-        case S_LN_F5:
-            if (record->event.pressed) {
-                tap_code16(KC_HOME);
-                tap_code16(LSFT(KC_END));
-                tap_code(KC_F5);
             }
             break;
         case F2_CPLN:

@@ -31,7 +31,6 @@ enum combos {
     SONNE_TAB,
     SONNE_VDPR,
     SONNE_VDNX,
-    //SONNE_TG_MOUSE_LAYER,
     // SONNE beidseitig
     SONNE_CAPS_WORD,
     #ifdef CS_NUM_WORD_ENABLE
@@ -43,8 +42,7 @@ enum combos {
     NUM_NUM_WORD,
     #endif
     NUM_NUM_BSPC,
-    NUM_NUM_DEL,
-    // COM_MOUSE_DBL_CLICK
+    NUM_NUM_DEL
 };
 
 #ifdef CS_INCLUDE_SONNE_LAYER
@@ -76,7 +74,6 @@ const uint16_t PROGMEM sonne_alt_f4_combo[] = { DE_G, DE_Z, COMBO_END };
 const uint16_t PROGMEM sonne_tab_combo[] = { HRM_S_T, DE_K, COMBO_END };
 const uint16_t PROGMEM sonne_vdpr_combo[] = { HRM_S_H, DE_D, COMBO_END };
 const uint16_t PROGMEM sonne_vdnx_combo[] = { HRM_S_T, LT_MS_C, COMBO_END };
-//const uint16_t PROGMEM sonne_tg_mouse_layer_combo[]  = { MS_ENT, HRM_S_N, COMBO_END };
 #ifdef CS_NUM_WORD_ENABLE
 const uint16_t PROGMEM sonne_num_word_combo[] = { HRM_S_H, DE_B, COMBO_END };
 #endif
@@ -89,7 +86,6 @@ const uint16_t PROGMEM num_num_word_combo[] = { NUM_4, DE_2, COMBO_END };
 #endif
 const uint16_t PROGMEM num_num_bspc_combo[]  = { NUM_4, NUM_5, COMBO_END };
 const uint16_t PROGMEM num_num_del_combo[]  = { NUM_6, NUM_DOT, COMBO_END };
-// const uint16_t PROGMEM com_mouse_double_click_combo[] = { MS_BTN1, MS_BTN2, COMBO_END };
 
 combo_t key_combos[] = {
     #ifdef CS_INCLUDE_SONNE_LAYER
@@ -121,7 +117,6 @@ combo_t key_combos[] = {
     [SONNE_TAB] = COMBO(sonne_tab_combo, KC_TAB),
     [SONNE_VDPR] = COMBO(sonne_vdpr_combo, CS_VDPR),
     [SONNE_VDNX] = COMBO(sonne_vdnx_combo, CS_VDNX),
-    //[SONNE_TG_MOUSE_LAYER] = COMBO(sonne_tg_mouse_layer_combo, TG_MS_L),
     #ifdef CS_NUM_WORD_ENABLE
     [SONNE_NUM_WORD] = COMBO(sonne_num_word_combo, NUMWORD),
     #endif
@@ -134,7 +129,6 @@ combo_t key_combos[] = {
     #endif
     [NUM_NUM_BSPC] = COMBO(num_num_bspc_combo, KC_BSPC),
     [NUM_NUM_DEL] = COMBO(num_num_del_combo, KC_DEL),
-    // [COM_MOUSE_DBL_CLICK] = COMBO(com_mouse_double_click_combo, DBL_CLK),
 };
 
 bool combo_should_trigger(uint16_t combo_index, combo_t *combo, uint16_t keycode, keyrecord_t *record) {

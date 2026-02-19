@@ -276,6 +276,7 @@
 #define LT_MS_C LT(MOUSE, DE_C)
 #define LT_CMB2 LCTL_T(MS_BTN2)
 #define LT_STBS RSFT_T(TB_SCR)
+#define ALT_F5 LALT(KC_F5)
 
 #ifdef CS_USE_ONE_THUMB_DEFAULT
 #  define NUM_SPC LT(NUM_FUNC, KC_SPC)

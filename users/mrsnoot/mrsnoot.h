@@ -110,8 +110,6 @@ enum encoder {
 #ifdef CS_USE_CUSTOM_FUNCTIONS
 void cs_mouse_wheel_up(void);
 void cs_mouse_wheel_down(void);
-void cs_mouse_wheel_up_accelerated(void);
-void cs_mouse_wheel_down_accelerated(void);
 void cs_cursor_left(void);
 void cs_cursor_right(void);
 void cs_virtual_desktop_previous(void);
@@ -124,14 +122,11 @@ enum custom_keycodes {
     CP_ALL = SAFE_RANGE,
     CP_LINE,
     CP_WORD,
-    CS_CSRL,
-    CS_CSRR,
     CS_VDPR,
     CS_VDNX,
     CS_TSPR,
     CS_TSNX,
     DBL_CLK,
-    S_LN_F5,
     F2_CPLN,
     IM1_INS,
 #ifdef CS_IS_KB_TO_TB_SENDER
