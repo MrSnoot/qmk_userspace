@@ -85,7 +85,9 @@ ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), dasbob endgame/rev6 evyd13/eon
 endif
 
 ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), nachie/syndrome_ortho))
-	OLED_ENABLE = no
+	OLED_ENABLE = yes
+	OS_DETECTION_ENABLE = yes
+	SRC += oled/oled_128_32_horizontal.c
 endif
 
 ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), 3x3macropad))
@@ -109,15 +111,15 @@ ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), dasbob evyd13/eon40 ploopyco/m
 	RGB_MATRIX_ENABLE = no
 endif
 
-ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), nachie/syndrome_ortho))
-	RGBLIGHT_ENABLE = no
-	RGB_MATRIX_ENABLE = yes
-endif
-
 ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), 3x3macropad))
 	RGBLIGHT_ENABLE = yes
 	RGB_MATRIX_ENABLE = no
 	SRC += rgb/rgb_light.c
+endif
+
+ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), nachie/syndrome_ortho))
+	RGBLIGHT_ENABLE = no
+	RGB_MATRIX_ENABLE = yes
 endif
 
 ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), endgame/rev6 fidrildi/v4 re_gret))
@@ -152,11 +154,11 @@ ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), ))
 endif
 
 # WPM -----------------------------------------------------
-ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), 3x3macropad dasbob endgame/rev6 evyd13/eon40 fidrildi/v4 kprepublic/bm60hsrgb_iso/rev1 nachie/syndrome_ortho ploopyco/madromys/rev1_001 ploopyco/trackball_nano/rev1_001 re_gret))
+ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), 3x3macropad dasbob endgame/rev6 evyd13/eon40 fidrildi/v4 kprepublic/bm60hsrgb_iso/rev1 ploopyco/madromys/rev1_001 ploopyco/trackball_nano/rev1_001 re_gret))
 	WPM_ENABLE = no
 endif
 
-ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), splitkb/aurora/corne/rev1))
+ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), nachie/syndrome_ortho splitkb/aurora/corne/rev1))
 	WPM_ENABLE = yes
 endif
 

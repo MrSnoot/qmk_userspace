@@ -26,6 +26,8 @@
 #if defined(OLED_ENABLE)
 #   if defined(KEYBOARD_3x3macropad)
 #       include "oled/oled_128_32_3x3macropad.h"
+#   elif defined(KEYBOARD_nachie_syndrome_ortho)
+#       include "oled/oled_128_32_horizontal.h"
 #   elif defined(OLED_DISPLAY_128X32) && defined(SPLIT_OLED_ENABLE)
 #       include "oled/oled_128_32_split.h"
 #   elif defined(OLED_DISPLAY_128X64) && defined(SPLIT_OLED_ENABLE)
