@@ -163,7 +163,7 @@
 #   endif
 #endif
 
-// nachie_syndrom_ortho ------------------------------------------
+// nachie_syndrome_ortho ------------------------------------------
 #if defined(KEYBOARD_nachie_syndrome_ortho)
 #   define CS_INCLUDE_SONNE_LAYER
 #   define CS_INCLUDE_NAV_LAYER

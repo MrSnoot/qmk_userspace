@@ -66,7 +66,8 @@ ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), dasbob endgame/rev6 evyd13/eon
 endif
 
 ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), nachie/syndrome_ortho))
-	ENCODER_ENABLE = no
+	ENCODER_ENABLE = yes
+	SRC += encoder/encoder.c
 endif
 
 ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), 3x3macropad))
@@ -76,7 +77,7 @@ endif
 
 ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), splitkb/aurora/corne/rev1))
 	ENCODER_ENABLE = yes
-	SRC += encoder/encoder_split.c
+	SRC += encoder/encoder.c
 endif
 
 # OLED ----------------------------------------------------

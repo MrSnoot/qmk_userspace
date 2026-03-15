@@ -49,7 +49,7 @@ void task_previous_next(bool clockwise) {
 }
 
 bool encoder_update_user(uint8_t index, bool clockwise) {
-    if (index == BOTTOM_LEFT) {
+    if (index == ENC_MOUSE) {
         switch (get_highest_layer(layer_state)) {
             case NUM_FUNC:
                 page_up_down(clockwise);
@@ -61,7 +61,7 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
                 mouse_wheel_up_down(clockwise);
                 break;
         }
-    } else if (index == BOTTOM_RIGHT) {
+    } else if (index == ENC_NAV) {
         switch (get_highest_layer(layer_state)) {
             case NAV:
                 cursor_left_right(clockwise);

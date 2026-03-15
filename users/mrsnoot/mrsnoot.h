@@ -18,7 +18,7 @@
 #   if defined(KEYBOARD_3x3macropad)
 #       include "encoder/encoder_3x3macropad.h"
 #   else
-#       include "encoder/encoder_split.h"
+#       include "encoder/encoder.h"
 #   endif
 #endif
 
@@ -102,8 +102,18 @@ enum layers {
 #if defined(KEYBOARD_splitkb_aurora_corne_rev1)
 #   ifdef ENCODER_ENABLE
 enum encoder {
-    BOTTOM_LEFT = 0,
-    BOTTOM_RIGHT = 1    
+    ENC_MOUSE = 0,
+    ENC_NAV = 1    
+};
+#   endif
+#endif
+
+// Detour Syndrome Ortho ----------------------------
+#if defined(KEYBOARD_nachie_syndrome_ortho)
+#   ifdef ENCODER_ENABLE
+enum encoder {
+    ENC_NAV = 0,
+    ENC_MOUSE = 3,
 };
 #   endif
 #endif
