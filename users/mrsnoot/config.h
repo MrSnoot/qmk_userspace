@@ -175,6 +175,24 @@
 #   define CS_USE_ONE_THUMB_DEFAULT
 #   define CS_USE_CUSTOM_FUNCTIONS
 #   define CS_IS_KB_TO_TB_SENDER
+
+#    ifdef AUDIO_ENABLE
+#        define AUDIO_PIN GP22
+#        define AUDIO_PWM_DRIVER PWMD3
+#        define AUDIO_PWM_CHANNEL RP2040_PWM_CHANNEL_A
+#    endif
+//   {  pin_a": "GP22", "pin_b": "GP23", "resolution": 2 },
+//   { "pin_a": "GP26", "pin_b": "GP24", "resolution": 2 },
+//   { "pin_a": "GP0", "pin_b": "GP1", "resolution": 2 },
+//   { "pin_a": "GP5", "pin_b": "GP3", "resolution": 2 }
+
+#   ifdef ENCODER_ENABLE
+#       undef ENCODER_A_PINS
+#       undef ENCODER_B_PINS
+#       define ENCODER_A_PINS { GP0, GP5 }
+#       define ENCODER_B_PINS { GP1, GP3 }
+#       define ENCODER_RESOLUTION 2
+#   endif
 #endif
 
 // KPRepublic BM60 HSRGB ---------------------------------------------
@@ -257,7 +275,7 @@
 #       endif
 #   endif
 #   ifdef ENCODER_ENABLE
-#       define ENCODER_RESOLUTION 2
+#       define ENCODER_RESOLUTION 4
 #   endif
 #   ifdef RGB_MATRIX_ENABLE
 #       define SPLIT_LAYER_STATE_ENABLE

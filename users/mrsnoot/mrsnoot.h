@@ -113,7 +113,7 @@ enum encoder {
 #   ifdef ENCODER_ENABLE
 enum encoder {
     ENC_NAV = 0,
-    ENC_MOUSE = 3,
+    ENC_MOUSE = 1,
 };
 #   endif
 #endif

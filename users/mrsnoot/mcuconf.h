@@ -23,6 +23,12 @@
 #    define RP_PWM_USE_PWM5 TRUE
 #endif
 
+// Nachie Syndrome Ortho
+#if defined(KEYBOARD_nachie_syndrome_ortho)
+#    undef  RP_PWM_USE_PWM3
+#    define RP_PWM_USE_PWM3 TRUE
+#endif
+
 // Ploopy Adept
 #if defined(KEYBOARD_ploopyco_madromys_rev1_001)
 #    undef  RP_PWM_USE_PWM6

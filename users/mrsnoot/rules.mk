@@ -28,11 +28,11 @@ endif
 # Split Boards --------------------------------------------
 
 # Audio ---------------------------------------------------
-ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), 3x3macropad evyd13/eon40 fidrildi/v4 kprepublic/bm60hsrgb_iso/rev1 nachie/syndrome_ortho ploopyco/trackball_nano/rev1_001))
+ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), 3x3macropad evyd13/eon40 fidrildi/v4 kprepublic/bm60hsrgb_iso/rev1 ploopyco/trackball_nano/rev1_001))
 	AUDIO_ENABLE = no
 endif
 
-ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), dasbob endgame/rev6 ploopyco/madromys/rev1_001 re_gret splitkb/aurora/corne/rev1))
+ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), dasbob endgame/rev6 nachie/syndrome_ortho ploopyco/madromys/rev1_001 re_gret splitkb/aurora/corne/rev1))
 	AUDIO_ENABLE = yes
 	AUDIO_DRIVER = pwm_hardware
 endif
@@ -87,7 +87,6 @@ endif
 
 ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), nachie/syndrome_ortho))
 	OLED_ENABLE = yes
-	OS_DETECTION_ENABLE = yes
 	SRC += oled/oled_128_32_horizontal.c
 endif
 
