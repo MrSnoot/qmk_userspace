@@ -4,10 +4,10 @@
 //#   include "layout.h"
 //#endif
 
-// Allgemein ----------------------------------------------
+// Allgemein --------------------------------------------------------
 #define LAYER_STATE_8BIT
 
-// Audio Feature ------------------------------------------
+// Audio Feature ----------------------------------------------------
 #ifdef AUDIO_ENABLE
 #   define AUDIO_ENABLE_TONE_MULTIPLEXING
 #   define AUDIO_TONE_MULTIPLEXING_RATE_DEFAULT 10
@@ -19,7 +19,7 @@
 #   define STARTUP_SONG SONG(STARTUP_SOUND)
 #endif
 
-// Combo Feature ------------------------------------------
+// Combo Feature ----------------------------------------------------
 #ifdef COMBO_ENABLE
 #   undef  TAPPING_TERM
 #   define TAPPING_TERM 190
@@ -30,7 +30,7 @@
 #   define COMBO_SHOULD_TRIGGER
 #endif
 
-// OLED Feature -------------------------------------------
+// OLED Feature -----------------------------------------------------
 #ifdef OLED_ENABLE
 #   if defined(KEYBOARD_3x3macropad)
 #       define OLED_SCROLL_TIMEOUT 0
@@ -39,27 +39,27 @@
 #   endif
 #endif
 
-// RGB Matrix Feature -------------------------------------
+// RGB Matrix Feature -----------------------------------------------
 #ifdef RGB_MATRIX_ENABLE
 #   define RGB_MATRIX_TIMEOUT 30000
 #   define RGB_DISABLE_WHEN_USB_SUSPENDED
 #endif
 
-// WPM Feature --------------------------------------------
+// WPM Feature ------------------------------------------------------
 #ifdef WPM_ENABLE
 #   define WPM_SAMPLE_SECONDS 10
 #   define WPM_SAMPLE_PERIODS 50
 //#   define WPM_ESTIMATED_WORD_SIZE 5
 #endif
 
-// Auto Shift Feature -------------------------------------
+// Auto Shift Feature -----------------------------------------------
 #ifdef AUTO_SHIFT_ENABLE
 #   define AUTO_SHIFT_TIMEOUT 135
 #   define AUTO_SHIFT_REPEAT
 #   define RETRO_SHIFT 400
 #endif
 
-// 3x3 Macropad -------------------------------------------
+// 3x3 Macropad -----------------------------------------------------
 #if defined(KEYBOARD_3x3macropad)
 #   define CS_INCLUDE_BASIS_LAYER
 #   define CS_INCLUDE_ADJUST_LAYER
@@ -85,7 +85,7 @@
 #   endif
 #endif
 
-// Dasbob -------------------------------------------------
+// Dasbob -----------------------------------------------------------
 #if defined(KEYBOARD_dasbob)
 #   define CS_INCLUDE_SONNE_LAYER
 #   define CS_INCLUDE_NAV_LAYER
@@ -103,7 +103,7 @@
 #   define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_LED 17U
 #endif
 
-// Endgame ------------------------------------------------
+// Endgame ----------------------------------------------------------
 #if defined(KEYBOARD_endgame_rev6)
 #   define CS_INCLUDE_SONNE_LAYER
 #   define CS_INCLUDE_NAV_LAYER
@@ -126,7 +126,7 @@
 #   endif
 #endif
 
-// HMKB EON40 ---------------------------------------------
+// HMKB EON40 -------------------------------------------------------
 #if defined(KEYBOARD_evyd13_eon40)
 #   define CS_INCLUDE_SONNE_LAYER
 #   define CS_INCLUDE_NAV_LAYER
@@ -140,7 +140,7 @@
 #   define CS_IS_KB_TO_TB_SENDER
 #endif
 
-// fidrildi -----------------------------------------------
+// fidrildi ---------------------------------------------------------
 #if defined(KEYBOARD_fidrildi_v4)
 #   define CS_INCLUDE_SONNE_LAYER
 #   define CS_INCLUDE_NAV_LAYER
@@ -163,7 +163,7 @@
 #   endif
 #endif
 
-// nachie_syndrome_ortho ------------------------------------------
+// nachie_syndrome_ortho --------------------------------------------
 #if defined(KEYBOARD_nachie_syndrome_ortho)
 #   define CS_INCLUDE_SONNE_LAYER
 #   define CS_INCLUDE_NAV_LAYER
@@ -195,13 +195,13 @@
 #   endif
 #endif
 
-// KPRepublic BM60 HSRGB ---------------------------------------------
+// KPRepublic BM60 HSRGB --------------------------------------------
 #if defined(KEYBOARD_kprepublic_bm60hsrgb_iso_rev1)
 #   define CS_INCLUDE_QWERTY_LAYER
 #   define CS_INCLUDE_NAV_FUNC_LAYER
 #endif
 
-// Ploopy Adept -------------------------------------------
+// Ploopy Adept -----------------------------------------------------
 #if defined(KEYBOARD_ploopyco_madromys_rev1_001)
 #   define CS_USE_CUSTOM_FUNCTIONS
 #    undef PLOOPY_DPI_DEFAULT
@@ -217,7 +217,7 @@
 #    endif
 #endif
 
-// Ploopy Nano --------------------------------------------
+// Ploopy Nano ------------------------------------------------------
 #if defined(KEYBOARD_ploopyco_trackball_nano_rev1_001)
 // #   undef PLOOPY_DPI_OPTIONS
 #   define PLOOPY_DPI_OPTIONS { 500, 1000, 1375 }
@@ -225,7 +225,7 @@
 #   define PLOOPY_DPI_DEFAULT 2
 #endif
 
-// re_gret ------------------------------------------------
+// re_gret ----------------------------------------------------------
 #if defined(KEYBOARD_re_gret)
 #   define CS_INCLUDE_SONNE_LAYER
 #   define CS_INCLUDE_NAV_LAYER
@@ -254,7 +254,22 @@
 #   endif
 #endif
 
-// Splitkb Aurora Corne -------------------------------------------
+// Shoonie Zensai Chiffre ---------------------------------------------------
+#if defined(KEYBOARD_shoonie_zensai_chiffre_c8v3)
+#   define CS_INCLUDE_SONNE_LAYER
+#   define CS_INCLUDE_NAV_LAYER
+#   define CS_INCLUDE_MOUSE_LAYER
+#   define CS_INCLUDE_NUM_FUNC_LAYER
+#   define CS_INCLUDE_SYMBOL_LAYER
+#   define CS_INCLUDE_ADJUST_LAYER
+#   define CS_USE_HRM
+#   define CS_USE_ONE_THUMB_DEFAULT
+#   define CS_USE_CUSTOM_FUNCTIONS
+#   define CS_FIVE_POS_ROTARY_SWITCH
+#   define CS_IS_KB_TO_TB_SENDER
+#endif
+
+// Splitkb Aurora Corne ---------------------------------------------
 #if defined(KEYBOARD_splitkb_aurora_corne_rev1)
 #   define CS_INCLUDE_SONNE_LAYER
 #   define CS_INCLUDE_NAV_LAYER
@@ -285,7 +300,7 @@
 #   endif
 #endif
 
-// Alias Keycodes -----------------------------------------
+// Alias Keycodes ---------------------------------------------------
 #define MO_ADJ MO(ADJUST)
 #define NP_XMLL MEH(DE_L)
 #define NP_XMLF MEH(DE_B)

@@ -98,22 +98,32 @@ enum layers {
     _LAYER_SAFE_RANGE
 };
 
-// Aurora Corne ----------------------------
+// Aurora Corne -------------------------------------------
 #if defined(KEYBOARD_splitkb_aurora_corne_rev1)
 #   ifdef ENCODER_ENABLE
 enum encoder {
     ENC_MOUSE = 0,
-    ENC_NAV = 1    
+    ENC_NAV = 1
 };
 #   endif
 #endif
 
-// Detour Syndrome Ortho ----------------------------
+// Detour Syndrome Ortho ----------------------------------
 #if defined(KEYBOARD_nachie_syndrome_ortho)
 #   ifdef ENCODER_ENABLE
 enum encoder {
     ENC_NAV = 0,
-    ENC_MOUSE = 1,
+    ENC_MOUSE = 1
+};
+#   endif
+#endif
+
+// Shoonie Zensai Chiffre ---------------------------------
+#if defined(KEYBOARD_shoonie_zensai_chiffre_c8v3)
+#   ifdef ENCODER_ENABLE
+enum encoder {
+    ENC_MOUSE = 0,
+    ENC_NAV = 1
 };
 #   endif
 #endif
@@ -148,6 +158,9 @@ enum custom_keycodes {
 #endif
 #ifdef CS_NUM_WORD_ENABLE
     NUMWORD,
+#endif
+#ifdef CS_FIVE_POS_ROTARY_SWITCH
+    CS_5PRS,
 #endif
     MS_BN13
 };

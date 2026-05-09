@@ -12,6 +12,10 @@ float tone_startup[][2]         = SONG(STARTUP_SOUND);
 // float tone_tb_dpi_value[][2]    = SONG(Q__NOTE(_D5));
 #endif
 
+#ifdef CS_FIVE_POS_ROTARY_SWITCH
+uint8_t last_pressed_rs_pos;
+#endif
+
 // Custom Functions ---------------------------------------
 #ifdef CS_USE_CUSTOM_FUNCTIONS
 bool is_alt_tab_active = false;
@@ -165,6 +169,21 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             #endif
             break;
 #ifdef CS_USE_CUSTOM_FUNCTIONS
+#ifdef CS_FIVE_POS_ROTARY_SWITCH
+        case CS_5PRS:
+            if (record->event.pressed) {
+                if(last_pressed_rs_pos > record->event.key.col) {
+                    cs_virtual_desktop_previous();
+                }
+                else {
+                    cs_virtual_desktop_next();
+                }
+            }
+            else {
+                last_pressed_rs_pos = record->event.key.col;
+            }
+            break;
+#endif
         case CP_ALL:
             if (record->event.pressed) {
                 tap_code16(LCTL(KC_A));

@@ -17,7 +17,7 @@ LTO_ENABLE = no
 # INTROSPECTION_KEYMAP_C = mrsnoot.c
 
 # Common features -----------------------------------------
-ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), dasbob endgame/rev6 fidrildi/v4 evyd13/eon40 kprepublic/bm60hsrgb_iso/rev1 nachie/syndrome_ortho ploopyco/madromys/rev1_001 ploopyco/trackball_nano/rev1_001 re_gret splitkb/aurora/corne/rev1))
+ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), dasbob endgame/rev6 fidrildi/v4 evyd13/eon40 kprepublic/bm60hsrgb_iso/rev1 nachie/syndrome_ortho ploopyco/madromys/rev1_001 ploopyco/trackball_nano/rev1_001 re_gret shoonie/zensai_chiffre/c8v3 splitkb/aurora/corne/rev1))
 	EXTRAKEY_ENABLE = no
 endif
 
@@ -28,7 +28,7 @@ endif
 # Split Boards --------------------------------------------
 
 # Audio ---------------------------------------------------
-ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), 3x3macropad evyd13/eon40 fidrildi/v4 kprepublic/bm60hsrgb_iso/rev1 ploopyco/trackball_nano/rev1_001))
+ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), 3x3macropad evyd13/eon40 fidrildi/v4 kprepublic/bm60hsrgb_iso/rev1 ploopyco/trackball_nano/rev1_001 shoonie/zensai_chiffre/c8v3))
 	AUDIO_ENABLE = no
 endif
 
@@ -42,7 +42,7 @@ ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), 3x3macropad kprepublic/bm60hsr
 	CS_NUM_WORD_ENABLE = no 
 endif
 
-ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), dasbob endgame/rev6 evyd13/eon40 fidrildi/v4 nachie/syndrome_ortho re_gret splitkb/aurora/corne/rev1))
+ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), dasbob endgame/rev6 evyd13/eon40 fidrildi/v4 nachie/syndrome_ortho re_gret shoonie/zensai_chiffre/c8v3 splitkb/aurora/corne/rev1))
 	CS_NUM_WORD_ENABLE = yes
 	SRC += num_word/num_word.c
     OPT_DEFS += -DCS_NUM_WORD_ENABLE
@@ -53,7 +53,7 @@ ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), 3x3macropad kprepublic/bm60hsr
 	COMBO_ENABLE = no
 endif
 
-ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), dasbob endgame/rev6 evyd13/eon40 fidrildi/v4 nachie/syndrome_ortho re_gret splitkb/aurora/corne/rev1))
+ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), dasbob endgame/rev6 evyd13/eon40 fidrildi/v4 nachie/syndrome_ortho re_gret shoonie/zensai_chiffre/c8v3 splitkb/aurora/corne/rev1))
 	COMBO_ENABLE = yes
 	INTROSPECTION_KEYMAP_C = combo/combo.c
 # SRC += combo/combo.c
@@ -75,13 +75,13 @@ ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), 3x3macropad))
 	SRC += encoder/encoder_3x3macropad.c
 endif
 
-ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), splitkb/aurora/corne/rev1))
+ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), shoonie/zensai_chiffre/c8v3 splitkb/aurora/corne/rev1))
 	ENCODER_ENABLE = yes
 	SRC += encoder/encoder.c
 endif
 
 # OLED ----------------------------------------------------
-ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), dasbob endgame/rev6 evyd13/eon40 fidrildi/v4 kprepublic/bm60hsrgb_iso/rev1 ploopyco/madromys/rev1_001 ploopyco/trackball_nano/rev1_001 re_gret))
+ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), dasbob endgame/rev6 evyd13/eon40 fidrildi/v4 kprepublic/bm60hsrgb_iso/rev1 ploopyco/madromys/rev1_001 ploopyco/trackball_nano/rev1_001 re_gret shoonie/zensai_chiffre/c8v3))
 	OLED_ENABLE = no
 endif
 
@@ -106,7 +106,7 @@ ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), xxx))
 endif
 
 # RGB -----------------------------------------------------
-ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), dasbob evyd13/eon40 ploopyco/madromys/rev1_001 ploopyco/trackball_nano/rev1_001))
+ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), dasbob evyd13/eon40 ploopyco/madromys/rev1_001 ploopyco/trackball_nano/rev1_001 shoonie/zensai_chiffre/c8v3))
 	RGBLIGHT_ENABLE = no
 	RGB_MATRIX_ENABLE = no
 endif
@@ -139,13 +139,13 @@ ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), 3x3macropad kprepublic/bm60hsr
 	MOUSEKEY_ENABLE = no
 endif
 
-ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), dasbob endgame/rev6 evyd13/eon40 fidrildi/v4 nachie/syndrome_ortho ploopyco/madromys/rev1_001 re_gret splitkb/aurora/corne/rev1))
+ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), dasbob endgame/rev6 evyd13/eon40 fidrildi/v4 nachie/syndrome_ortho ploopyco/madromys/rev1_001 re_gret shoonie/zensai_chiffre/c8v3 splitkb/aurora/corne/rev1))
 	MOUSEKEY_ENABLE = yes
 endif
 
 
 # Deferred Executo ----------------------------------------
-ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), 3x3macropad dasbob endgame/rev6 evyd13/eon40 fidrildi/v4 kprepublic/bm60hsrgb_iso/rev1 nachie/syndrome_ortho ploopyco/madromys/rev1_001 ploopyco/trackball_nano/rev1_001 re_gret splitkb/aurora/corne/rev1))
+ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), 3x3macropad dasbob endgame/rev6 evyd13/eon40 fidrildi/v4 kprepublic/bm60hsrgb_iso/rev1 nachie/syndrome_ortho ploopyco/madromys/rev1_001 ploopyco/trackball_nano/rev1_001 re_gret shoonie/zensai_chiffre/c8v3 splitkb/aurora/corne/rev1))
 	DEFERRED_EXEC_ENABLE = no
 endif
 
@@ -154,7 +154,7 @@ ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), ))
 endif
 
 # WPM -----------------------------------------------------
-ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), 3x3macropad dasbob endgame/rev6 evyd13/eon40 fidrildi/v4 kprepublic/bm60hsrgb_iso/rev1 ploopyco/madromys/rev1_001 ploopyco/trackball_nano/rev1_001 re_gret))
+ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), 3x3macropad dasbob endgame/rev6 evyd13/eon40 fidrildi/v4 kprepublic/bm60hsrgb_iso/rev1 ploopyco/madromys/rev1_001 ploopyco/trackball_nano/rev1_001 re_gret shoonie/zensai_chiffre/c8v3))
 	WPM_ENABLE = no
 endif
 
@@ -167,7 +167,7 @@ ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), 3x3macropad kprepublic/bm60hsr
 	CAPS_WORD_ENABLE = no 
 endif
 
-ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), dasbob endgame/rev6 evyd13/eon40 fidrildi/v4 nachie/syndrome_ortho re_gret splitkb/aurora/corne/rev1))
+ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), dasbob endgame/rev6 evyd13/eon40 fidrildi/v4 nachie/syndrome_ortho re_gret shoonie/zensai_chiffre/c8v3 splitkb/aurora/corne/rev1))
 	CAPS_WORD_ENABLE = yes
 endif
 
@@ -176,6 +176,6 @@ ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), 3x3macropad kprepublic/bm60hsr
 	AUTO_SHIFT_ENABLE = no 
 endif
 
-ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), dasbob endgame/rev6 evyd13/eon40 fidrildi/v4 nachie/syndrome_ortho re_gret splitkb/aurora/corne/rev1))
+ifeq ($(strip $(KEYBOARD)), $(filter $(KEYBOARD), dasbob endgame/rev6 evyd13/eon40 fidrildi/v4 nachie/syndrome_ortho re_gret shoonie/zensai_chiffre/c8v3 splitkb/aurora/corne/rev1))
 	AUTO_SHIFT_ENABLE = no
 endif
