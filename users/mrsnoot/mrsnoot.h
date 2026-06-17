@@ -2,6 +2,7 @@
 
 #include "quantum.h"
 #include "keymap_german.h"
+#include "wrapper/wrappers.h"
 
 // NUM_WORD Feature ---------------------------------------
 #ifdef CS_NUM_WORD_ENABLE
