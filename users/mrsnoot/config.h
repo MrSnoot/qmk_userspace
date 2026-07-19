@@ -85,6 +85,20 @@
 #   endif
 #endif
 
+// cbkbd/acai -------------------------------------------------------
+#if defined(KEYBOARD_cbkbd_acai)
+#   define CS_INCLUDE_SONNE_LAYER
+#   define CS_INCLUDE_NAV_LAYER
+#   define CS_INCLUDE_MOUSE_LAYER
+#   define CS_INCLUDE_NUM_FUNC_LAYER
+#   define CS_INCLUDE_SYMBOL_LAYER
+#   define CS_INCLUDE_ADJUST_LAYER
+#   define CS_USE_HRM
+#   define CS_USE_ONE_THUMB_DEFAULT
+#   define CS_USE_CUSTOM_FUNCTIONS
+#   define CS_IS_KB_TO_TB_SENDER
+#endif
+
 // Dasbob -----------------------------------------------------------
 #if defined(KEYBOARD_dasbob)
 #   define CS_INCLUDE_SONNE_LAYER
