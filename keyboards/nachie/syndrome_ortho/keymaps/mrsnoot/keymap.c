@@ -29,7 +29,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   K01    , K02    , K03    , K04    , K05    , XXXXXXX, K06    , K07    , K08    , K09    , K0A, \
   K11    , K12    , K13    , K14    , K15    , XXXXXXX, K16    , K17    , K18    , K19    , K1A, \
   K21    , K22    , K23    , K24    , K25    , XXXXXXX, K26    , K27    , K28    , K29    , K2A, \
-  XXXXXXX, XXXXXXX, XXXXXXX, K31    , K31    , XXXXXXX, XXXXXXX, K32, XXXXXXX, XXXXXXX, XXXXXXX \
+  XXXXXXX, XXXXXXX, XXXXXXX, K31    , K31    , K31    , K31    , K31    , XXXXXXX, XXXXXXX, XXXXXXX \
   )
 /* Re-pass though to allow templates to be used */
 #define LAYOUT_base_wrapper(...)       LAYOUT_syndrome_ortho_base(__VA_ARGS__)

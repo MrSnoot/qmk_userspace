@@ -34,7 +34,7 @@ enum combos {
     SONNE_VDPR,
     SONNE_VDNX,
     SONNE_VD_VIEW,
-    SONNE_TSPR,
+    //SONNE_TSPR,
     SONNE_TSNX,
     // SONNE beidseitig
     SONNE_CAPS_WORD,
@@ -78,12 +78,12 @@ const uint16_t PROGMEM sonne_copy_word_combo[] = { DE_X, GUI_SS, COMBO_END };
 const uint16_t PROGMEM sonne_alt_f4_combo[] = { DE_G, DE_Z, COMBO_END };
 const uint16_t PROGMEM sonne_tab_combo[] = { HRM_S_T, DE_K, COMBO_END };
 const uint16_t PROGMEM sonne_enter_hr_combo[] = { HRM_S_T, HRM_S_N, COMBO_END };
-const uint16_t PROGMEM sonne_enter_combo[] = { HRM_S_R, GUI_SS, COMBO_END };
+const uint16_t PROGMEM sonne_enter_combo[] = { HRM_S_R, DE_Q, COMBO_END };
 const uint16_t PROGMEM sonne_vdpr_combo[] = { HRM_S_H, DE_D, COMBO_END };
 const uint16_t PROGMEM sonne_vdnx_combo[] = { HRM_S_T, LT_MS_C, COMBO_END };
 const uint16_t PROGMEM sonne_vd_view_combo[] = { CS_VDPR, CS_VDNX, COMBO_END };
-const uint16_t PROGMEM sonne_tspr_combo[] = { HRM_S_N, DE_L, COMBO_END };
-const uint16_t PROGMEM sonne_tsnx_combo[] = { HRM_S_R, DE_Q, COMBO_END };
+//const uint16_t PROGMEM sonne_tspr_combo[] = { HRM_S_N, DE_L, COMBO_END };
+const uint16_t PROGMEM sonne_tsnx_combo[] = { HRM_S_N, DE_L, COMBO_END };
 #ifdef CS_NUM_WORD_ENABLE
 const uint16_t PROGMEM sonne_num_word_combo[] = { HRM_S_H, DE_B, COMBO_END };
 #endif
@@ -130,7 +130,7 @@ combo_t key_combos[] = {
     [SONNE_VDPR] = COMBO(sonne_vdpr_combo, CS_VDPR),
     [SONNE_VDNX] = COMBO(sonne_vdnx_combo, CS_VDNX),
     [SONNE_VD_VIEW] = COMBO(sonne_vd_view_combo, LGUI(KC_TAB)),
-    [SONNE_TSPR] = COMBO(sonne_tspr_combo, CS_TSPR),
+    //[SONNE_TSPR] = COMBO(sonne_tspr_combo, CS_TSPR),
     [SONNE_TSNX] = COMBO(sonne_tsnx_combo, CS_TSNX),
     #ifdef CS_NUM_WORD_ENABLE
     [SONNE_NUM_WORD] = COMBO(sonne_num_word_combo, NUMWORD),
